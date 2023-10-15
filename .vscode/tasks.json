@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Open HTML in Browser",
+            "type": "shell",
+            "command": "start",
+            "args": ["index.html"],
+            "windows": {
+                "command": "cmd.exe",
+                "args": ["/C", "start", "index.html"]
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
