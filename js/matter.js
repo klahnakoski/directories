@@ -3,13 +3,14 @@ var engine = Matter.Engine.create();
 
 engine.world.gravity.x = 0;
 engine.world.gravity.y = 0;
-engine.timing.timeScale = 1;
+engine.timing.timeScale = 0.0001;
 
 const airFriction = 0.0;
 const restitution = 0.5;
 const angularResistance = 0.999;
 const slop = 0.0;
 const density = 0.001;
+const degree90 = Math.PI / 2;
 
 // Create a renderer for visualization
 var render = Matter.Render.create({
@@ -20,13 +21,14 @@ var render = Matter.Render.create({
 // Create a circle and a line (represented by a thin rectangle in this case)
 var circle = Matter.Bodies.circle(250, 250, 50, { restitution, airFriction });
 
-
 // Add all bodies to the world
 Matter.World.add(engine.world, [circle]);
 
 function createSquare(centerX, centerY, sideLength) {
+  const center = { x: centerX, y: centerY };
+  const thickness = 10;
   const halfSide = sideLength / 2;
-  const halfThickness = 5; // half of the line thickness
+  const halfThickness = thickness / 2;
   const details = {
     density,
     slop,
@@ -37,47 +39,46 @@ function createSquare(centerX, centerY, sideLength) {
 
   // Define the four lines for the square
   const lines = [
-    Matter.Bodies.rectangle(centerX, centerY + halfSide - halfThickness, sideLength, 10, {label:"top", ...details}), // Top
-    Matter.Bodies.rectangle(centerX + halfSide - halfThickness, centerY, 10, sideLength, {label:"right", ...details}), // Right
-    Matter.Bodies.rectangle(centerX, centerY - halfSide + halfThickness, sideLength, 10, {label:"bottom", ...details}), // Bottom
-    Matter.Bodies.rectangle(centerX - halfSide + halfThickness, centerY, 10, sideLength, {label:"left", ...details}), // Left
+    Matter.Bodies.rectangle(0, 0, sideLength, thickness, { label: "top", ...details }), // Top
+    Matter.Bodies.rectangle(0, 0, sideLength, thickness, { label: "right", ...details }), // Right
+    Matter.Bodies.rectangle(0, 0, sideLength, thickness, { label: "bottom", ...details }), // Bottom
+    Matter.Bodies.rectangle(0, 0, sideLength, thickness, { label: "left", ...details }), // Left
   ];
-
-  // Define the connection points for each line
-  const connectionPoints = [
-    { x: halfSide - halfThickness, y: halfSide - halfThickness }, // Top Right
-    { x: halfSide - halfThickness, y: -halfSide + halfThickness }, // Bottom right
-    { x: -halfSide + halfThickness, y: -halfSide + halfThickness }, // Bottom left
-    { x: -halfSide + halfThickness, y: halfSide - halfThickness }, // Top Left
-  ];
-
+    // Rotate the lines to the correct angle
+    lines.forEach((line, i) => {
+      const angle = toRadians(i * 90);
+      Matter.Body.rotate(line, angle);
+      Matter.Body.setPosition(
+        line,
+        chain({ x: 0, y: -halfSide - halfThickness })
+          .rotate(angle)
+          .add(center)
+          .get()
+      );
+    });
+  
+  
   // Connect the lines using constraints
-  const constraints = lines.map((_, i) => {
+  const constraints = lines.map((lineA, i) => {
     let nextIdx = (i + 1) % 4; // To loop back to the first line after the last one
+    const lineB = lines[nextIdx];
+    const angle = toRadians(i * 90);
 
-    let pointA, pointB;
-    if (i % 2 === 0) {
-      pointA = { x: connectionPoints[i].x, y: 0 };
-      pointB = { x: 0, y: connectionPoints[i].y };
-    } else {
-      pointA = { x: 0, y: connectionPoints[i].y };
-      pointB = { x: connectionPoints[i].x, y: 0 };
-    }
+    const pointA = chain({x:halfSide, y:halfThickness}).rotate(angle).get();
+    const pointB = chain({x:-halfSide, y:halfThickness}).rotate(angle+degree90).get()
 
     return Matter.Constraint.create({
-      bodyA: lines[i],
-      bodyB: lines[nextIdx],
-      angleA: Matter.Common.toRadians(45+90*i),
-      angleB: Matter.Common.toRadians(-135+90*i),
+      bodyA: lineA,
+      bodyB: lineB,
       pointA: pointA,
       pointB: pointB,
-      stiffness: 1e-5,
+      stiffness: 1e-3,
       length: 10,
       render: {
         lineWidth: 1,
         strokeStyle: "#FAA",
       },
-      label: lines[i].label + "-" + lines[nextIdx].label,
+      label: lineA.label + "-" + lineB.label,
     });
   });
 
@@ -102,7 +103,7 @@ function applyCenteringForce(body, centerX, centerY) {
   let dy = centerY - body.position.y;
 
   // zero out the angular velocity
-  Matter.Body.setAngularVelocity(body, 0);
+  Matter.Body.setAngularVelocity(body, body.angularVelocity/2);
 
   // Apply the force
   Matter.Body.applyForce(body, body.position, {
@@ -114,73 +115,46 @@ function applyCenteringForce(body, centerX, centerY) {
 function getOriginalVertices(body) {
   const pos = body.position;
   const angle = body.angle;
-  const vertices = body.vertices.map(v=>{
+  const vertices = body.vertices.map((v) => {
     return chain(v).sub(pos).rotate(-angle).add(pos).get();
   });
-  return vertices
+  return vertices;
 }
 
+const stretchFactor = 1e-2
 
-Matter.Events.on(engine, "beforeUpdate", function () {
+Matter.Events.on(engine, "afterUpdate", function () {
   const centerX = 400; // Adjust to the desired center X position
   const centerY = 300; // Adjust to the desired center Y position
   for (let body of engine.world.bodies) {
     applyCenteringForce(body, centerX, centerY);
   }
-  for (let quad of quads) {
-    const deltas = quad.constraints.map((con, i) => {
-      const delta = chain(con.pointA).add(con.bodyA.position).sub(con.pointB).sub(con.bodyB.position).magnitude()-1;
-      const body = con.bodyA;
-      const nextBody = con.bodyB;
-      const oVertices = getOriginalVertices(body);
+   for (let quad of quads) {
+     const verts = quad.bodies.map(b=>b.vertices.map(v=>chain(v).sub(b.position).get()));
+    quad.constraints.forEach((con, i) => {
+      const delta = chain(con.pointA).add(con.bodyA.position).sub(con.pointB).sub(con.bodyB.position).magnitude();
+      const bodyA = con.bodyA;
+      const bodyB = con.bodyB;
+      const vertA = verts[i];
+      const vertB = verts[(i+1)%4];
 
-      if (i === 0) {
-        con.pointA.x += delta;
-        con.pointB.y += delta;
-        body.
-        body.position.x += (delta / 2) * Math.cos(body.angle);
-        body.position.y += (delta / 2) * Math.sin(body.angle);
-        nextBody.position.x -= (delta / 2) * Math.sin(nextBody.angle);
-        nextBody.position.y -= (delta / 2) * Math.cos(nextBody.angle);
-      }
-
+      const diffA = Math.cos(con.angleA - bodyA.angle)* delta*stretchFactor;
+      const a = chain({x:diffA, y:0}).rotate(bodyA.angle).get();
+      vertA[1] = chain(vertA[1]).add(a).get();
+      vertA[2] = chain(vertA[2]).add(a).get();
+      con.pointA = chain(con.pointA).add(chain(a).mult(0.5).get()).get(); 
+      
+      const diffB = -Math.cos(con.angleB - bodyB.angle)* delta*stretchFactor;
+      const b = chain({x:diffB, y:0}).rotate(bodyB.angle).get();
+      vertB[0] = chain(vertB[0]).add(b).get();
+      vertB[3] = chain(vertB[3]).add(b).get();
+      con.pointB = chain(con.pointB).add(chain(b).mult(0.5).get()).get(); 
     });
 
-    
-    quad.constraints.forEach((con, i) => {
-      const body = con.bodyA;
-      const nextBody = con.bodyB;
-      const delta = deltas[i];
-      // if (i === 0) {
-      //   con.pointA.x += delta;
-      //   con.pointB.y += delta;
-      //   body.
-      //   body.position.x += (delta / 2) * Math.cos(body.angle);
-      //   body.position.y += (delta / 2) * Math.sin(body.angle);
-      //   nextBody.position.x -= (delta / 2) * Math.sin(nextBody.angle);
-      //   nextBody.position.y -= (delta / 2) * Math.cos(nextBody.angle);
-      // } else if (i === 1) {
-      //   con.pointA.y += delta;
-      //   con.pointB.x += delta;
-      //   body.position.x += (delta / 2) * Math.sin(body.angle);
-      //   body.position.y += (delta / 2) * Math.cos(body.angle);
-      //   nextBody.position.x += (delta / 2) * Math.cos(nextBody.angle);
-      //   nextBody.position.y += (delta / 2) * Math.sin(nextBody.angle);
-      // } else if (i === 2) {
-      //   con.pointA.x += delta;
-      //   con.pointB.y += delta;
-      //   body.position.x -= (delta / 2) * Math.cos(body.angle);
-      //   body.position.y -= (delta / 2) * Math.sin(body.angle);
-      //   nextBody.position.x += (delta / 2) * Math.sin(nextBody.angle);
-      //   nextBody.position.y += (delta / 2) * Math.cos(nextBody.angle);
-      // } else {
-      //   con.pointA.y += delta;
-      //   con.pointB.x += delta;
-      //   body.position.x -= (delta / 2) * Math.sin(body.angle);
-      //   body.position.y -= (delta / 2) * Math.cos(body.angle);
-      //   nextBody.position.x -= (delta / 2) * Math.cos(nextBody.angle);
-      //   nextBody.position.y -= (delta / 2) * Math.sin(nextBody.angle);
-      // }
+    quad.bodies.forEach((body, i) => {
+      const original = body.vertices.map(v=>chain(v).get())
+      Matter.Body.setVertices(body, verts[i]);
+      applyCenteringForce(body, centerX, centerY);
     });
   }
 });

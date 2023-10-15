@@ -15,6 +15,10 @@ class Vector {
         return new Vector(Matter.Vector.rotate(this.vector, angle));
     }
 
+    mult(scalar) {
+        return new Vector(Matter.Vector.mult(this.vector, scalar));
+    }
+
     magnitude(){
         return Matter.Vector.magnitude(this.vector);
     } 
@@ -27,4 +31,7 @@ class Vector {
   function chain(vector) {
     return new Vector(vector);
   }
-  
+
+  function toRadians(degrees){
+    return degrees * (Math.PI / 180);
+  }
