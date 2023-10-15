@@ -3,9 +3,9 @@ var engine = Matter.Engine.create();
 
 engine.world.gravity.x = 0;
 engine.world.gravity.y = 0;
-engine.timing.timeScale = 0.0001;
+engine.timing.timeScale = 0.1;
 
-const airFriction = 0.0;
+const airFriction = 0.1;
 const restitution = 0.5;
 const angularResistance = 0.999;
 const slop = 0.0;
@@ -103,7 +103,7 @@ function applyCenteringForce(body, centerX, centerY) {
   let dy = centerY - body.position.y;
 
   // zero out the angular velocity
-  Matter.Body.setAngularVelocity(body, body.angularVelocity/2);
+  //Matter.Body.setAngularVelocity(body, body.angularVelocity/2);
 
   // Apply the force
   Matter.Body.applyForce(body, body.position, {
@@ -132,23 +132,23 @@ Matter.Events.on(engine, "afterUpdate", function () {
    for (let quad of quads) {
      const verts = quad.bodies.map(b=>b.vertices.map(v=>chain(v).sub(b.position).get()));
     quad.constraints.forEach((con, i) => {
-      const delta = chain(con.pointA).add(con.bodyA.position).sub(con.pointB).sub(con.bodyB.position).magnitude();
+      const forceVector = chain(con.pointA).add(con.bodyA.position).sub(con.pointB).sub(con.bodyB.position).get();
+      const delta = chain(forceVector).magnitude();
       const bodyA = con.bodyA;
       const bodyB = con.bodyB;
       const vertA = verts[i];
       const vertB = verts[(i+1)%4];
 
-      const diffA = Math.cos(con.angleA - bodyA.angle)* delta*stretchFactor;
-      const a = chain({x:diffA, y:0}).rotate(bodyA.angle).get();
+  
+      const a = chain(forceVector).mult(-1).rotate(-bodyA.angle).x().mult(stretchFactor).rotate(bodyA.angle).get();
       vertA[1] = chain(vertA[1]).add(a).get();
       vertA[2] = chain(vertA[2]).add(a).get();
-      con.pointA = chain(con.pointA).add(chain(a).mult(0.5).get()).get(); 
+      con.pointA = vertA[2];
       
-      const diffB = -Math.cos(con.angleB - bodyB.angle)* delta*stretchFactor;
-      const b = chain({x:diffB, y:0}).rotate(bodyB.angle).get();
+      const b = chain(forceVector).rotate(-bodyB.angle).x().mult(stretchFactor).rotate(bodyB.angle).get();
       vertB[0] = chain(vertB[0]).add(b).get();
       vertB[3] = chain(vertB[3]).add(b).get();
-      con.pointB = chain(con.pointB).add(chain(b).mult(0.5).get()).get(); 
+      con.pointB = vertB[3];
     });
 
     quad.bodies.forEach((body, i) => {
