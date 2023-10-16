@@ -1,8 +1,11 @@
+const stretchFactor = 1e-2;
+const degree90 = Math.PI / 2;
+
 function createSquare(center, sideLength, details) {
   const thickness = 10;
   const halfSide = sideLength / 2;
   const halfThickness = thickness / 2;
- 
+
   // Define the four lines for the square
   const lines = [
     Matter.Bodies.rectangle(0, 0, sideLength, thickness, { label: "top", ...details }), // Top
@@ -53,14 +56,13 @@ function createSquare(center, sideLength, details) {
     bodies: lines,
     constraints: constraints,
   });
-  quads.push(composite);
-  quads.afterUpdate = afterUpdate;
-  Matter.World.add(engine.world, composite);
+  composite.afterUpdate = afterUpdate.bind(composite);
+  return composite;
 }
 
 function afterUpdate() {
-  const verts = quad.bodies.map((b) => b.vertices.map((v) => chain(v).sub(b.position).get()));
-  quad.constraints.forEach((con, i) => {
+  const verts = this.bodies.map((b) => b.vertices.map((v) => chain(v).sub(b.position).get()));
+  this.constraints.forEach((con, i) => {
     const forceVector = chain(con.pointA).add(con.bodyA.position).sub(con.pointB).sub(con.bodyB.position).get();
     const delta = chain(forceVector).magnitude();
     const bodyA = con.bodyA;
@@ -79,7 +81,7 @@ function afterUpdate() {
     con.pointB = vertB[3];
   });
 
-  quad.bodies.forEach((body, i) => {
+  this.bodies.forEach((body, i) => {
     const original = body.vertices.map((v) => chain(v).get());
     Matter.Body.setVertices(body, verts[i]);
   });

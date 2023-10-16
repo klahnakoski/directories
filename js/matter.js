@@ -1,8 +1,11 @@
+
+
+
 // Create an engine
 var engine = Matter.Engine.create();
 
-engine.gravity.x = 0;
-engine.gravity.y = 0;
+engine.world.gravity.x = 0;
+engine.world.gravity.y = 0;
 engine.timing.timeScale = 1;
 
 const airFriction = 0.1;
@@ -10,7 +13,6 @@ const restitution = 0.5;
 const angularResistance = 0.999;
 const slop = 0.0;
 const density = 0.001;
-const degree90 = Math.PI / 2;
 
 // Create a renderer for visualization
 var render = Matter.Render.create({
@@ -18,22 +20,24 @@ var render = Matter.Render.create({
   engine: engine,
 });
 
-// Create a circle and a line (represented by a thin rectangle in this case)
-var circle = Matter.Bodies.circle(250, 250, 50, { restitution, airFriction });
-
-// Add all bodies to the world
-Matter.World.add(engine.world, [circle]);
-
-// Usage:
-const quads = [];
-
-createSquare({x:250, y:250}, 300, {
+const dirDetails={
   density,
   slop,
   restitution,
   airFriction,
   angularResistance,
-});
+};
+
+const depDetails = {
+  stiffness: 1e-1,
+  length: 10,
+  render: {
+    lineWidth: 1,
+    strokeStyle: "#FAA",
+  }
+};
+
+const circleDetails = { restitution, airFriction };
 
 function applyCenteringForce(body, centerX, centerY) {
   const strength = 0.0001; // Adjust this value as needed
@@ -52,28 +56,25 @@ function applyCenteringForce(body, centerX, centerY) {
   });
 }
 
-function getOriginalVertices(body) {
-  const pos = body.position;
-  const angle = body.angle;
-  const vertices = body.vertices.map((v) => {
-    return chain(v).sub(pos).rotate(-angle).add(pos).get();
+loadData("js/dependencies.json").then(data=>{
+  const {bounds, dirs, circles, constraints} = first_layout(data, circleDetails, dirDetails, depDetails);
+  Matter.World.add(engine.world, circles);
+  //Matter.World.add(engine.world, dirs);
+  //Matter.World.add(engine.world, constraints);
+  const quads = dirs;
+
+  Matter.Events.on(engine, "afterUpdate", function () {
+    const centerX = 400; // Adjust to the desired center X position
+    const centerY = 300; // Adjust to the desired center Y position
+    for (let body of engine.world.bodies) {
+      applyCenteringForce(body, centerX, centerY);
+    }
+    for (let quad of quads) quad.afterUpdate();
   });
-  return vertices;
-}
+  
+  Matter.Engine.run(engine);
+  Matter.Render.run(render);
 
-const stretchFactor = 1e-2;
-
-Matter.Events.on(engine, "afterUpdate", function () {
-  const centerX = 400; // Adjust to the desired center X position
-  const centerY = 300; // Adjust to the desired center Y position
-  for (let body of engine.world.bodies) {
-    applyCenteringForce(body, centerX, centerY);
-  }
-  for (let quad of quads) quad.afterUpdate();
 });
 
-// Run the engine
-Matter.Engine.run(engine);
 
-// Run the renderer
-Matter.Render.run(render);
