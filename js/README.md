@@ -13,3 +13,10 @@ Microservices came to fashion because of pain caused by the complexity monolithi
 ## Solution
 
 Visualizing the dependency graph of a code project will help justify moving files to a business centric directory structure.  PLus it will show the particularly knotty parts of the code.
+
+
+## Uasge
+
+Example
+
+    c:\Python311\Scripts\pydeps.exe ../django/django/ -v --noshow --deps-output dependencies.json

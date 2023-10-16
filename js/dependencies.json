@@ -1,0 +1,3729 @@
+{
+    "django/__init__.py": [
+        "django/utils/version.py", "django/apps/__init__.py", "django/conf/__init__.py",
+        "django/urls/__init__.py",     "django/utils/log.py"
+    ],
+    "django/__main__.py": ["django/core/__init__.py"],
+    "django/apps/__init__.py": ["django/apps/config.py", "django/apps/registry.py"],
+    "django/apps/config.py": [
+        "django/core/exceptions.py",
+        "django/utils/functional.py",
+        "django/utils/module_loading.py",
+        "django/conf/__init__.py"
+    ],
+    "django/apps/registry.py": [
+        "django/core/exceptions.py",     "django/apps/config.py",
+          "django/conf/__init__.py"
+    ],
+    "django/conf/__init__.py": [
+                "django/__init__.py",    "django/conf/__init__.py",
+         "django/core/exceptions.py", "django/utils/functional.py",
+           "django/urls/__init__.py"
+    ],
+    "django/conf/urls/__init__.py": ["django/urls/__init__.py", "django/views/__init__.py"],
+    "django/conf/urls/i18n.py": ["django/conf/__init__.py", "django/urls/__init__.py", "django/views/i18n.py"],
+    "django/conf/urls/static.py": [
+          "django/conf/__init__.py", "django/core/exceptions.py",
+          "django/urls/__init__.py",    "django/views/static.py"
+    ],
+    "django/contrib/admin/__init__.py": [
+        "django/contrib/admin/decorators.py",
+        "django/contrib/admin/filters.py",
+        "django/contrib/admin/options.py",
+        "django/contrib/admin/sites.py",
+        "django/utils/module_loading.py"
+    ],
+    "django/contrib/admin/actions.py": [
+        "django/contrib/__init__.py",
+        "django/contrib/admin/__init__.py",
+        "django/contrib/admin/decorators.py",
+        "django/contrib/admin/utils.py",
+        "django/core/exceptions.py",
+        "django/template/response.py",
+        "django/utils/translation/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/admin/apps.py": [
+        "django/apps/__init__.py",
+        "django/contrib/admin/checks.py",
+        "django/core/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/admin/checks.py": [
+        "django/apps/__init__.py",
+        "django/conf/__init__.py",
+        "django/contrib/admin/exceptions.py",
+        "django/contrib/admin/utils.py",
+        "django/core/__init__.py",
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/db/models/constants.py",
+        "django/db/models/expressions.py",
+        "django/forms/models.py",
+        "django/template/__init__.py",
+        "django/template/backends/django.py",
+        "django/utils/module_loading.py",
+        "django/contrib/admin/sites.py",
+        "django/contrib/admin/sites.py",
+        "django/contrib/admin/options.py",
+        "django/contrib/admin/options.py",
+        "django/contrib/admin/options.py",
+        "django/contrib/admin/__init__.py"
+    ],
+    "django/contrib/admin/decorators.py": [
+        "django/contrib/admin/__init__.py",
+        "django/contrib/admin/sites.py",
+        "django/contrib/admin/sites.py"
+    ],
+    "django/contrib/admin/exceptions.py": ["django/core/exceptions.py"],
+    "django/contrib/admin/filters.py": [
+        "django/contrib/admin/exceptions.py",
+        "django/contrib/admin/options.py",
+        "django/contrib/admin/utils.py",
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/utils/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/admin/forms.py": [
+        "django/contrib/auth/forms.py",
+        "django/core/exceptions.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/admin/helpers.py": [
+        "django/__init__.py",
+        "django/contrib/admin/utils.py",
+        "django/core/exceptions.py",
+        "django/db/models/fields/related.py",
+        "django/forms/utils.py",
+        "django/template/defaultfilters.py",
+        "django/urls/__init__.py",
+        "django/utils/html.py",
+        "django/utils/safestring.py",
+        "django/utils/translation/__init__.py",
+        "django/utils/translation/__init__.py",
+        "django/contrib/admin/templatetags/admin_list.py",
+        "django/forms/formsets.py"
+    ],
+    "django/contrib/admin/migrations/0001_initial.py": [
+        "django/contrib/admin/models.py",
+        "django/conf/__init__.py",
+        "django/db/__init__.py"
+    ],
+    "django/contrib/admin/migrations/0002_logentry_remove_auto_add.py": ["django/db/__init__.py", "django/utils/__init__.py"],
+    "django/contrib/admin/migrations/0003_logentry_add_action_flag_choices.py": ["django/db/__init__.py"],
+    "django/contrib/admin/models.py": [
+        "django/conf/__init__.py",
+        "django/contrib/admin/utils.py",
+        "django/contrib/contenttypes/models.py",
+        "django/db/__init__.py",
+        "django/urls/__init__.py",
+        "django/utils/__init__.py",
+        "django/utils/text.py",
+        "django/utils/translation/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/admin/options.py": [
+        "django/__init__.py",
+        "django/conf/__init__.py",
+        "django/contrib/__init__.py",
+        "django/contrib/admin/__init__.py",
+        "django/contrib/admin/checks.py",
+        "django/contrib/admin/exceptions.py",
+        "django/contrib/admin/templatetags/admin_urls.py",
+        "django/contrib/admin/utils.py",
+        "django/contrib/admin/widgets.py",
+        "django/contrib/auth/__init__.py",
+        "django/core/exceptions.py",
+        "django/core/paginator.py",
+        "django/db/__init__.py",
+        "django/db/models/constants.py",
+        "django/forms/formsets.py",
+        "django/forms/models.py",
+        "django/forms/widgets.py",
+        "django/http/__init__.py",
+        "django/http/response.py",
+        "django/template/response.py",
+        "django/urls/__init__.py",
+        "django/utils/decorators.py",
+        "django/utils/html.py",
+        "django/utils/http.py",
+        "django/utils/safestring.py",
+        "django/utils/text.py",
+        "django/utils/translation/__init__.py",
+        "django/utils/translation/__init__.py",
+        "django/views/decorators/csrf.py",
+        "django/views/generic/__init__.py",
+        "django/contrib/contenttypes/models.py",
+        "django/contrib/admin/filters.py",
+        "django/urls/__init__.py",
+        "django/contrib/admin/views/main.py",
+        "django/contrib/admin/models.py",
+        "django/contrib/admin/models.py",
+        "django/contrib/admin/models.py",
+        "django/contrib/admin/views/main.py",
+        "django/contrib/admin/models.py",
+        "django/contrib/admin/views/main.py"
+    ],
+    "django/contrib/admin/sites.py": [
+        "django/apps/__init__.py",
+        "django/conf/__init__.py",
+        "django/contrib/admin/__init__.py",
+        "django/contrib/admin/exceptions.py",
+        "django/contrib/admin/views/autocomplete.py",
+        "django/contrib/auth/__init__.py",
+        "django/core/exceptions.py",
+        "django/db/models/base.py",
+        "django/http/__init__.py",
+        "django/template/response.py",
+        "django/urls/__init__.py",
+        "django/utils/decorators.py",
+        "django/utils/functional.py",
+        "django/utils/module_loading.py",
+        "django/utils/text.py",
+        "django/utils/translation/__init__.py",
+        "django/utils/translation/__init__.py",
+        "django/views/decorators/cache.py",
+        "django/views/decorators/common.py",
+        "django/views/decorators/csrf.py",
+        "django/views/i18n.py",
+        "django/contrib/contenttypes/__init__.py",
+        "django/urls/__init__.py",
+        "django/contrib/admin/forms.py",
+        "django/contrib/auth/views.py",
+        "django/contrib/auth/views.py",
+        "django/contrib/auth/views.py",
+        "django/contrib/admin/forms.py",
+        "django/contrib/auth/views.py",
+        "django/contrib/admin/models.py",
+        "django/contrib/auth/views.py"
+    ],
+    "django/contrib/admin/templatetags/admin_list.py": [
+        "django/contrib/admin/templatetags/admin_urls.py",
+        "django/contrib/admin/utils.py",
+        "django/contrib/admin/views/main.py",
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/template/__init__.py",
+        "django/template/loader.py",
+        "django/templatetags/static.py",
+        "django/urls/__init__.py",
+        "django/utils/__init__.py",
+        "django/utils/html.py",
+        "django/utils/safestring.py",
+        "django/utils/text.py",
+        "django/utils/translation/__init__.py",
+        "django/contrib/admin/templatetags/base.py"
+    ],
+    "django/contrib/admin/templatetags/admin_modify.py": [
+        "django/__init__.py",
+        "django/template/context.py",
+        "django/contrib/admin/templatetags/base.py"
+    ],
+    "django/contrib/admin/templatetags/admin_urls.py": [
+        "django/__init__.py",
+        "django/contrib/admin/utils.py",
+        "django/urls/__init__.py",
+        "django/utils/http.py",
+        "django/contrib/admin/options.py",
+        "django/contrib/admin/options.py"
+    ],
+    "django/contrib/admin/templatetags/base.py": ["django/template/library.py"],
+    "django/contrib/admin/templatetags/log.py": ["django/__init__.py"],
+    "django/contrib/admin/utils.py": [
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/db/models/constants.py",
+        "django/db/models/deletion.py",
+        "django/forms/utils.py",
+        "django/urls/__init__.py",
+        "django/utils/__init__.py",
+        "django/utils/hashable.py",
+        "django/utils/html.py",
+        "django/utils/regex_helper.py",
+        "django/utils/text.py",
+        "django/utils/translation/__init__.py",
+        "django/utils/translation/__init__.py",
+        "django/contrib/admin/templatetags/admin_list.py",
+        "django/contrib/admin/templatetags/admin_list.py"
+    ],
+    "django/contrib/admin/views/autocomplete.py": [
+        "django/apps/__init__.py",
+        "django/contrib/admin/exceptions.py",
+        "django/core/exceptions.py",
+        "django/http/__init__.py",
+        "django/views/generic/list.py"
+    ],
+    "django/contrib/admin/views/decorators.py": [
+        "django/contrib/auth/__init__.py",
+        "django/contrib/auth/decorators.py"
+    ],
+    "django/contrib/admin/views/main.py": [
+        "django/__init__.py",
+        "django/conf/__init__.py",
+        "django/contrib/__init__.py",
+        "django/contrib/admin/__init__.py",
+        "django/contrib/admin/exceptions.py",
+        "django/contrib/admin/options.py",
+        "django/contrib/admin/utils.py",
+        "django/core/exceptions.py",
+        "django/core/paginator.py",
+        "django/db/models/__init__.py",
+        "django/db/models/expressions.py",
+        "django/urls/__init__.py",
+        "django/utils/deprecation.py",
+        "django/utils/http.py",
+        "django/utils/inspect.py",
+        "django/utils/timezone.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/admin/widgets.py": [
+        "django/__init__.py",
+        "django/conf/__init__.py",
+        "django/core/exceptions.py",
+        "django/core/validators.py",
+        "django/db/models/__init__.py",
+        "django/urls/__init__.py",
+        "django/urls/exceptions.py",
+        "django/utils/html.py",
+        "django/utils/http.py",
+        "django/utils/text.py",
+        "django/utils/translation/__init__.py",
+        "django/utils/translation/__init__.py",
+        "django/contrib/admin/views/main.py",
+        "django/contrib/admin/views/main.py"
+    ],
+    "django/contrib/admindocs/apps.py": [
+        "django/apps/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/admindocs/middleware.py": [
+        "django/conf/__init__.py",
+        "django/core/exceptions.py",
+        "django/http/__init__.py",
+        "django/utils/deprecation.py",
+        "django/contrib/admindocs/utils.py"
+    ],
+    "django/contrib/admindocs/urls.py": [
+        "django/contrib/admindocs/__init__.py",
+        "django/urls/__init__.py"
+    ],
+    "django/contrib/admindocs/utils.py": [
+             "django/urls/__init__.py", "django/utils/regex_helper.py",
+          "django/utils/safestring.py"
+    ],
+    "django/contrib/admindocs/views.py": [
+        "django/apps/__init__.py",
+        "django/contrib/__init__.py",
+        "django/contrib/admin/views/decorators.py",
+        "django/contrib/admindocs/__init__.py",
+        "django/contrib/admindocs/utils.py",
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/http/__init__.py",
+        "django/template/engine.py",
+        "django/urls/__init__.py",
+        "django/utils/_os.py",
+        "django/utils/decorators.py",
+        "django/utils/functional.py",
+        "django/utils/inspect.py",
+        "django/utils/translation/__init__.py",
+        "django/views/generic/__init__.py",
+        "django/contrib/admindocs/utils.py"
+    ],
+    "django/contrib/auth/__init__.py": [
+        "django/apps/__init__.py",
+        "django/conf/__init__.py",
+        "django/core/exceptions.py",
+        "django/middleware/csrf.py",
+        "django/utils/crypto.py",
+        "django/utils/module_loading.py",
+        "django/views/decorators/debug.py",
+        "django/contrib/auth/signals.py",
+        "django/contrib/auth/models.py",
+        "django/contrib/auth/models.py"
+    ],
+    "django/contrib/auth/admin.py": [
+        "django/conf/__init__.py",
+        "django/contrib/__init__.py",
+        "django/contrib/admin/options.py",
+        "django/contrib/admin/utils.py",
+        "django/contrib/auth/__init__.py",
+        "django/contrib/auth/forms.py",
+        "django/contrib/auth/models.py",
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/http/__init__.py",
+        "django/template/response.py",
+        "django/urls/__init__.py",
+        "django/utils/decorators.py",
+        "django/utils/html.py",
+        "django/utils/translation/__init__.py",
+        "django/utils/translation/__init__.py",
+        "django/views/decorators/csrf.py",
+        "django/views/decorators/debug.py"
+    ],
+    "django/contrib/auth/apps.py": [
+        "django/apps/__init__.py",
+        "django/core/__init__.py",
+        "django/db/models/query_utils.py",
+        "django/db/models/signals.py",
+        "django/utils/translation/__init__.py",
+        "django/contrib/auth/__init__.py",
+        "django/contrib/auth/checks.py",
+        "django/contrib/auth/management/__init__.py",
+        "django/contrib/auth/signals.py",
+        "django/contrib/auth/models.py"
+    ],
+    "django/contrib/auth/backends.py": [
+        "django/contrib/auth/__init__.py",
+        "django/contrib/auth/models.py",
+        "django/db/models/__init__.py"
+    ],
+    "django/contrib/auth/base_user.py": [
+        "django/conf/__init__.py",
+        "django/contrib/auth/__init__.py",
+        "django/contrib/auth/hashers.py",
+        "django/db/__init__.py",
+        "django/utils/crypto.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/auth/checks.py": [
+        "django/apps/__init__.py",
+        "django/conf/__init__.py",
+        "django/core/__init__.py",
+        "django/contrib/auth/management/__init__.py"
+    ],
+    "django/contrib/auth/context_processors.py": ["django/contrib/auth/models.py"],
+    "django/contrib/auth/decorators.py": [
+        "django/conf/__init__.py",
+        "django/contrib/auth/__init__.py",
+        "django/core/exceptions.py",
+        "django/shortcuts.py",
+        "django/contrib/auth/views.py"
+    ],
+    "django/contrib/auth/forms.py": [
+        "django/__init__.py",
+        "django/contrib/auth/__init__.py",
+        "django/contrib/auth/hashers.py",
+        "django/contrib/auth/models.py",
+        "django/contrib/auth/tokens.py",
+        "django/contrib/sites/shortcuts.py",
+        "django/core/exceptions.py",
+        "django/core/mail/__init__.py",
+        "django/template/__init__.py",
+        "django/utils/encoding.py",
+        "django/utils/http.py",
+        "django/utils/text.py",
+        "django/utils/translation/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/auth/handlers/modwsgi.py": ["django/__init__.py", "django/contrib/__init__.py"],
+    "django/contrib/auth/hashers.py": [
+        "django/conf/__init__.py",
+        "django/core/exceptions.py",
+        "django/core/signals.py",
+        "django/dispatch/__init__.py",
+        "django/utils/crypto.py",
+        "django/utils/module_loading.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/auth/management/__init__.py": [
+        "django/apps/__init__.py",
+        "django/contrib/auth/__init__.py",
+        "django/contrib/contenttypes/management/__init__.py",
+        "django/core/__init__.py",
+        "django/db/__init__.py",
+        "django/contrib/auth/__init__.py"
+    ],
+    "django/contrib/auth/management/commands/changepassword.py": [
+        "django/contrib/auth/__init__.py",
+        "django/contrib/auth/password_validation.py",
+        "django/core/exceptions.py",
+        "django/core/management/base.py",
+        "django/db/__init__.py"
+    ],
+    "django/contrib/auth/management/commands/createsuperuser.py": [
+        "django/contrib/auth/__init__.py",
+        "django/contrib/auth/management/__init__.py",
+        "django/contrib/auth/password_validation.py",
+        "django/core/__init__.py",
+        "django/core/management/base.py",
+        "django/db/__init__.py",
+        "django/utils/functional.py",
+        "django/utils/text.py"
+    ],
+    "django/contrib/auth/middleware.py": [
+        "django/contrib/__init__.py",
+        "django/contrib/auth/__init__.py",
+        "django/contrib/auth/backends.py",
+        "django/core/exceptions.py",
+        "django/utils/deprecation.py",
+        "django/utils/functional.py"
+    ],
+    "django/contrib/auth/migrations/0001_initial.py": [
+        "django/contrib/auth/models.py",
+        "django/contrib/auth/__init__.py",
+        "django/db/__init__.py",
+        "django/utils/__init__.py"
+    ],
+    "django/contrib/auth/migrations/0002_alter_permission_name_max_length.py": ["django/db/__init__.py"],
+    "django/contrib/auth/migrations/0003_alter_user_email_max_length.py": ["django/db/__init__.py"],
+    "django/contrib/auth/migrations/0004_alter_user_username_opts.py": [
+        "django/contrib/auth/__init__.py",
+        "django/db/__init__.py"
+    ],
+    "django/contrib/auth/migrations/0005_alter_user_last_login_null.py": ["django/db/__init__.py"],
+    "django/contrib/auth/migrations/0006_require_contenttypes_0002.py": ["django/db/__init__.py"],
+    "django/contrib/auth/migrations/0007_alter_validators_add_error_messages.py": [
+        "django/contrib/auth/__init__.py",
+        "django/db/__init__.py"
+    ],
+    "django/contrib/auth/migrations/0008_alter_user_username_max_length.py": [
+        "django/contrib/auth/__init__.py",
+        "django/db/__init__.py"
+    ],
+    "django/contrib/auth/migrations/0009_alter_user_last_name_max_length.py": ["django/db/__init__.py"],
+    "django/contrib/auth/migrations/0010_alter_group_name_max_length.py": ["django/db/__init__.py"],
+    "django/contrib/auth/migrations/0011_update_proxy_permissions.py": [
+        "django/core/management/color.py",
+        "django/db/__init__.py",
+        "django/db/models/__init__.py"
+    ],
+    "django/contrib/auth/migrations/0012_alter_user_first_name_max_length.py": ["django/db/__init__.py"],
+    "django/contrib/auth/mixins.py": [
+        "django/conf/__init__.py",
+        "django/contrib/auth/__init__.py",
+        "django/contrib/auth/views.py",
+        "django/core/exceptions.py",
+        "django/shortcuts.py"
+    ],
+    "django/contrib/auth/models.py": [
+        "django/apps/__init__.py",
+        "django/contrib/__init__.py",
+        "django/contrib/auth/base_user.py",
+        "django/contrib/auth/hashers.py",
+        "django/contrib/contenttypes/models.py",
+        "django/core/exceptions.py",
+        "django/core/mail/__init__.py",
+        "django/db/__init__.py",
+        "django/db/models/manager.py",
+        "django/utils/__init__.py",
+        "django/utils/itercompat.py",
+        "django/utils/translation/__init__.py",
+        "django/contrib/auth/validators.py"
+    ],
+    "django/contrib/auth/password_validation.py": [
+        "django/conf/__init__.py",
+        "django/core/exceptions.py",
+        "django/utils/functional.py",
+        "django/utils/html.py",
+        "django/utils/module_loading.py",
+        "django/utils/translation/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/auth/signals.py": ["django/dispatch/__init__.py"],
+    "django/contrib/auth/tokens.py": ["django/conf/__init__.py", "django/utils/crypto.py", "django/utils/http.py"],
+    "django/contrib/auth/urls.py": [
+        "django/contrib/auth/__init__.py",
+        "django/urls/__init__.py"
+    ],
+    "django/contrib/auth/validators.py": [
+        "django/core/__init__.py",
+        "django/utils/deconstruct.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/auth/views.py": [
+        "django/conf/__init__.py",
+        "django/contrib/auth/__init__.py",
+        "django/contrib/auth/__init__.py",
+        "django/contrib/auth/__init__.py",
+        "django/contrib/auth/__init__.py",
+        "django/contrib/auth/decorators.py",
+        "django/contrib/auth/forms.py",
+        "django/contrib/auth/tokens.py",
+        "django/contrib/sites/shortcuts.py",
+        "django/core/exceptions.py",
+        "django/http/__init__.py",
+        "django/shortcuts.py",
+        "django/urls/__init__.py",
+        "django/utils/decorators.py",
+        "django/utils/http.py",
+        "django/utils/translation/__init__.py",
+        "django/views/decorators/cache.py",
+        "django/views/decorators/csrf.py",
+        "django/views/decorators/debug.py",
+        "django/views/generic/base.py",
+        "django/views/generic/edit.py"
+    ],
+    "django/contrib/contenttypes/admin.py": [
+        "django/contrib/admin/checks.py",
+        "django/contrib/admin/options.py",
+        "django/contrib/contenttypes/fields.py",
+        "django/contrib/contenttypes/forms.py",
+        "django/core/__init__.py",
+        "django/core/exceptions.py",
+        "django/forms/__init__.py",
+        "django/forms/models.py"
+    ],
+    "django/contrib/contenttypes/apps.py": [
+        "django/apps/__init__.py",
+        "django/contrib/contenttypes/checks.py",
+        "django/core/__init__.py",
+        "django/db/models/signals.py",
+        "django/utils/translation/__init__.py",
+        "django/contrib/contenttypes/management/__init__.py"
+    ],
+    "django/contrib/contenttypes/checks.py": [
+        "django/apps/__init__.py",
+        "django/core/checks/__init__.py",
+        "django/contrib/contenttypes/fields.py"
+    ],
+    "django/contrib/contenttypes/fields.py": [
+        "django/contrib/contenttypes/models.py",
+        "django/core/__init__.py",
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/db/models/__init__.py",
+        "django/db/models/base.py",
+        "django/db/models/fields/mixins.py",
+        "django/db/models/fields/related.py",
+        "django/db/models/query_utils.py",
+        "django/db/models/sql/__init__.py",
+        "django/db/models/sql/where.py",
+        "django/db/models/utils.py",
+        "django/utils/deprecation.py",
+        "django/utils/functional.py"
+    ],
+    "django/contrib/contenttypes/forms.py": [
+        "django/contrib/contenttypes/models.py",
+        "django/db/__init__.py",
+        "django/forms/__init__.py",
+        "django/forms/models.py"
+    ],
+    "django/contrib/contenttypes/management/__init__.py": ["django/apps/__init__.py", "django/db/__init__.py"],
+    "django/contrib/contenttypes/management/commands/remove_stale_contenttypes.py": [
+        "django/apps/__init__.py",
+        "django/contrib/contenttypes/models.py",
+        "django/core/management/__init__.py",
+        "django/db/__init__.py",
+        "django/db/models/deletion.py"
+    ],
+    "django/contrib/contenttypes/migrations/0001_initial.py": [
+        "django/contrib/contenttypes/models.py",
+        "django/db/__init__.py"
+    ],
+    "django/contrib/contenttypes/migrations/0002_remove_content_type_name.py": ["django/db/__init__.py"],
+    "django/contrib/contenttypes/models.py": [
+        "django/apps/__init__.py",
+        "django/db/__init__.py",
+        "django/db/models/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/contenttypes/prefetch.py": ["django/db/models/__init__.py", "django/db/models/query.py"],
+    "django/contrib/contenttypes/views.py": [
+        "django/apps/__init__.py",
+        "django/contrib/contenttypes/models.py",
+        "django/contrib/sites/shortcuts.py",
+        "django/core/exceptions.py",
+        "django/http/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/flatpages/admin.py": [
+        "django/contrib/__init__.py",
+        "django/contrib/flatpages/forms.py",
+        "django/contrib/flatpages/models.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/flatpages/apps.py": [
+        "django/apps/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/flatpages/forms.py": [
+        "django/__init__.py",
+        "django/conf/__init__.py",
+        "django/contrib/flatpages/models.py",
+        "django/core/exceptions.py",
+        "django/utils/translation/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/flatpages/middleware.py": [
+        "django/conf/__init__.py",
+        "django/contrib/flatpages/views.py",
+        "django/http/__init__.py",
+        "django/utils/deprecation.py"
+    ],
+    "django/contrib/flatpages/migrations/0001_initial.py": ["django/db/__init__.py"],
+    "django/contrib/flatpages/models.py": [
+        "django/contrib/sites/models.py",
+        "django/db/__init__.py",
+        "django/urls/__init__.py",
+        "django/utils/encoding.py",
+        "django/utils/translation/__init__.py",
+        "django/contrib/flatpages/views.py"
+    ],
+    "django/contrib/flatpages/sitemaps.py": [
+        "django/apps/__init__.py",
+        "django/contrib/sitemaps/__init__.py",
+        "django/core/exceptions.py"
+    ],
+    "django/contrib/flatpages/templatetags/flatpages.py": [
+        "django/__init__.py",
+        "django/conf/__init__.py",
+        "django/contrib/flatpages/models.py",
+        "django/contrib/sites/shortcuts.py"
+    ],
+    "django/contrib/flatpages/urls.py": [
+        "django/contrib/flatpages/__init__.py",
+        "django/urls/__init__.py"
+    ],
+    "django/contrib/flatpages/views.py": [
+        "django/conf/__init__.py",
+        "django/contrib/flatpages/models.py",
+        "django/contrib/sites/shortcuts.py",
+        "django/http/__init__.py",
+        "django/shortcuts.py",
+        "django/template/__init__.py",
+        "django/utils/safestring.py",
+        "django/views/decorators/csrf.py",
+        "django/contrib/auth/views.py"
+    ],
+    "django/contrib/gis/admin/__init__.py": [
+        "django/contrib/admin/__init__.py",
+        "django/contrib/gis/admin/options.py"
+    ],
+    "django/contrib/gis/admin/options.py": [
+        "django/contrib/admin/__init__.py",
+        "django/contrib/gis/db/__init__.py",
+        "django/contrib/gis/forms/__init__.py"
+    ],
+    "django/contrib/gis/apps.py": [
+        "django/apps/__init__.py",
+        "django/core/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/gis/db/backends/base/features.py": ["django/contrib/gis/db/__init__.py"],
+    "django/contrib/gis/db/backends/base/models.py": ["django/contrib/gis/__init__.py"],
+    "django/contrib/gis/db/backends/base/operations.py": [
+        "django/contrib/gis/db/models/__init__.py",
+        "django/contrib/gis/db/models/functions.py",
+        "django/contrib/gis/measure.py",
+        "django/contrib/gis/measure.py",
+        "django/db/__init__.py",
+        "django/utils/functional.py"
+    ],
+    "django/contrib/gis/db/backends/mysql/base.py": [
+        "django/db/backends/mysql/base.py",
+        "django/contrib/gis/db/backends/mysql/features.py",
+        "django/contrib/gis/db/backends/mysql/introspection.py",
+        "django/contrib/gis/db/backends/mysql/operations.py",
+        "django/contrib/gis/db/backends/mysql/schema.py"
+    ],
+    "django/contrib/gis/db/backends/mysql/features.py": [
+        "django/contrib/gis/db/backends/base/features.py",
+        "django/db/backends/mysql/features.py",
+        "django/utils/functional.py"
+    ],
+    "django/contrib/gis/db/backends/mysql/introspection.py": [
+        "django/contrib/gis/gdal/__init__.py",
+        "django/db/backends/mysql/introspection.py"
+    ],
+    "django/contrib/gis/db/backends/mysql/operations.py": [
+        "django/contrib/gis/db/__init__.py",
+        "django/contrib/gis/db/backends/base/adapter.py",
+        "django/contrib/gis/db/backends/base/operations.py",
+        "django/contrib/gis/db/backends/utils.py",
+        "django/contrib/gis/geos/geometry.py",
+        "django/contrib/gis/geos/prototypes/io.py",
+        "django/contrib/gis/measure.py",
+        "django/db/backends/mysql/operations.py",
+        "django/utils/functional.py"
+    ],
+    "django/contrib/gis/db/backends/mysql/schema.py": [
+        "django/contrib/gis/db/models/__init__.py",
+        "django/db/__init__.py",
+        "django/db/backends/mysql/schema.py"
+    ],
+    "django/contrib/gis/db/backends/oracle/adapter.py": [
+        "django/contrib/gis/db/backends/base/adapter.py",
+        "django/contrib/gis/geos/__init__.py",
+        "django/db/backends/oracle/oracledb_any.py"
+    ],
+    "django/contrib/gis/db/backends/oracle/base.py": [
+        "django/db/backends/oracle/base.py",
+        "django/contrib/gis/db/backends/oracle/features.py",
+        "django/contrib/gis/db/backends/oracle/introspection.py",
+        "django/contrib/gis/db/backends/oracle/operations.py",
+        "django/contrib/gis/db/backends/oracle/schema.py"
+    ],
+    "django/contrib/gis/db/backends/oracle/features.py": [
+        "django/contrib/gis/db/backends/base/features.py",
+        "django/db/backends/oracle/features.py",
+        "django/utils/functional.py"
+    ],
+    "django/contrib/gis/db/backends/oracle/introspection.py": [
+        "django/db/backends/oracle/introspection.py",
+        "django/db/backends/oracle/oracledb_any.py",
+        "django/utils/functional.py"
+    ],
+    "django/contrib/gis/db/backends/oracle/models.py": [
+        "django/contrib/gis/db/__init__.py",
+        "django/contrib/gis/db/backends/base/models.py"
+    ],
+    "django/contrib/gis/db/backends/oracle/operations.py": [
+        "django/contrib/gis/db/__init__.py",
+        "django/contrib/gis/db/backends/base/operations.py",
+        "django/contrib/gis/db/backends/oracle/adapter.py",
+        "django/contrib/gis/db/backends/utils.py",
+        "django/contrib/gis/geos/geometry.py",
+        "django/contrib/gis/geos/prototypes/io.py",
+        "django/contrib/gis/measure.py",
+        "django/db/backends/oracle/operations.py",
+        "django/contrib/gis/db/backends/oracle/models.py",
+        "django/contrib/gis/db/backends/oracle/models.py"
+    ],
+    "django/contrib/gis/db/backends/oracle/schema.py": [
+        "django/contrib/gis/db/models/__init__.py",
+        "django/db/backends/oracle/schema.py",
+        "django/db/backends/utils.py"
+    ],
+    "django/contrib/gis/db/backends/postgis/adapter.py": [
+        "django/contrib/gis/db/backends/postgis/pgraster.py",
+        "django/contrib/gis/geos/__init__.py",
+        "django/db/backends/postgresql/psycopg_any.py"
+    ],
+    "django/contrib/gis/db/backends/postgis/base.py": [
+        "django/db/backends/base/base.py",
+        "django/db/backends/postgresql/base.py",
+        "django/db/backends/postgresql/features.py",
+        "django/db/backends/postgresql/introspection.py",
+        "django/db/backends/postgresql/operations.py",
+        "django/db/backends/postgresql/psycopg_any.py",
+        "django/contrib/gis/db/backends/postgis/adapter.py",
+        "django/contrib/gis/db/backends/postgis/features.py",
+        "django/contrib/gis/db/backends/postgis/introspection.py",
+        "django/contrib/gis/db/backends/postgis/operations.py",
+        "django/contrib/gis/db/backends/postgis/schema.py"
+    ],
+    "django/contrib/gis/db/backends/postgis/features.py": [
+        "django/contrib/gis/db/backends/base/features.py",
+        "django/db/backends/postgresql/features.py"
+    ],
+    "django/contrib/gis/db/backends/postgis/introspection.py": [
+        "django/contrib/gis/gdal/__init__.py",
+        "django/db/backends/postgresql/introspection.py"
+    ],
+    "django/contrib/gis/db/backends/postgis/models.py": [
+        "django/contrib/gis/db/backends/base/models.py",
+        "django/db/__init__.py"
+    ],
+    "django/contrib/gis/db/backends/postgis/operations.py": [
+        "django/conf/__init__.py",
+        "django/contrib/gis/db/backends/base/operations.py",
+        "django/contrib/gis/db/backends/utils.py",
+        "django/contrib/gis/db/models/__init__.py",
+        "django/contrib/gis/gdal/__init__.py",
+        "django/contrib/gis/geos/geometry.py",
+        "django/contrib/gis/geos/prototypes/io.py",
+        "django/contrib/gis/measure.py",
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/db/backends/postgresql/operations.py",
+        "django/db/backends/postgresql/psycopg_any.py",
+        "django/db/models/__init__.py",
+        "django/utils/functional.py",
+        "django/utils/version.py",
+        "django/contrib/gis/db/backends/postgis/adapter.py",
+        "django/contrib/gis/db/backends/postgis/models.py",
+        "django/contrib/gis/db/backends/postgis/pgraster.py"
+    ],
+    "django/contrib/gis/db/backends/postgis/pgraster.py": [
+        "django/core/exceptions.py",
+        "django/contrib/gis/db/backends/postgis/const.py"
+    ],
+    "django/contrib/gis/db/backends/postgis/schema.py": [
+        "django/db/backends/postgresql/schema.py",
+        "django/db/models/expressions.py"
+    ],
+    "django/contrib/gis/db/backends/spatialite/adapter.py": [
+        "django/contrib/gis/db/backends/base/adapter.py",
+        "django/db/backends/sqlite3/base.py"
+    ],
+    "django/contrib/gis/db/backends/spatialite/base.py": [
+        "django/conf/__init__.py",
+        "django/core/exceptions.py",
+        "django/db/backends/sqlite3/base.py",
+        "django/contrib/gis/db/backends/spatialite/client.py",
+        "django/contrib/gis/db/backends/spatialite/features.py",
+        "django/contrib/gis/db/backends/spatialite/introspection.py",
+        "django/contrib/gis/db/backends/spatialite/operations.py",
+        "django/contrib/gis/db/backends/spatialite/schema.py"
+    ],
+    "django/contrib/gis/db/backends/spatialite/client.py": ["django/db/backends/sqlite3/client.py"],
+    "django/contrib/gis/db/backends/spatialite/features.py": [
+        "django/contrib/gis/db/backends/base/features.py",
+        "django/db/backends/sqlite3/features.py",
+        "django/utils/functional.py"
+    ],
+    "django/contrib/gis/db/backends/spatialite/introspection.py": [
+        "django/contrib/gis/gdal/__init__.py",
+        "django/db/backends/sqlite3/introspection.py"
+    ],
+    "django/contrib/gis/db/backends/spatialite/models.py": [
+        "django/contrib/gis/db/backends/base/models.py",
+        "django/db/__init__.py"
+    ],
+    "django/contrib/gis/db/backends/spatialite/operations.py": [
+        "django/contrib/gis/db/__init__.py",
+        "django/contrib/gis/db/backends/base/operations.py",
+        "django/contrib/gis/db/backends/spatialite/adapter.py",
+        "django/contrib/gis/db/backends/utils.py",
+        "django/contrib/gis/geos/geometry.py",
+        "django/contrib/gis/geos/prototypes/io.py",
+        "django/contrib/gis/measure.py",
+        "django/core/exceptions.py",
+        "django/db/backends/sqlite3/operations.py",
+        "django/utils/functional.py",
+        "django/utils/version.py",
+        "django/contrib/gis/db/backends/spatialite/models.py",
+        "django/contrib/gis/db/backends/spatialite/models.py"
+    ],
+    "django/contrib/gis/db/backends/spatialite/schema.py": [
+        "django/db/__init__.py",
+        "django/db/backends/sqlite3/schema.py",
+        "django/contrib/gis/db/models/__init__.py",
+        "django/contrib/gis/db/models/__init__.py",
+        "django/contrib/gis/db/models/__init__.py",
+        "django/contrib/gis/db/models/__init__.py",
+        "django/contrib/gis/db/models/__init__.py"
+    ],
+    "django/contrib/gis/db/models/__init__.py": [
+        "django/db/models/__init__.py",
+        "django/db/models/__init__.py",
+        "django/contrib/gis/db/models/functions.py",
+        "django/contrib/gis/db/models/lookups.py",
+        "django/contrib/gis/db/models/aggregates.py",
+        "django/contrib/gis/db/models/aggregates.py",
+        "django/contrib/gis/db/models/fields.py"
+    ],
+    "django/contrib/gis/db/models/aggregates.py": [
+        "django/contrib/gis/db/models/fields.py",
+        "django/db/models/__init__.py",
+        "django/utils/functional.py"
+    ],
+    "django/contrib/gis/db/models/fields.py": [
+        "django/contrib/gis/__init__.py",
+        "django/contrib/gis/db/models/proxy.py",
+        "django/contrib/gis/gdal/error.py",
+        "django/contrib/gis/geos/__init__.py",
+        "django/core/exceptions.py",
+        "django/db/models/__init__.py",
+        "django/utils/translation/__init__.py",
+        "django/contrib/gis/gdal/__init__.py",
+        "django/contrib/gis/db/models/lookups.py"
+    ],
+    "django/contrib/gis/db/models/functions.py": [
+        "django/contrib/gis/db/models/fields.py",
+        "django/contrib/gis/db/models/sql/__init__.py",
+        "django/contrib/gis/geos/__init__.py",
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/db/models/__init__.py",
+        "django/db/models/functions/__init__.py",
+        "django/utils/functional.py"
+    ],
+    "django/contrib/gis/db/models/lookups.py": [
+        "django/contrib/gis/db/models/fields.py",
+        "django/contrib/gis/measure.py",
+        "django/db/__init__.py",
+        "django/db/models/__init__.py",
+        "django/db/models/sql/query.py",
+        "django/utils/regex_helper.py"
+    ],
+    "django/contrib/gis/db/models/proxy.py": ["django/db/models/query_utils.py"],
+    "django/contrib/gis/db/models/sql/__init__.py": ["django/contrib/gis/db/models/sql/conversion.py"],
+    "django/contrib/gis/db/models/sql/conversion.py": [
+        "django/contrib/gis/measure.py",
+        "django/db/__init__.py"
+    ],
+    "django/contrib/gis/feeds.py": [
+        "django/contrib/syndication/views.py",
+        "django/utils/feedgenerator.py"
+    ],
+    "django/contrib/gis/forms/__init__.py": [
+        "django/forms/__init__.py",
+        "django/contrib/gis/forms/fields.py",
+        "django/contrib/gis/forms/widgets.py"
+    ],
+    "django/contrib/gis/forms/fields.py": [
+        "django/__init__.py",
+        "django/contrib/gis/gdal/__init__.py",
+        "django/contrib/gis/geos/__init__.py",
+        "django/core/exceptions.py",
+        "django/utils/translation/__init__.py",
+        "django/contrib/gis/forms/widgets.py"
+    ],
+    "django/contrib/gis/forms/widgets.py": [
+        "django/conf/__init__.py",
+        "django/contrib/gis/__init__.py",
+        "django/contrib/gis/geometry.py",
+        "django/contrib/gis/geos/__init__.py",
+        "django/forms/widgets.py",
+        "django/utils/__init__.py"
+    ],
+    "django/contrib/gis/gdal/__init__.py": [
+        "django/contrib/gis/gdal/datasource.py",
+        "django/contrib/gis/gdal/driver.py",
+        "django/contrib/gis/gdal/envelope.py",
+        "django/contrib/gis/gdal/error.py",
+        "django/contrib/gis/gdal/geometries.py",
+        "django/contrib/gis/gdal/geomtype.py",
+        "django/contrib/gis/gdal/libgdal.py",
+        "django/contrib/gis/gdal/raster/source.py",
+        "django/contrib/gis/gdal/srs.py"
+    ],
+    "django/contrib/gis/gdal/base.py": [
+        "django/contrib/gis/gdal/error.py",
+        "django/contrib/gis/ptr.py"
+    ],
+    "django/contrib/gis/gdal/datasource.py": [
+        "django/contrib/gis/gdal/base.py",
+        "django/contrib/gis/gdal/driver.py",
+        "django/contrib/gis/gdal/error.py",
+        "django/contrib/gis/gdal/layer.py",
+        "django/contrib/gis/gdal/prototypes/__init__.py",
+        "django/utils/encoding.py"
+    ],
+    "django/contrib/gis/gdal/driver.py": [
+        "django/contrib/gis/gdal/base.py",
+        "django/contrib/gis/gdal/error.py",
+        "django/contrib/gis/gdal/prototypes/__init__.py",
+        "django/contrib/gis/gdal/prototypes/__init__.py",
+        "django/utils/encoding.py"
+    ],
+    "django/contrib/gis/gdal/envelope.py": ["django/contrib/gis/gdal/error.py"],
+    "django/contrib/gis/gdal/feature.py": [
+        "django/contrib/gis/gdal/base.py",
+        "django/contrib/gis/gdal/error.py",
+        "django/contrib/gis/gdal/field.py",
+        "django/contrib/gis/gdal/geometries.py",
+        "django/contrib/gis/gdal/prototypes/__init__.py",
+        "django/contrib/gis/gdal/prototypes/__init__.py",
+        "django/utils/encoding.py"
+    ],
+    "django/contrib/gis/gdal/field.py": [
+        "django/contrib/gis/gdal/base.py",
+        "django/contrib/gis/gdal/error.py",
+        "django/contrib/gis/gdal/prototypes/__init__.py",
+        "django/utils/encoding.py"
+    ],
+    "django/contrib/gis/gdal/geometries.py": [
+        "django/contrib/gis/gdal/base.py",
+        "django/contrib/gis/gdal/envelope.py",
+        "django/contrib/gis/gdal/error.py",
+        "django/contrib/gis/gdal/geomtype.py",
+        "django/contrib/gis/gdal/prototypes/__init__.py",
+        "django/contrib/gis/gdal/prototypes/__init__.py",
+        "django/contrib/gis/gdal/srs.py",
+        "django/contrib/gis/geometry.py",
+        "django/utils/encoding.py",
+        "django/contrib/gis/geos/__init__.py",
+        "django/contrib/gis/geos/__init__.py",
+        "django/contrib/gis/__init__.py"
+    ],
+    "django/contrib/gis/gdal/geomtype.py": ["django/contrib/gis/gdal/error.py"],
+    "django/contrib/gis/gdal/layer.py": [
+        "django/contrib/gis/gdal/base.py",
+        "django/contrib/gis/gdal/envelope.py",
+        "django/contrib/gis/gdal/error.py",
+        "django/contrib/gis/gdal/feature.py",
+        "django/contrib/gis/gdal/field.py",
+        "django/contrib/gis/gdal/geometries.py",
+        "django/contrib/gis/gdal/geomtype.py",
+        "django/contrib/gis/gdal/prototypes/__init__.py",
+        "django/contrib/gis/gdal/prototypes/__init__.py",
+        "django/contrib/gis/gdal/prototypes/__init__.py",
+        "django/contrib/gis/gdal/srs.py",
+        "django/utils/encoding.py",
+        "django/contrib/gis/geos/__init__.py"
+    ],
+    "django/contrib/gis/gdal/libgdal.py": [
+        "django/contrib/gis/gdal/error.py",
+        "django/core/exceptions.py",
+        "django/conf/__init__.py"
+    ],
+    "django/contrib/gis/gdal/prototypes/ds.py": [
+        "django/contrib/gis/gdal/envelope.py",
+        "django/contrib/gis/gdal/libgdal.py",
+        "django/contrib/gis/gdal/prototypes/generation.py"
+    ],
+    "django/contrib/gis/gdal/prototypes/errcheck.py": [
+        "django/contrib/gis/gdal/error.py",
+        "django/contrib/gis/gdal/libgdal.py"
+    ],
+    "django/contrib/gis/gdal/prototypes/generation.py": ["django/contrib/gis/gdal/prototypes/errcheck.py"],
+    "django/contrib/gis/gdal/prototypes/geom.py": [
+        "django/contrib/gis/gdal/envelope.py",
+        "django/contrib/gis/gdal/libgdal.py",
+        "django/contrib/gis/gdal/prototypes/errcheck.py",
+        "django/contrib/gis/gdal/prototypes/generation.py"
+    ],
+    "django/contrib/gis/gdal/prototypes/raster.py": [
+        "django/contrib/gis/gdal/libgdal.py",
+        "django/contrib/gis/gdal/prototypes/generation.py"
+    ],
+    "django/contrib/gis/gdal/prototypes/srs.py": [
+        "django/contrib/gis/gdal/libgdal.py",
+        "django/contrib/gis/gdal/prototypes/generation.py"
+    ],
+    "django/contrib/gis/gdal/raster/band.py": [
+        "django/contrib/gis/gdal/error.py",
+        "django/contrib/gis/gdal/prototypes/__init__.py",
+        "django/contrib/gis/gdal/raster/base.py",
+        "django/contrib/gis/shortcuts.py",
+        "django/utils/encoding.py",
+        "django/contrib/gis/gdal/raster/const.py"
+    ],
+    "django/contrib/gis/gdal/raster/base.py": [
+        "django/contrib/gis/gdal/base.py",
+        "django/contrib/gis/gdal/prototypes/__init__.py"
+    ],
+    "django/contrib/gis/gdal/raster/source.py": [
+        "django/contrib/gis/gdal/driver.py",
+        "django/contrib/gis/gdal/error.py",
+        "django/contrib/gis/gdal/prototypes/__init__.py",
+        "django/contrib/gis/gdal/raster/band.py",
+        "django/contrib/gis/gdal/raster/base.py",
+        "django/contrib/gis/gdal/raster/const.py",
+        "django/contrib/gis/gdal/srs.py",
+        "django/contrib/gis/geometry.py",
+        "django/utils/encoding.py",
+        "django/utils/functional.py"
+    ],
+    "django/contrib/gis/gdal/srs.py": [
+        "django/contrib/gis/gdal/base.py",
+        "django/contrib/gis/gdal/error.py",
+        "django/contrib/gis/gdal/libgdal.py",
+        "django/contrib/gis/gdal/prototypes/__init__.py",
+        "django/utils/encoding.py"
+    ],
+    "django/contrib/gis/geoip2/__init__.py": ["django/contrib/gis/geoip2/base.py"],
+    "django/contrib/gis/geoip2/base.py": [
+        "django/conf/__init__.py",
+        "django/core/exceptions.py",
+        "django/core/validators.py",
+        "django/utils/_os.py",
+        "django/contrib/gis/geoip2/resources.py",
+        "django/contrib/gis/geos/__init__.py"
+    ],
+    "django/contrib/gis/geometry.py": ["django/utils/regex_helper.py"],
+    "django/contrib/gis/geos/__init__.py": [
+        "django/contrib/gis/geos/collections.py",
+        "django/contrib/gis/geos/error.py",
+        "django/contrib/gis/geos/factory.py",
+        "django/contrib/gis/geos/geometry.py",
+        "django/contrib/gis/geos/io.py",
+        "django/contrib/gis/geos/libgeos.py",
+        "django/contrib/gis/geos/linestring.py",
+        "django/contrib/gis/geos/point.py",
+        "django/contrib/gis/geos/polygon.py"
+    ],
+    "django/contrib/gis/geos/base.py": [
+        "django/contrib/gis/geos/error.py",
+        "django/contrib/gis/ptr.py"
+    ],
+    "django/contrib/gis/geos/collections.py": [
+        "django/contrib/gis/geos/__init__.py",
+        "django/contrib/gis/geos/geometry.py",
+        "django/contrib/gis/geos/libgeos.py",
+        "django/contrib/gis/geos/linestring.py",
+        "django/contrib/gis/geos/point.py",
+        "django/contrib/gis/geos/polygon.py"
+    ],
+    "django/contrib/gis/geos/coordseq.py": [
+        "django/contrib/gis/geos/__init__.py",
+        "django/contrib/gis/geos/base.py",
+        "django/contrib/gis/geos/error.py",
+        "django/contrib/gis/geos/libgeos.py",
+        "django/contrib/gis/shortcuts.py"
+    ],
+    "django/contrib/gis/geos/factory.py": ["django/contrib/gis/geos/geometry.py"],
+    "django/contrib/gis/geos/geometry.py": [
+        "django/contrib/gis/__init__.py",
+        "django/contrib/gis/geometry.py",
+        "django/contrib/gis/geos/__init__.py",
+        "django/contrib/gis/geos/base.py",
+        "django/contrib/gis/geos/coordseq.py",
+        "django/contrib/gis/geos/error.py",
+        "django/contrib/gis/geos/libgeos.py",
+        "django/contrib/gis/geos/mutable_list.py",
+        "django/contrib/gis/geos/prepared.py",
+        "django/contrib/gis/geos/prototypes/io.py",
+        "django/utils/deconstruct.py",
+        "django/utils/encoding.py",
+        "django/contrib/gis/geos/point.py",
+        "django/contrib/gis/geos/point.py",
+        "django/contrib/gis/geos/point.py",
+        "django/contrib/gis/geos/collections.py",
+        "django/contrib/gis/geos/linestring.py",
+        "django/contrib/gis/geos/point.py",
+        "django/contrib/gis/geos/polygon.py"
+    ],
+    "django/contrib/gis/geos/io.py": [
+        "django/contrib/gis/geos/geometry.py",
+        "django/contrib/gis/geos/prototypes/io.py"
+    ],
+    "django/contrib/gis/geos/libgeos.py": [
+        "django/core/exceptions.py",
+        "django/utils/functional.py",
+        "django/utils/version.py",
+        "django/conf/__init__.py",
+        "django/contrib/gis/geos/prototypes/threadsafe.py"
+    ],
+    "django/contrib/gis/geos/linestring.py": [
+        "django/contrib/gis/geos/__init__.py",
+        "django/contrib/gis/geos/coordseq.py",
+        "django/contrib/gis/geos/error.py",
+        "django/contrib/gis/geos/geometry.py",
+        "django/contrib/gis/geos/point.py",
+        "django/contrib/gis/shortcuts.py"
+    ],
+    "django/contrib/gis/geos/point.py": [
+        "django/contrib/gis/__init__.py",
+        "django/contrib/gis/geos/__init__.py",
+        "django/contrib/gis/geos/error.py",
+        "django/contrib/gis/geos/geometry.py"
+    ],
+    "django/contrib/gis/geos/polygon.py": [
+        "django/contrib/gis/geos/__init__.py",
+        "django/contrib/gis/geos/geometry.py",
+        "django/contrib/gis/geos/libgeos.py",
+        "django/contrib/gis/geos/linestring.py"
+    ],
+    "django/contrib/gis/geos/prepared.py": [
+        "django/contrib/gis/geos/base.py",
+        "django/contrib/gis/geos/prototypes/__init__.py",
+        "django/contrib/gis/geos/geometry.py"
+    ],
+    "django/contrib/gis/geos/prototypes/__init__.py": [
+        "django/contrib/gis/geos/prototypes/coordseq.py",
+        "django/contrib/gis/geos/prototypes/geom.py",
+        "django/contrib/gis/geos/prototypes/misc.py",
+        "django/contrib/gis/geos/prototypes/predicates.py",
+        "django/contrib/gis/geos/prototypes/topology.py"
+    ],
+    "django/contrib/gis/geos/prototypes/coordseq.py": [
+        "django/contrib/gis/geos/libgeos.py",
+        "django/contrib/gis/geos/prototypes/errcheck.py"
+    ],
+    "django/contrib/gis/geos/prototypes/errcheck.py": [
+        "django/contrib/gis/geos/error.py",
+        "django/contrib/gis/geos/libgeos.py"
+    ],
+    "django/contrib/gis/geos/prototypes/geom.py": [
+        "django/contrib/gis/geos/libgeos.py",
+        "django/contrib/gis/geos/prototypes/errcheck.py"
+    ],
+    "django/contrib/gis/geos/prototypes/io.py": [
+        "django/contrib/gis/geos/base.py",
+        "django/contrib/gis/geos/libgeos.py",
+        "django/contrib/gis/geos/prototypes/errcheck.py",
+        "django/contrib/gis/geos/prototypes/geom.py",
+        "django/utils/encoding.py",
+        "django/utils/functional.py",
+        "django/contrib/gis/geos/__init__.py"
+    ],
+    "django/contrib/gis/geos/prototypes/misc.py": [
+        "django/contrib/gis/geos/libgeos.py",
+        "django/contrib/gis/geos/prototypes/errcheck.py",
+        "django/contrib/gis/geos/prototypes/geom.py"
+    ],
+    "django/contrib/gis/geos/prototypes/predicates.py": [
+        "django/contrib/gis/geos/libgeos.py",
+        "django/contrib/gis/geos/prototypes/errcheck.py"
+    ],
+    "django/contrib/gis/geos/prototypes/prepared.py": [
+        "django/contrib/gis/geos/libgeos.py",
+        "django/contrib/gis/geos/prototypes/errcheck.py"
+    ],
+    "django/contrib/gis/geos/prototypes/threadsafe.py": [
+        "django/contrib/gis/geos/base.py",
+        "django/contrib/gis/geos/libgeos.py"
+    ],
+    "django/contrib/gis/geos/prototypes/topology.py": [
+        "django/contrib/gis/geos/libgeos.py",
+        "django/contrib/gis/geos/prototypes/errcheck.py",
+        "django/contrib/gis/geos/prototypes/geom.py"
+    ],
+    "django/contrib/gis/management/commands/inspectdb.py": ["django/core/management/commands/inspectdb.py"],
+    "django/contrib/gis/management/commands/ogrinspect.py": [
+        "django/contrib/gis/__init__.py",
+        "django/core/management/base.py",
+        "django/utils/inspect.py",
+        "django/contrib/gis/utils/ogrinspect.py"
+    ],
+    "django/contrib/gis/serializers/geojson.py": [
+        "django/contrib/gis/gdal/__init__.py",
+        "django/core/serializers/base.py",
+        "django/core/serializers/json.py"
+    ],
+    "django/contrib/gis/shortcuts.py": [
+            "django/conf/__init__.py",     "django/http/__init__.py",
+        "django/template/__init__.py"
+    ],
+    "django/contrib/gis/sitemaps/__init__.py": ["django/contrib/gis/sitemaps/kml.py"],
+    "django/contrib/gis/sitemaps/kml.py": [
+        "django/apps/__init__.py",
+        "django/contrib/gis/db/models/__init__.py",
+        "django/contrib/sitemaps/__init__.py",
+        "django/db/__init__.py",
+        "django/urls/__init__.py"
+    ],
+    "django/contrib/gis/sitemaps/views.py": [
+        "django/apps/__init__.py",
+        "django/contrib/gis/db/models/__init__.py",
+        "django/contrib/gis/db/models/functions.py",
+        "django/contrib/gis/shortcuts.py",
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/http/__init__.py"
+    ],
+    "django/contrib/gis/utils/__init__.py": [
+        "django/contrib/gis/utils/ogrinfo.py",
+        "django/contrib/gis/utils/ogrinspect.py",
+        "django/contrib/gis/utils/srs.py",
+        "django/core/exceptions.py",
+        "django/contrib/gis/utils/layermapping.py"
+    ],
+    "django/contrib/gis/utils/layermapping.py": [
+        "django/contrib/gis/db/models/__init__.py",
+        "django/contrib/gis/gdal/__init__.py",
+        "django/contrib/gis/gdal/field.py",
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/utils/encoding.py"
+    ],
+    "django/contrib/gis/utils/ogrinfo.py": [
+        "django/contrib/gis/gdal/__init__.py",
+        "django/contrib/gis/gdal/geometries.py"
+    ],
+    "django/contrib/gis/utils/ogrinspect.py": [
+        "django/contrib/gis/gdal/__init__.py",
+        "django/contrib/gis/gdal/field.py"
+    ],
+    "django/contrib/gis/utils/srs.py": [
+        "django/contrib/gis/gdal/__init__.py",
+        "django/db/__init__.py"
+    ],
+    "django/contrib/gis/views.py": [
+        "django/http/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/humanize/apps.py": [
+        "django/apps/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/humanize/templatetags/humanize.py": [
+        "django/__init__.py",
+        "django/template/__init__.py",
+        "django/utils/formats.py",
+        "django/utils/safestring.py",
+        "django/utils/timezone.py",
+        "django/utils/translation/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/messages/__init__.py": [
+        "django/contrib/messages/api.py",
+        "django/contrib/messages/constants.py",
+        "django/contrib/messages/storage/base.py"
+    ],
+    "django/contrib/messages/api.py": [
+        "django/contrib/messages/__init__.py",
+        "django/contrib/messages/storage/__init__.py"
+    ],
+    "django/contrib/messages/apps.py": [
+        "django/apps/__init__.py",
+        "django/contrib/messages/storage/__init__.py",
+        "django/contrib/messages/utils.py",
+        "django/core/signals.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/messages/context_processors.py": [
+        "django/contrib/messages/api.py",
+        "django/contrib/messages/constants.py"
+    ],
+    "django/contrib/messages/middleware.py": [
+        "django/conf/__init__.py",
+        "django/contrib/messages/storage/__init__.py",
+        "django/utils/deprecation.py"
+    ],
+    "django/contrib/messages/storage/__init__.py": [
+        "django/conf/__init__.py",
+        "django/utils/module_loading.py"
+    ],
+    "django/contrib/messages/storage/base.py": [
+        "django/conf/__init__.py",
+        "django/contrib/messages/__init__.py"
+    ],
+    "django/contrib/messages/storage/cookie.py": [
+        "django/conf/__init__.py",
+        "django/contrib/messages/storage/base.py",
+        "django/core/__init__.py",
+        "django/http/__init__.py",
+        "django/utils/safestring.py"
+    ],
+    "django/contrib/messages/storage/fallback.py": [
+        "django/contrib/messages/storage/base.py",
+        "django/contrib/messages/storage/cookie.py",
+        "django/contrib/messages/storage/session.py"
+    ],
+    "django/contrib/messages/storage/session.py": [
+        "django/contrib/messages/storage/base.py",
+        "django/contrib/messages/storage/cookie.py",
+        "django/core/exceptions.py"
+    ],
+    "django/contrib/messages/utils.py": [
+        "django/conf/__init__.py",
+        "django/contrib/messages/__init__.py"
+    ],
+    "django/contrib/messages/views.py": ["django/contrib/__init__.py"],
+    "django/contrib/postgres/aggregates/__init__.py": [
+        "django/contrib/postgres/aggregates/general.py",
+        "django/contrib/postgres/aggregates/statistics.py"
+    ],
+    "django/contrib/postgres/aggregates/general.py": [
+        "django/contrib/postgres/fields/__init__.py",
+        "django/db/models/__init__.py",
+        "django/contrib/postgres/aggregates/mixins.py"
+    ],
+    "django/contrib/postgres/aggregates/mixins.py": ["django/db/models/expressions.py"],
+    "django/contrib/postgres/aggregates/statistics.py": ["django/db/models/__init__.py"],
+    "django/contrib/postgres/apps.py": [
+        "django/apps/__init__.py",
+        "django/core/signals.py",
+        "django/db/__init__.py",
+        "django/db/backends/postgresql/psycopg_any.py",
+        "django/db/backends/signals.py",
+        "django/db/migrations/writer.py",
+        "django/db/models/__init__.py",
+        "django/db/models/functions/__init__.py",
+        "django/db/models/indexes.py",
+        "django/utils/translation/__init__.py",
+        "django/contrib/postgres/indexes.py",
+        "django/contrib/postgres/lookups.py",
+        "django/contrib/postgres/serializers.py",
+        "django/contrib/postgres/signals.py"
+    ],
+    "django/contrib/postgres/constraints.py": [
+        "django/contrib/postgres/indexes.py",
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/db/backends/ddl_references.py",
+        "django/db/models/__init__.py",
+        "django/db/models/expressions.py",
+        "django/db/models/indexes.py",
+        "django/db/models/lookups.py",
+        "django/db/models/sql/__init__.py"
+    ],
+    "django/contrib/postgres/expressions.py": [
+        "django/contrib/postgres/fields/__init__.py",
+        "django/db/models/__init__.py",
+        "django/utils/functional.py"
+    ],
+    "django/contrib/postgres/fields/__init__.py": [
+        "django/contrib/postgres/fields/array.py",
+        "django/contrib/postgres/fields/citext.py",
+        "django/contrib/postgres/fields/hstore.py",
+        "django/contrib/postgres/fields/jsonb.py",
+        "django/contrib/postgres/fields/ranges.py"
+    ],
+    "django/contrib/postgres/fields/array.py": [
+        "django/contrib/postgres/__init__.py",
+        "django/contrib/postgres/forms/__init__.py",
+        "django/contrib/postgres/validators.py",
+        "django/core/__init__.py",
+        "django/db/models/__init__.py",
+        "django/db/models/fields/mixins.py",
+        "django/db/models/lookups.py",
+        "django/utils/translation/__init__.py",
+        "django/contrib/postgres/utils.py",
+        "django/contrib/postgres/fields/utils.py"
+    ],
+    "django/contrib/postgres/fields/citext.py": ["django/db/models/__init__.py"],
+    "django/contrib/postgres/fields/hstore.py": [
+        "django/contrib/postgres/__init__.py",
+        "django/contrib/postgres/fields/array.py",
+        "django/core/__init__.py",
+        "django/db/models/__init__.py",
+        "django/db/models/fields/mixins.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/postgres/fields/jsonb.py": ["django/db/models/__init__.py"],
+    "django/contrib/postgres/fields/ranges.py": [
+        "django/contrib/postgres/__init__.py",
+        "django/db/__init__.py",
+        "django/db/backends/postgresql/psycopg_any.py",
+        "django/db/models/functions/__init__.py",
+        "django/db/models/lookups.py",
+        "django/contrib/postgres/fields/utils.py"
+    ],
+    "django/contrib/postgres/forms/__init__.py": [
+        "django/contrib/postgres/forms/array.py",
+        "django/contrib/postgres/forms/hstore.py",
+        "django/contrib/postgres/forms/ranges.py"
+    ],
+    "django/contrib/postgres/forms/array.py": [
+        "django/__init__.py",
+        "django/contrib/postgres/validators.py",
+        "django/core/exceptions.py",
+        "django/utils/translation/__init__.py",
+        "django/contrib/postgres/utils.py"
+    ],
+    "django/contrib/postgres/forms/hstore.py": [
+        "django/__init__.py",
+        "django/core/exceptions.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/postgres/forms/ranges.py": [
+        "django/__init__.py",
+        "django/core/__init__.py",
+        "django/db/backends/postgresql/psycopg_any.py",
+        "django/forms/widgets.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/postgres/functions.py": ["django/db/models/__init__.py"],
+    "django/contrib/postgres/indexes.py": [
+               "django/db/__init__.py", "django/db/models/__init__.py",
+          "django/utils/functional.py"
+    ],
+    "django/contrib/postgres/lookups.py": [
+        "django/db/models/__init__.py",
+        "django/db/models/lookups.py",
+        "django/db/models/sql/query.py",
+        "django/contrib/postgres/search.py",
+        "django/contrib/postgres/expressions.py"
+    ],
+    "django/contrib/postgres/operations.py": [
+        "django/contrib/postgres/signals.py",
+        "django/db/__init__.py",
+        "django/db/migrations/__init__.py",
+        "django/db/migrations/operations/base.py",
+        "django/db/models/constraints.py"
+    ],
+    "django/contrib/postgres/search.py": [
+        "django/db/models/__init__.py",
+        "django/db/models/expressions.py",
+        "django/db/models/functions/__init__.py",
+        "django/contrib/postgres/fields/array.py"
+    ],
+    "django/contrib/postgres/serializers.py": ["django/db/migrations/serializer.py"],
+    "django/contrib/postgres/signals.py": [
+        "django/db/__init__.py",
+        "django/db/backends/base/base.py",
+        "django/db/backends/postgresql/psycopg_any.py"
+    ],
+    "django/contrib/postgres/utils.py": [
+         "django/core/exceptions.py", "django/utils/functional.py",
+              "django/utils/text.py"
+    ],
+    "django/contrib/postgres/validators.py": [
+        "django/core/exceptions.py",
+        "django/core/validators.py",
+        "django/utils/deconstruct.py",
+        "django/utils/translation/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/redirects/admin.py": [
+        "django/contrib/__init__.py",
+        "django/contrib/redirects/models.py"
+    ],
+    "django/contrib/redirects/apps.py": [
+        "django/apps/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/redirects/middleware.py": [
+        "django/apps/__init__.py",
+        "django/conf/__init__.py",
+        "django/contrib/redirects/models.py",
+        "django/contrib/sites/shortcuts.py",
+        "django/core/exceptions.py",
+        "django/http/__init__.py",
+        "django/utils/deprecation.py"
+    ],
+    "django/contrib/redirects/migrations/0001_initial.py": ["django/db/__init__.py"],
+    "django/contrib/redirects/migrations/0002_alter_redirect_new_path_help_text.py": ["django/db/__init__.py"],
+    "django/contrib/redirects/models.py": [
+        "django/contrib/sites/models.py",
+        "django/db/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/sessions/apps.py": [
+        "django/apps/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/sessions/backends/base.py": [
+        "django/conf/__init__.py",
+        "django/core/__init__.py",
+        "django/utils/__init__.py",
+        "django/utils/crypto.py",
+        "django/utils/module_loading.py"
+    ],
+    "django/contrib/sessions/backends/cache.py": [
+        "django/conf/__init__.py",
+        "django/contrib/sessions/backends/base.py",
+        "django/core/cache/__init__.py"
+    ],
+    "django/contrib/sessions/backends/cached_db.py": [
+        "django/conf/__init__.py",
+        "django/contrib/sessions/backends/db.py",
+        "django/core/cache/__init__.py"
+    ],
+    "django/contrib/sessions/backends/db.py": [
+        "django/contrib/sessions/backends/base.py",
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/utils/__init__.py",
+        "django/utils/functional.py",
+        "django/contrib/sessions/models.py"
+    ],
+    "django/contrib/sessions/backends/file.py": [
+        "django/conf/__init__.py",
+        "django/contrib/sessions/backends/base.py",
+        "django/contrib/sessions/exceptions.py",
+        "django/core/exceptions.py"
+    ],
+    "django/contrib/sessions/backends/signed_cookies.py": [
+        "django/contrib/sessions/backends/base.py",
+        "django/core/__init__.py"
+    ],
+    "django/contrib/sessions/base_session.py": [
+        "django/db/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/sessions/exceptions.py": ["django/core/exceptions.py"],
+    "django/contrib/sessions/management/commands/clearsessions.py": [
+        "django/conf/__init__.py",
+        "django/core/management/base.py"
+    ],
+    "django/contrib/sessions/middleware.py": [
+        "django/conf/__init__.py",
+        "django/contrib/sessions/backends/base.py",
+        "django/contrib/sessions/exceptions.py",
+        "django/utils/cache.py",
+        "django/utils/deprecation.py",
+        "django/utils/http.py"
+    ],
+    "django/contrib/sessions/migrations/0001_initial.py": [
+        "django/contrib/sessions/models.py",
+        "django/db/__init__.py"
+    ],
+    "django/contrib/sessions/models.py": [
+        "django/contrib/sessions/base_session.py",
+        "django/contrib/sessions/backends/db.py"
+    ],
+    "django/contrib/sessions/serializers.py": ["django/core/signing.py"],
+    "django/contrib/sitemaps/__init__.py": [
+          "django/apps/__init__.py",   "django/conf/__init__.py",
+          "django/core/__init__.py", "django/core/exceptions.py",
+         "django/utils/__init__.py"
+    ],
+    "django/contrib/sitemaps/apps.py": [
+        "django/apps/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/sitemaps/views.py": [
+        "django/contrib/sites/shortcuts.py",
+        "django/core/paginator.py",
+        "django/http/__init__.py",
+        "django/template/response.py",
+        "django/urls/__init__.py",
+        "django/utils/__init__.py",
+        "django/utils/http.py"
+    ],
+    "django/contrib/sites/admin.py": [
+        "django/contrib/__init__.py",
+        "django/contrib/sites/models.py"
+    ],
+    "django/contrib/sites/apps.py": [
+        "django/apps/__init__.py",
+        "django/contrib/sites/checks.py",
+        "django/core/__init__.py",
+        "django/db/models/signals.py",
+        "django/utils/translation/__init__.py",
+        "django/contrib/sites/management.py"
+    ],
+    "django/contrib/sites/checks.py": [
+        "django/conf/__init__.py",
+        "django/core/checks/__init__.py"
+    ],
+    "django/contrib/sites/management.py": [
+        "django/apps/__init__.py",
+        "django/conf/__init__.py",
+        "django/core/management/color.py",
+        "django/db/__init__.py"
+    ],
+    "django/contrib/sites/managers.py": [
+          "django/conf/__init__.py",   "django/core/__init__.py",
+        "django/core/exceptions.py",     "django/db/__init__.py"
+    ],
+    "django/contrib/sites/middleware.py": [
+        "django/utils/deprecation.py",
+        "django/contrib/sites/shortcuts.py"
+    ],
+    "django/contrib/sites/migrations/0001_initial.py": [
+        "django/contrib/sites/models.py",
+        "django/contrib/sites/models.py",
+        "django/db/__init__.py"
+    ],
+    "django/contrib/sites/migrations/0002_alter_domain_unique.py": [
+        "django/contrib/sites/models.py",
+        "django/db/__init__.py"
+    ],
+    "django/contrib/sites/models.py": [
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/db/models/signals.py",
+        "django/http/request.py",
+        "django/utils/translation/__init__.py",
+        "django/conf/__init__.py"
+    ],
+    "django/contrib/sites/shortcuts.py": [
+        "django/apps/__init__.py",
+        "django/contrib/sites/requests.py",
+        "django/contrib/sites/models.py"
+    ],
+    "django/contrib/staticfiles/apps.py": [
+        "django/apps/__init__.py",
+        "django/contrib/staticfiles/checks.py",
+        "django/core/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/staticfiles/checks.py": [
+        "django/conf/__init__.py",
+        "django/contrib/staticfiles/finders.py",
+        "django/core/checks/__init__.py"
+    ],
+    "django/contrib/staticfiles/finders.py": [
+        "django/apps/__init__.py",
+        "django/conf/__init__.py",
+        "django/contrib/staticfiles/__init__.py",
+        "django/core/checks/__init__.py",
+        "django/core/exceptions.py",
+        "django/core/files/storage/__init__.py",
+        "django/utils/_os.py",
+        "django/utils/functional.py",
+        "django/utils/module_loading.py"
+    ],
+    "django/contrib/staticfiles/handlers.py": [
+        "django/conf/__init__.py",
+        "django/contrib/staticfiles/__init__.py",
+        "django/contrib/staticfiles/views.py",
+        "django/core/handlers/asgi.py",
+        "django/core/handlers/exception.py",
+        "django/core/handlers/wsgi.py",
+        "django/http/__init__.py"
+    ],
+    "django/contrib/staticfiles/management/commands/collectstatic.py": [
+        "django/apps/__init__.py",
+        "django/contrib/staticfiles/finders.py",
+        "django/contrib/staticfiles/storage.py",
+        "django/core/checks/__init__.py",
+        "django/core/files/storage/__init__.py",
+        "django/core/management/base.py",
+        "django/core/management/color.py",
+        "django/utils/functional.py"
+    ],
+    "django/contrib/staticfiles/management/commands/findstatic.py": [
+        "django/contrib/staticfiles/__init__.py",
+        "django/core/management/base.py"
+    ],
+    "django/contrib/staticfiles/management/commands/runserver.py": [
+        "django/conf/__init__.py",
+        "django/contrib/staticfiles/handlers.py",
+        "django/core/management/commands/runserver.py"
+    ],
+    "django/contrib/staticfiles/storage.py": [
+        "django/conf/__init__.py",
+        "django/contrib/staticfiles/utils.py",
+        "django/core/exceptions.py",
+        "django/core/files/base.py",
+        "django/core/files/storage/__init__.py",
+        "django/utils/functional.py"
+    ],
+    "django/contrib/staticfiles/urls.py": [
+        "django/conf/__init__.py",
+        "django/conf/urls/static.py",
+        "django/contrib/staticfiles/views.py"
+    ],
+    "django/contrib/staticfiles/utils.py": ["django/conf/__init__.py", "django/core/exceptions.py"],
+    "django/contrib/staticfiles/views.py": [
+        "django/conf/__init__.py",
+        "django/contrib/staticfiles/__init__.py",
+        "django/http/__init__.py",
+        "django/views/__init__.py"
+    ],
+    "django/contrib/syndication/apps.py": [
+        "django/apps/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/contrib/syndication/views.py": [
+        "django/contrib/sites/shortcuts.py",
+        "django/core/exceptions.py",
+        "django/http/__init__.py",
+        "django/template/__init__.py",
+        "django/utils/__init__.py",
+        "django/utils/encoding.py",
+        "django/utils/html.py",
+        "django/utils/http.py",
+        "django/utils/timezone.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/core/asgi.py": ["django/__init__.py", "django/core/handlers/asgi.py"],
+    "django/core/cache/__init__.py": [
+        "django/core/__init__.py",
+        "django/core/cache/backends/base.py",
+        "django/utils/connection.py",
+        "django/utils/module_loading.py"
+    ],
+    "django/core/cache/backends/base.py": [
+        "django/core/exceptions.py",
+        "django/utils/module_loading.py",
+        "django/utils/regex_helper.py"
+    ],
+    "django/core/cache/backends/db.py": [
+        "django/conf/__init__.py",
+        "django/core/cache/backends/base.py",
+        "django/db/__init__.py",
+        "django/utils/timezone.py"
+    ],
+    "django/core/cache/backends/dummy.py": ["django/core/cache/backends/base.py"],
+    "django/core/cache/backends/filebased.py": [
+        "django/core/cache/backends/base.py",
+        "django/core/files/__init__.py",
+        "django/core/files/move.py"
+    ],
+    "django/core/cache/backends/locmem.py": ["django/core/cache/backends/base.py"],
+    "django/core/cache/backends/memcached.py": [
+        "django/core/cache/backends/base.py",
+        "django/utils/functional.py"
+    ],
+    "django/core/cache/backends/redis.py": [
+        "django/core/cache/backends/base.py",
+        "django/utils/functional.py",
+        "django/utils/module_loading.py"
+    ],
+    "django/core/checks/__init__.py": [
+        "django/core/checks/messages.py",
+        "django/core/checks/registry.py",
+        "django/core/checks/async_checks.py",
+        "django/core/checks/caches.py",
+        "django/core/checks/compatibility/django_4_0.py",
+        "django/core/checks/database.py",
+        "django/core/checks/files.py",
+        "django/core/checks/model_checks.py",
+        "django/core/checks/security/base.py",
+        "django/core/checks/security/csrf.py",
+        "django/core/checks/security/sessions.py",
+        "django/core/checks/templates.py",
+        "django/core/checks/translation.py",
+        "django/core/checks/urls.py"
+    ],
+    "django/core/checks/async_checks.py": ["django/core/checks/__init__.py"],
+    "django/core/checks/caches.py": [
+        "django/conf/__init__.py",
+        "django/core/cache/__init__.py",
+        "django/core/cache/backends/filebased.py",
+        "django/core/checks/__init__.py"
+    ],
+    "django/core/checks/compatibility/django_4_0.py": [
+        "django/conf/__init__.py",
+        "django/core/checks/__init__.py"
+    ],
+    "django/core/checks/database.py": [
+        "django/db/__init__.py",
+        "django/core/checks/__init__.py"
+    ],
+    "django/core/checks/files.py": [
+        "django/conf/__init__.py",
+        "django/core/checks/__init__.py"
+    ],
+    "django/core/checks/messages.py": ["django/db/__init__.py", "django/conf/__init__.py"],
+    "django/core/checks/model_checks.py": [
+        "django/apps/__init__.py",
+        "django/conf/__init__.py",
+        "django/core/checks/__init__.py",
+        "django/db/models/__init__.py"
+    ],
+    "django/core/checks/registry.py": ["django/utils/inspect.py", "django/utils/itercompat.py"],
+    "django/core/checks/security/base.py": [
+        "django/conf/__init__.py",
+        "django/core/exceptions.py",
+        "django/core/checks/__init__.py"
+    ],
+    "django/core/checks/security/csrf.py": [
+        "django/conf/__init__.py",
+        "django/core/checks/__init__.py",
+        "django/middleware/csrf.py"
+    ],
+    "django/core/checks/security/sessions.py": [
+        "django/conf/__init__.py",
+        "django/core/checks/__init__.py"
+    ],
+    "django/core/checks/templates.py": [
+        "django/conf/__init__.py",
+        "django/template/backends/django.py",
+        "django/core/checks/__init__.py"
+    ],
+    "django/core/checks/translation.py": [
+        "django/conf/__init__.py",
+        "django/utils/translation/__init__.py",
+        "django/utils/translation/trans_real.py",
+        "django/core/checks/__init__.py"
+    ],
+    "django/core/checks/urls.py": [
+        "django/conf/__init__.py",
+        "django/core/checks/__init__.py",
+        "django/urls/__init__.py",
+        "django/urls/__init__.py"
+    ],
+    "django/core/exceptions.py": ["django/utils/hashable.py"],
+    "django/core/files/__init__.py": ["django/core/files/base.py"],
+    "django/core/files/base.py": ["django/core/files/utils.py", "django/utils/functional.py"],
+    "django/core/files/images.py": ["django/core/files/__init__.py"],
+    "django/core/files/move.py": ["django/core/files/__init__.py"],
+    "django/core/files/storage/__init__.py": [
+        "django/conf/__init__.py",
+        "django/utils/functional.py",
+        "django/core/files/storage/base.py",
+        "django/core/files/storage/filesystem.py",
+        "django/core/files/storage/handler.py",
+        "django/core/files/storage/memory.py"
+    ],
+    "django/core/files/storage/base.py": [
+        "django/core/exceptions.py",
+        "django/core/files/__init__.py",
+        "django/core/files/utils.py",
+        "django/utils/crypto.py",
+        "django/utils/text.py"
+    ],
+    "django/core/files/storage/filesystem.py": [
+        "django/conf/__init__.py",
+        "django/core/files/__init__.py",
+        "django/core/files/move.py",
+        "django/core/signals.py",
+        "django/utils/_os.py",
+        "django/utils/deconstruct.py",
+        "django/utils/encoding.py",
+        "django/utils/functional.py",
+        "django/core/files/storage/base.py",
+        "django/core/files/storage/mixins.py"
+    ],
+    "django/core/files/storage/handler.py": [
+        "django/conf/__init__.py",
+        "django/core/exceptions.py",
+        "django/utils/functional.py",
+        "django/utils/module_loading.py"
+    ],
+    "django/core/files/storage/memory.py": [
+        "django/conf/__init__.py",
+        "django/core/files/base.py",
+        "django/core/signals.py",
+        "django/utils/_os.py",
+        "django/utils/deconstruct.py",
+        "django/utils/encoding.py",
+        "django/utils/functional.py",
+        "django/utils/timezone.py",
+        "django/core/files/storage/base.py",
+        "django/core/files/storage/mixins.py"
+    ],
+    "django/core/files/temp.py": ["django/core/files/utils.py"],
+    "django/core/files/uploadedfile.py": [
+        "django/conf/__init__.py",
+        "django/core/files/__init__.py",
+        "django/core/files/base.py",
+        "django/core/files/utils.py"
+    ],
+    "django/core/files/uploadhandler.py": [
+        "django/conf/__init__.py",
+        "django/core/files/uploadedfile.py",
+        "django/utils/module_loading.py"
+    ],
+    "django/core/files/utils.py": ["django/core/exceptions.py"],
+    "django/core/handlers/asgi.py": [
+        "django/conf/__init__.py",
+        "django/core/__init__.py",
+        "django/core/exceptions.py",
+        "django/core/handlers/__init__.py",
+        "django/http/__init__.py",
+        "django/urls/__init__.py",
+        "django/utils/functional.py"
+    ],
+    "django/core/handlers/base.py": [
+        "django/conf/__init__.py",
+        "django/core/exceptions.py",
+        "django/core/signals.py",
+        "django/db/__init__.py",
+        "django/urls/__init__.py",
+        "django/utils/log.py",
+        "django/utils/module_loading.py",
+        "django/core/handlers/exception.py"
+    ],
+    "django/core/handlers/exception.py": [
+        "django/conf/__init__.py",
+        "django/core/__init__.py",
+        "django/core/exceptions.py",
+        "django/http/__init__.py",
+        "django/http/multipartparser.py",
+        "django/urls/__init__.py",
+        "django/utils/log.py",
+        "django/views/__init__.py"
+    ],
+    "django/core/handlers/wsgi.py": [
+        "django/conf/__init__.py",
+        "django/core/__init__.py",
+        "django/core/handlers/__init__.py",
+        "django/http/__init__.py",
+        "django/urls/__init__.py",
+        "django/utils/encoding.py",
+        "django/utils/functional.py",
+        "django/utils/regex_helper.py"
+    ],
+    "django/core/mail/__init__.py": [
+        "django/conf/__init__.py",
+        "django/core/mail/message.py",
+        "django/core/mail/utils.py",
+        "django/utils/module_loading.py"
+    ],
+    "django/core/mail/backends/console.py": ["django/core/mail/backends/base.py"],
+    "django/core/mail/backends/dummy.py": ["django/core/mail/backends/base.py"],
+    "django/core/mail/backends/filebased.py": [
+        "django/conf/__init__.py",
+        "django/core/exceptions.py",
+        "django/core/mail/backends/console.py"
+    ],
+    "django/core/mail/backends/locmem.py": [
+        "django/core/__init__.py",
+        "django/core/mail/backends/base.py"
+    ],
+    "django/core/mail/backends/smtp.py": [
+        "django/conf/__init__.py",
+        "django/core/mail/backends/base.py",
+        "django/core/mail/message.py",
+        "django/core/mail/utils.py",
+        "django/utils/functional.py"
+    ],
+    "django/core/mail/message.py": [
+             "django/conf/__init__.py",    "django/core/mail/utils.py",
+            "django/utils/encoding.py", "django/core/mail/__init__.py"
+    ],
+    "django/core/mail/utils.py": ["django/utils/encoding.py"],
+    "django/core/management/__init__.py": [
+        "django/__init__.py",
+        "django/apps/__init__.py",
+        "django/conf/__init__.py",
+        "django/core/exceptions.py",
+        "django/core/management/base.py",
+        "django/core/management/color.py",
+        "django/utils/__init__.py"
+    ],
+    "django/core/management/base.py": [
+        "django/__init__.py",
+        "django/core/__init__.py",
+        "django/core/exceptions.py",
+        "django/core/management/color.py",
+        "django/db/__init__.py",
+        "django/utils/__init__.py",
+        "django/db/migrations/executor.py",
+        "django/apps/__init__.py"
+    ],
+    "django/core/management/color.py": ["django/utils/__init__.py"],
+    "django/core/management/commands/check.py": [
+        "django/apps/__init__.py",
+        "django/core/__init__.py",
+        "django/core/checks/registry.py",
+        "django/core/management/base.py"
+    ],
+    "django/core/management/commands/compilemessages.py": [
+        "django/core/management/base.py",
+        "django/core/management/utils.py",
+        "django/conf/__init__.py"
+    ],
+    "django/core/management/commands/createcachetable.py": [
+        "django/conf/__init__.py",
+        "django/core/cache/__init__.py",
+        "django/core/cache/backends/db.py",
+        "django/core/management/base.py",
+        "django/db/__init__.py"
+    ],
+    "django/core/management/commands/dbshell.py": [
+        "django/core/management/base.py",
+        "django/db/__init__.py"
+    ],
+    "django/core/management/commands/diffsettings.py": [
+        "django/core/management/base.py",
+        "django/conf/__init__.py"
+    ],
+    "django/core/management/commands/dumpdata.py": [
+        "django/apps/__init__.py",
+        "django/core/__init__.py",
+        "django/core/management/base.py",
+        "django/core/management/utils.py",
+        "django/db/__init__.py"
+    ],
+    "django/core/management/commands/flush.py": [
+        "django/apps/__init__.py",
+        "django/core/management/base.py",
+        "django/core/management/color.py",
+        "django/core/management/sql.py",
+        "django/db/__init__.py"
+    ],
+    "django/core/management/commands/inspectdb.py": [
+        "django/core/management/base.py",
+        "django/db/__init__.py",
+        "django/db/models/constants.py"
+    ],
+    "django/core/management/commands/loaddata.py": [
+        "django/apps/__init__.py",
+        "django/conf/__init__.py",
+        "django/core/__init__.py",
+        "django/core/exceptions.py",
+        "django/core/management/base.py",
+        "django/core/management/color.py",
+        "django/core/management/utils.py",
+        "django/db/__init__.py",
+        "django/utils/functional.py"
+    ],
+    "django/core/management/commands/makemessages.py": [
+        "django/__init__.py",
+        "django/conf/__init__.py",
+        "django/core/exceptions.py",
+        "django/core/files/temp.py",
+        "django/core/management/base.py",
+        "django/core/management/utils.py",
+        "django/utils/encoding.py",
+        "django/utils/functional.py",
+        "django/utils/jslex.py",
+        "django/utils/regex_helper.py",
+        "django/utils/text.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/core/management/commands/makemigrations.py": [
+        "django/apps/__init__.py",
+        "django/conf/__init__.py",
+        "django/core/management/base.py",
+        "django/core/management/utils.py",
+        "django/db/__init__.py",
+        "django/db/migrations/__init__.py",
+        "django/db/migrations/autodetector.py",
+        "django/db/migrations/loader.py",
+        "django/db/migrations/migration.py",
+        "django/db/migrations/optimizer.py",
+        "django/db/migrations/questioner.py",
+        "django/db/migrations/state.py",
+        "django/db/migrations/utils.py",
+        "django/db/migrations/writer.py"
+    ],
+    "django/core/management/commands/migrate.py": [
+        "django/apps/__init__.py",
+        "django/core/management/base.py",
+        "django/core/management/sql.py",
+        "django/db/__init__.py",
+        "django/db/migrations/autodetector.py",
+        "django/db/migrations/executor.py",
+        "django/db/migrations/loader.py",
+        "django/db/migrations/state.py",
+        "django/utils/module_loading.py",
+        "django/utils/text.py"
+    ],
+    "django/core/management/commands/optimizemigration.py": [
+        "django/apps/__init__.py",
+        "django/core/management/base.py",
+        "django/core/management/utils.py",
+        "django/db/__init__.py",
+        "django/db/migrations/exceptions.py",
+        "django/db/migrations/loader.py",
+        "django/db/migrations/optimizer.py",
+        "django/db/migrations/writer.py",
+        "django/utils/version.py"
+    ],
+    "django/core/management/commands/runserver.py": [
+        "django/conf/__init__.py",
+        "django/core/management/base.py",
+        "django/core/servers/basehttp.py",
+        "django/utils/__init__.py",
+        "django/utils/regex_helper.py"
+    ],
+    "django/core/management/commands/sendtestemail.py": [
+        "django/core/mail/__init__.py",
+        "django/core/management/base.py",
+        "django/utils/__init__.py"
+    ],
+    "django/core/management/commands/shell.py": [
+        "django/core/management/__init__.py",
+        "django/utils/datastructures.py"
+    ],
+    "django/core/management/commands/showmigrations.py": [
+        "django/apps/__init__.py",
+        "django/core/management/base.py",
+        "django/db/__init__.py",
+        "django/db/migrations/loader.py",
+        "django/db/migrations/recorder.py"
+    ],
+    "django/core/management/commands/sqlflush.py": [
+        "django/core/management/base.py",
+        "django/core/management/sql.py",
+        "django/db/__init__.py"
+    ],
+    "django/core/management/commands/sqlmigrate.py": [
+        "django/apps/__init__.py",
+        "django/core/management/base.py",
+        "django/db/__init__.py",
+        "django/db/migrations/loader.py"
+    ],
+    "django/core/management/commands/sqlsequencereset.py": [
+        "django/core/management/base.py",
+        "django/db/__init__.py"
+    ],
+    "django/core/management/commands/squashmigrations.py": [
+        "django/apps/__init__.py",
+        "django/conf/__init__.py",
+        "django/core/management/base.py",
+        "django/core/management/utils.py",
+        "django/db/__init__.py",
+        "django/db/migrations/loader.py",
+        "django/db/migrations/migration.py",
+        "django/db/migrations/optimizer.py",
+        "django/db/migrations/writer.py",
+        "django/utils/version.py"
+    ],
+    "django/core/management/commands/startapp.py": ["django/core/management/templates.py"],
+    "django/core/management/commands/startproject.py": [
+        "django/core/checks/security/base.py",
+        "django/core/management/templates.py",
+        "django/core/management/utils.py"
+    ],
+    "django/core/management/sql.py": ["django/apps/__init__.py", "django/db/__init__.py"],
+    "django/core/management/templates.py": [
+        "django/__init__.py",
+        "django/conf/__init__.py",
+        "django/core/management/base.py",
+        "django/core/management/utils.py",
+        "django/template/__init__.py",
+        "django/utils/__init__.py",
+        "django/utils/http.py",
+        "django/utils/version.py"
+    ],
+    "django/core/management/utils.py": [
+        "django/apps/__init__.py",
+        "django/utils/crypto.py",
+        "django/utils/encoding.py",
+        "django/core/management/base.py"
+    ],
+    "django/core/paginator.py": [
+        "django/utils/functional.py",
+        "django/utils/inspect.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/core/serializers/__init__.py": [
+        "django/apps/__init__.py",
+        "django/conf/__init__.py",
+        "django/core/serializers/base.py"
+    ],
+    "django/core/serializers/base.py": ["django/core/exceptions.py", "django/db/__init__.py"],
+    "django/core/serializers/json.py": [
+        "django/core/serializers/base.py",
+        "django/core/serializers/python.py",
+        "django/core/serializers/python.py",
+        "django/utils/duration.py",
+        "django/utils/functional.py",
+        "django/utils/timezone.py"
+    ],
+    "django/core/serializers/jsonl.py": [
+        "django/core/serializers/base.py",
+        "django/core/serializers/json.py",
+        "django/core/serializers/python.py",
+        "django/core/serializers/python.py"
+    ],
+    "django/core/serializers/python.py": [
+        "django/apps/__init__.py",
+        "django/core/serializers/__init__.py",
+        "django/db/__init__.py",
+        "django/utils/encoding.py"
+    ],
+    "django/core/serializers/pyyaml.py": [
+        "django/core/serializers/base.py",
+        "django/core/serializers/python.py",
+        "django/core/serializers/python.py",
+        "django/db/__init__.py"
+    ],
+    "django/core/serializers/xml_serializer.py": [
+        "django/apps/__init__.py",
+        "django/conf/__init__.py",
+        "django/core/exceptions.py",
+        "django/core/serializers/__init__.py",
+        "django/db/__init__.py",
+        "django/utils/xmlutils.py"
+    ],
+    "django/core/servers/basehttp.py": [
+        "django/core/exceptions.py",
+        "django/core/handlers/wsgi.py",
+        "django/core/wsgi.py",
+        "django/db/__init__.py",
+        "django/utils/module_loading.py",
+        "django/conf/__init__.py"
+    ],
+    "django/core/signals.py": ["django/dispatch/__init__.py"],
+    "django/core/signing.py": [
+        "django/conf/__init__.py",
+        "django/utils/crypto.py",
+        "django/utils/encoding.py",
+        "django/utils/module_loading.py",
+        "django/utils/regex_helper.py"
+    ],
+    "django/core/validators.py": [
+        "django/core/exceptions.py",
+        "django/utils/deconstruct.py",
+        "django/utils/encoding.py",
+        "django/utils/ipv6.py",
+        "django/utils/regex_helper.py",
+        "django/utils/translation/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/core/wsgi.py": ["django/__init__.py", "django/core/handlers/wsgi.py"],
+    "django/db/__init__.py": [
+           "django/core/__init__.py",         "django/db/utils.py",
+        "django/utils/connection.py"
+    ],
+    "django/db/backends/base/base.py": [
+        "django/conf/__init__.py",
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/db/backends/__init__.py",
+        "django/db/backends/base/validation.py",
+        "django/db/backends/signals.py",
+        "django/db/backends/utils.py",
+        "django/db/transaction.py",
+        "django/db/utils.py",
+        "django/utils/asyncio.py",
+        "django/utils/functional.py"
+    ],
+    "django/db/backends/base/creation.py": [
+        "django/apps/__init__.py",
+        "django/conf/__init__.py",
+        "django/core/__init__.py",
+        "django/db/__init__.py",
+        "django/db/transaction.py",
+        "django/utils/module_loading.py",
+        "django/core/management/__init__.py",
+        "django/db/migrations/loader.py"
+    ],
+    "django/db/backends/base/features.py": ["django/db/__init__.py", "django/utils/functional.py"],
+    "django/db/backends/base/introspection.py": ["django/apps/__init__.py", "django/db/__init__.py"],
+    "django/db/backends/base/operations.py": [
+        "django/conf/__init__.py",
+        "django/db/__init__.py",
+        "django/db/backends/__init__.py",
+        "django/db/models/expressions.py",
+        "django/utils/__init__.py",
+        "django/utils/deprecation.py",
+        "django/utils/encoding.py"
+    ],
+    "django/db/backends/base/schema.py": [
+        "django/conf/__init__.py",
+        "django/db/backends/ddl_references.py",
+        "django/db/backends/utils.py",
+        "django/db/models/__init__.py",
+        "django/db/models/sql/__init__.py",
+        "django/db/transaction.py",
+        "django/utils/__init__.py",
+        "django/db/models/expressions.py"
+    ],
+    "django/db/backends/dummy/base.py": [
+        "django/core/exceptions.py",
+        "django/db/backends/base/base.py",
+        "django/db/backends/base/client.py",
+        "django/db/backends/base/creation.py",
+        "django/db/backends/base/introspection.py",
+        "django/db/backends/base/operations.py",
+        "django/db/backends/dummy/features.py"
+    ],
+    "django/db/backends/dummy/features.py": ["django/db/backends/base/features.py"],
+    "django/db/backends/mysql/base.py": [
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/db/backends/__init__.py",
+        "django/db/backends/base/base.py",
+        "django/utils/asyncio.py",
+        "django/utils/functional.py",
+        "django/utils/regex_helper.py",
+        "django/db/backends/mysql/client.py",
+        "django/db/backends/mysql/creation.py",
+        "django/db/backends/mysql/features.py",
+        "django/db/backends/mysql/introspection.py",
+        "django/db/backends/mysql/operations.py",
+        "django/db/backends/mysql/schema.py",
+        "django/db/backends/mysql/validation.py"
+    ],
+    "django/db/backends/mysql/client.py": ["django/db/backends/base/client.py"],
+    "django/db/backends/mysql/compiler.py": [
+        "django/core/exceptions.py",
+        "django/db/models/expressions.py",
+        "django/db/models/sql/__init__.py"
+    ],
+    "django/db/backends/mysql/creation.py": [
+        "django/db/backends/base/creation.py",
+        "django/db/backends/mysql/client.py"
+    ],
+    "django/db/backends/mysql/features.py": [
+        "django/db/backends/base/features.py",
+        "django/utils/functional.py"
+    ],
+    "django/db/backends/mysql/introspection.py": [
+        "django/db/backends/base/introspection.py",
+        "django/db/backends/base/introspection.py",
+        "django/db/backends/base/introspection.py",
+        "django/db/models/__init__.py",
+        "django/utils/datastructures.py"
+    ],
+    "django/db/backends/mysql/operations.py": [
+        "django/conf/__init__.py",
+        "django/db/backends/base/operations.py",
+        "django/db/backends/utils.py",
+        "django/db/models/__init__.py",
+        "django/db/models/constants.py",
+        "django/utils/__init__.py",
+        "django/utils/encoding.py",
+        "django/utils/regex_helper.py"
+    ],
+    "django/db/backends/mysql/schema.py": [
+        "django/db/backends/base/schema.py",
+        "django/db/models/__init__.py",
+        "django/db/models/constants.py"
+    ],
+    "django/db/backends/mysql/validation.py": [
+        "django/core/__init__.py",
+        "django/db/backends/base/validation.py",
+        "django/utils/version.py"
+    ],
+    "django/db/backends/oracle/base.py": [
+        "django/conf/__init__.py",
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/db/backends/base/base.py",
+        "django/db/backends/oracle/oracledb_any.py",
+        "django/db/backends/utils.py",
+        "django/utils/asyncio.py",
+        "django/utils/encoding.py",
+        "django/utils/functional.py",
+        "django/db/backends/oracle/client.py",
+        "django/db/backends/oracle/creation.py",
+        "django/db/backends/oracle/features.py",
+        "django/db/backends/oracle/introspection.py",
+        "django/db/backends/oracle/operations.py",
+        "django/db/backends/oracle/schema.py",
+        "django/db/backends/oracle/utils.py",
+        "django/db/backends/oracle/validation.py"
+    ],
+    "django/db/backends/oracle/client.py": [
+        "django/db/backends/base/client.py",
+        "django/db/backends/oracle/utils.py"
+    ],
+    "django/db/backends/oracle/creation.py": [
+        "django/conf/__init__.py",
+        "django/db/__init__.py",
+        "django/db/backends/base/creation.py",
+        "django/utils/crypto.py",
+        "django/utils/functional.py"
+    ],
+    "django/db/backends/oracle/features.py": [
+        "django/db/__init__.py",
+        "django/db/backends/base/features.py",
+        "django/utils/functional.py"
+    ],
+    "django/db/backends/oracle/functions.py": ["django/db/models/__init__.py"],
+    "django/db/backends/oracle/introspection.py": [
+        "django/db/__init__.py",
+        "django/db/backends/base/introspection.py",
+        "django/db/backends/base/introspection.py",
+        "django/db/backends/base/introspection.py",
+        "django/db/backends/oracle/oracledb_any.py"
+    ],
+    "django/db/backends/oracle/operations.py": [
+        "django/conf/__init__.py",
+        "django/db/__init__.py",
+        "django/db/backends/base/operations.py",
+        "django/db/backends/utils.py",
+        "django/db/models/__init__.py",
+        "django/db/models/expressions.py",
+        "django/db/models/sql/where.py",
+        "django/utils/__init__.py",
+        "django/utils/encoding.py",
+        "django/utils/functional.py",
+        "django/utils/regex_helper.py",
+        "django/db/backends/oracle/base.py",
+        "django/db/backends/oracle/utils.py"
+    ],
+    "django/db/backends/oracle/oracledb_any.py": ["django/core/exceptions.py", "django/utils/deprecation.py"],
+    "django/db/backends/oracle/schema.py": [
+        "django/db/__init__.py",
+        "django/db/backends/base/schema.py",
+        "django/utils/duration.py"
+    ],
+    "django/db/backends/oracle/utils.py": ["django/db/backends/oracle/base.py"],
+    "django/db/backends/oracle/validation.py": [
+        "django/core/__init__.py",
+        "django/db/backends/base/validation.py"
+    ],
+    "django/db/backends/postgresql/base.py": [
+        "django/conf/__init__.py",
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/db/__init__.py",
+        "django/db/backends/base/base.py",
+        "django/db/backends/utils.py",
+        "django/utils/asyncio.py",
+        "django/utils/functional.py",
+        "django/utils/safestring.py",
+        "django/utils/version.py",
+        "django/db/backends/postgresql/psycopg_any.py",
+        "django/db/backends/postgresql/client.py",
+        "django/db/backends/postgresql/creation.py",
+        "django/db/backends/postgresql/features.py",
+        "django/db/backends/postgresql/introspection.py",
+        "django/db/backends/postgresql/operations.py",
+        "django/db/backends/postgresql/schema.py",
+        "django/db/backends/postgresql/psycopg_any.py"
+    ],
+    "django/db/backends/postgresql/client.py": ["django/db/backends/base/client.py"],
+    "django/db/backends/postgresql/creation.py": [
+        "django/core/exceptions.py",
+        "django/db/backends/base/creation.py",
+        "django/db/backends/postgresql/psycopg_any.py",
+        "django/db/backends/utils.py"
+    ],
+    "django/db/backends/postgresql/features.py": [
+        "django/db/__init__.py",
+        "django/db/backends/base/features.py",
+        "django/db/backends/postgresql/psycopg_any.py",
+        "django/utils/functional.py"
+    ],
+    "django/db/backends/postgresql/introspection.py": [
+        "django/db/backends/base/introspection.py",
+        "django/db/backends/base/introspection.py",
+        "django/db/backends/base/introspection.py",
+        "django/db/models/__init__.py"
+    ],
+    "django/db/backends/postgresql/operations.py": [
+        "django/conf/__init__.py",
+        "django/db/backends/base/operations.py",
+        "django/db/backends/postgresql/psycopg_any.py",
+        "django/db/backends/utils.py",
+        "django/db/models/constants.py",
+        "django/db/models/functions/__init__.py",
+        "django/utils/regex_helper.py",
+        "django/db/__init__.py"
+    ],
+    "django/db/backends/postgresql/schema.py": [
+        "django/db/backends/base/schema.py",
+        "django/db/backends/ddl_references.py",
+        "django/db/backends/postgresql/psycopg_any.py",
+        "django/db/backends/utils.py"
+    ],
+    "django/db/backends/signals.py": ["django/dispatch/__init__.py"],
+    "django/db/backends/sqlite3/_functions.py": [
+        "django/db/backends/utils.py",    "django/utils/__init__.py",
+           "django/utils/duration.py"
+    ],
+    "django/db/backends/sqlite3/base.py": [
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/db/backends/base/base.py",
+        "django/utils/asyncio.py",
+        "django/utils/dateparse.py",
+        "django/utils/regex_helper.py",
+        "django/db/backends/sqlite3/_functions.py",
+        "django/db/backends/sqlite3/client.py",
+        "django/db/backends/sqlite3/creation.py",
+        "django/db/backends/sqlite3/features.py",
+        "django/db/backends/sqlite3/introspection.py",
+        "django/db/backends/sqlite3/operations.py",
+        "django/db/backends/sqlite3/schema.py"
+    ],
+    "django/db/backends/sqlite3/client.py": ["django/db/backends/base/client.py"],
+    "django/db/backends/sqlite3/creation.py": [
+        "django/db/__init__.py",
+        "django/db/backends/base/creation.py"
+    ],
+    "django/db/backends/sqlite3/features.py": [
+        "django/db/__init__.py",
+        "django/db/backends/base/features.py",
+        "django/db/utils.py",
+        "django/utils/functional.py",
+        "django/db/backends/sqlite3/base.py"
+    ],
+    "django/db/backends/sqlite3/introspection.py": [
+        "django/db/__init__.py",
+        "django/db/backends/base/introspection.py",
+        "django/db/backends/base/introspection.py",
+        "django/db/backends/base/introspection.py",
+        "django/db/models/__init__.py",
+        "django/utils/regex_helper.py"
+    ],
+    "django/db/backends/sqlite3/operations.py": [
+        "django/conf/__init__.py",
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/db/backends/base/operations.py",
+        "django/db/models/constants.py",
+        "django/db/models/expressions.py",
+        "django/utils/__init__.py",
+        "django/utils/dateparse.py",
+        "django/utils/functional.py"
+    ],
+    "django/db/backends/sqlite3/schema.py": [
+        "django/apps/registry.py",
+        "django/db/__init__.py",
+        "django/db/backends/base/schema.py",
+        "django/db/backends/ddl_references.py",
+        "django/db/backends/utils.py",
+        "django/db/models/__init__.py",
+        "django/db/models/expressions.py"
+    ],
+    "django/db/backends/utils.py": [
+          "django/apps/__init__.py",     "django/db/__init__.py",
+        "django/utils/dateparse.py"
+    ],
+    "django/db/migrations/__init__.py": [
+        "django/db/migrations/migration.py",
+        "django/db/migrations/operations/__init__.py"
+    ],
+    "django/db/migrations/autodetector.py": [
+        "django/conf/__init__.py",
+        "django/db/__init__.py",
+        "django/db/migrations/__init__.py",
+        "django/db/migrations/migration.py",
+        "django/db/migrations/operations/models.py",
+        "django/db/migrations/optimizer.py",
+        "django/db/migrations/questioner.py",
+        "django/db/migrations/utils.py"
+    ],
+    "django/db/migrations/exceptions.py": ["django/db/__init__.py"],
+    "django/db/migrations/executor.py": [
+        "django/apps/registry.py",
+        "django/db/__init__.py",
+        "django/db/migrations/exceptions.py",
+        "django/db/migrations/loader.py",
+        "django/db/migrations/recorder.py",
+        "django/db/migrations/state.py"
+    ],
+    "django/db/migrations/graph.py": [
+        "django/db/migrations/state.py",
+        "django/db/migrations/exceptions.py"
+    ],
+    "django/db/migrations/loader.py": [
+        "django/apps/__init__.py",
+        "django/conf/__init__.py",
+        "django/db/migrations/graph.py",
+        "django/db/migrations/recorder.py",
+        "django/db/migrations/exceptions.py"
+    ],
+    "django/db/migrations/migration.py": [
+        "django/db/migrations/utils.py",
+        "django/db/transaction.py",
+        "django/db/migrations/exceptions.py"
+    ],
+    "django/db/migrations/operations/__init__.py": [
+        "django/db/migrations/operations/fields.py",
+        "django/db/migrations/operations/models.py",
+        "django/db/migrations/operations/special.py"
+    ],
+    "django/db/migrations/operations/base.py": ["django/db/__init__.py"],
+    "django/db/migrations/operations/fields.py": [
+        "django/db/migrations/utils.py",
+        "django/db/models/__init__.py",
+        "django/utils/functional.py",
+        "django/db/migrations/operations/base.py",
+        "django/db/migrations/operations/models.py"
+    ],
+    "django/db/migrations/operations/models.py": [
+        "django/db/__init__.py",
+        "django/db/migrations/operations/base.py",
+        "django/db/migrations/state.py",
+        "django/db/migrations/utils.py",
+        "django/db/models/options.py",
+        "django/utils/functional.py",
+        "django/db/migrations/operations/fields.py"
+    ],
+    "django/db/migrations/operations/special.py": [
+        "django/db/__init__.py",
+        "django/db/migrations/operations/base.py"
+    ],
+    "django/db/migrations/questioner.py": [
+        "django/apps/__init__.py",
+        "django/core/management/base.py",
+        "django/db/models/__init__.py",
+        "django/utils/__init__.py",
+        "django/utils/version.py",
+        "django/db/migrations/loader.py"
+    ],
+    "django/db/migrations/recorder.py": [
+        "django/apps/registry.py",
+        "django/db/__init__.py",
+        "django/utils/functional.py",
+        "django/utils/timezone.py",
+        "django/db/migrations/exceptions.py"
+    ],
+    "django/db/migrations/serializer.py": [
+        "django/conf/__init__.py",
+        "django/db/__init__.py",
+        "django/db/migrations/operations/base.py",
+        "django/db/migrations/utils.py",
+        "django/utils/functional.py",
+        "django/utils/version.py",
+        "django/db/migrations/writer.py"
+    ],
+    "django/db/migrations/state.py": [
+        "django/apps/__init__.py",
+        "django/apps/registry.py",
+        "django/apps/registry.py",
+        "django/conf/__init__.py",
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/db/migrations/utils.py",
+        "django/db/models/__init__.py",
+        "django/db/models/fields/related.py",
+        "django/db/models/options.py",
+        "django/db/models/utils.py",
+        "django/utils/functional.py",
+        "django/utils/module_loading.py",
+        "django/utils/version.py",
+        "django/db/migrations/exceptions.py",
+        "django/db/migrations/utils.py",
+        "django/core/checks/model_checks.py"
+    ],
+    "django/db/migrations/utils.py": ["django/db/models/fields/related.py"],
+    "django/db/migrations/writer.py": [
+        "django/__init__.py",
+        "django/apps/__init__.py",
+        "django/conf/__init__.py",
+        "django/db/__init__.py",
+        "django/db/migrations/loader.py",
+        "django/db/migrations/serializer.py",
+        "django/utils/inspect.py",
+        "django/utils/module_loading.py",
+        "django/utils/timezone.py"
+    ],
+    "django/db/models/__init__.py": [
+        "django/core/exceptions.py",
+        "django/db/models/__init__.py",
+        "django/db/models/aggregates.py",
+        "django/db/models/aggregates.py",
+        "django/db/models/constraints.py",
+        "django/db/models/constraints.py",
+        "django/db/models/deletion.py",
+        "django/db/models/enums.py",
+        "django/db/models/enums.py",
+        "django/db/models/expressions.py",
+        "django/db/models/fields/__init__.py",
+        "django/db/models/fields/__init__.py",
+        "django/db/models/fields/files.py",
+        "django/db/models/fields/generated.py",
+        "django/db/models/fields/json.py",
+        "django/db/models/fields/proxy.py",
+        "django/db/models/indexes.py",
+        "django/db/models/indexes.py",
+        "django/db/models/lookups.py",
+        "django/db/models/manager.py",
+        "django/db/models/query.py",
+        "django/db/models/query_utils.py",
+        "django/db/models/base.py",
+        "django/db/models/fields/related.py"
+    ],
+    "django/db/models/aggregates.py": [
+        "django/core/exceptions.py",
+        "django/db/models/expressions.py",
+        "django/db/models/fields/__init__.py",
+        "django/db/models/functions/comparison.py",
+        "django/db/models/functions/mixins.py"
+    ],
+    "django/db/models/base.py": [
+        "django/__init__.py",
+        "django/apps/__init__.py",
+        "django/conf/__init__.py",
+        "django/core/__init__.py",
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/db/models/__init__.py",
+        "django/db/models/constants.py",
+        "django/db/models/constraints.py",
+        "django/db/models/deletion.py",
+        "django/db/models/expressions.py",
+        "django/db/models/fields/related.py",
+        "django/db/models/functions/__init__.py",
+        "django/db/models/manager.py",
+        "django/db/models/options.py",
+        "django/db/models/query.py",
+        "django/db/models/signals.py",
+        "django/db/models/utils.py",
+        "django/utils/encoding.py",
+        "django/utils/hashable.py",
+        "django/utils/text.py",
+        "django/utils/translation/__init__.py",
+        "django/db/__init__.py"
+    ],
+    "django/db/models/constraints.py": [
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/db/models/expressions.py",
+        "django/db/models/indexes.py",
+        "django/db/models/lookups.py",
+        "django/db/models/query_utils.py",
+        "django/db/models/sql/query.py",
+        "django/db/utils.py",
+        "django/utils/deprecation.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/db/models/deletion.py": ["django/db/__init__.py", "django/db/models/__init__.py"],
+    "django/db/models/enums.py": [
+        "django/utils/deprecation.py",  "django/utils/functional.py",
+            "django/utils/version.py"
+    ],
+    "django/db/models/expressions.py": [
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/db/models/__init__.py",
+        "django/db/models/constants.py",
+        "django/db/models/query_utils.py",
+        "django/utils/deconstruct.py",
+        "django/utils/functional.py",
+        "django/utils/hashable.py"
+    ],
+    "django/db/models/fields/__init__.py": [
+        "django/__init__.py",
+        "django/apps/__init__.py",
+        "django/conf/__init__.py",
+        "django/core/__init__.py",
+        "django/db/__init__.py",
+        "django/db/models/constants.py",
+        "django/db/models/query_utils.py",
+        "django/utils/__init__.py",
+        "django/utils/choices.py",
+        "django/utils/datastructures.py",
+        "django/utils/dateparse.py",
+        "django/utils/duration.py",
+        "django/utils/functional.py",
+        "django/utils/ipv6.py",
+        "django/utils/itercompat.py",
+        "django/utils/text.py",
+        "django/utils/translation/__init__.py",
+        "django/db/models/expressions.py",
+        "django/db/models/expressions.py",
+        "django/db/models/expressions.py",
+        "django/db/models/expressions.py",
+        "django/db/models/expressions.py",
+        "django/db/models/expressions.py"
+    ],
+    "django/db/models/fields/files.py": [
+        "django/__init__.py",
+        "django/core/__init__.py",
+        "django/core/files/base.py",
+        "django/core/files/images.py",
+        "django/core/files/storage/__init__.py",
+        "django/core/files/utils.py",
+        "django/db/models/__init__.py",
+        "django/db/models/fields/__init__.py",
+        "django/db/models/query_utils.py",
+        "django/db/models/utils.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/db/models/fields/generated.py": [
+        "django/core/__init__.py",
+        "django/db/__init__.py",
+        "django/db/models/sql/__init__.py",
+        "django/utils/functional.py",
+        "django/db/models/fields/__init__.py",
+        "django/db/models/expressions.py"
+    ],
+    "django/db/models/fields/json.py": [
+        "django/__init__.py",
+        "django/core/__init__.py",
+        "django/db/__init__.py",
+        "django/db/models/__init__.py",
+        "django/db/models/constants.py",
+        "django/db/models/fields/__init__.py",
+        "django/db/models/lookups.py",
+        "django/utils/translation/__init__.py",
+        "django/db/models/fields/__init__.py",
+        "django/db/models/fields/mixins.py"
+    ],
+    "django/db/models/fields/mixins.py": ["django/core/__init__.py"],
+    "django/db/models/fields/proxy.py": ["django/db/models/__init__.py"],
+    "django/db/models/fields/related.py": [
+        "django/__init__.py",
+        "django/apps/__init__.py",
+        "django/conf/__init__.py",
+        "django/core/__init__.py",
+        "django/db/__init__.py",
+        "django/db/backends/__init__.py",
+        "django/db/models/__init__.py",
+        "django/db/models/constants.py",
+        "django/db/models/deletion.py",
+        "django/db/models/query_utils.py",
+        "django/db/models/utils.py",
+        "django/utils/deprecation.py",
+        "django/utils/functional.py",
+        "django/utils/translation/__init__.py",
+        "django/db/models/fields/__init__.py",
+        "django/db/models/fields/mixins.py",
+        "django/db/models/fields/related_descriptors.py",
+        "django/db/models/fields/related_lookups.py",
+        "django/db/models/fields/reverse_related.py",
+        "django/db/__init__.py",
+        "django/db/models/base.py"
+    ],
+    "django/db/models/fields/related_descriptors.py": [
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/db/models/__init__.py",
+        "django/db/models/functions/__init__.py",
+        "django/db/models/lookups.py",
+        "django/db/models/query.py",
+        "django/db/models/query_utils.py",
+        "django/db/models/utils.py",
+        "django/utils/deprecation.py",
+        "django/utils/functional.py",
+        "django/db/models/__init__.py"
+    ],
+    "django/db/models/fields/related_lookups.py": [
+        "django/db/models/lookups.py",
+        "django/db/models/__init__.py",
+        "django/db/models/sql/where.py",
+        "django/db/models/sql/where.py"
+    ],
+    "django/db/models/fields/reverse_related.py": [
+        "django/core/__init__.py",
+        "django/utils/deprecation.py",
+        "django/utils/functional.py",
+        "django/utils/hashable.py",
+        "django/db/models/fields/__init__.py",
+        "django/db/models/fields/mixins.py"
+    ],
+    "django/db/models/functions/__init__.py": [
+        "django/db/models/functions/comparison.py",
+        "django/db/models/functions/datetime.py",
+        "django/db/models/functions/math.py",
+        "django/db/models/functions/text.py",
+        "django/db/models/functions/window.py"
+    ],
+    "django/db/models/functions/comparison.py": [
+        "django/db/__init__.py",
+        "django/db/models/expressions.py",
+        "django/db/models/fields/__init__.py",
+        "django/db/models/fields/json.py",
+        "django/utils/regex_helper.py"
+    ],
+    "django/db/models/functions/datetime.py": [
+        "django/conf/__init__.py",
+        "django/db/models/expressions.py",
+        "django/db/models/fields/__init__.py",
+        "django/db/models/lookups.py",
+        "django/utils/__init__.py"
+    ],
+    "django/db/models/functions/math.py": [
+        "django/db/models/expressions.py",
+        "django/db/models/fields/__init__.py",
+        "django/db/models/functions/__init__.py",
+        "django/db/models/functions/mixins.py",
+        "django/db/models/lookups.py"
+    ],
+    "django/db/models/functions/mixins.py": [
+        "django/db/models/fields/__init__.py",
+        "django/db/models/functions/__init__.py",
+        "django/db/backends/oracle/functions.py"
+    ],
+    "django/db/models/functions/text.py": [
+        "django/db/__init__.py",
+        "django/db/models/expressions.py",
+        "django/db/models/fields/__init__.py",
+        "django/db/models/functions/__init__.py",
+        "django/db/models/lookups.py"
+    ],
+    "django/db/models/functions/window.py": [
+        "django/db/models/expressions.py",
+        "django/db/models/fields/__init__.py"
+    ],
+    "django/db/models/indexes.py": [
+        "django/db/backends/utils.py",
+        "django/db/models/expressions.py",
+        "django/db/models/functions/__init__.py",
+        "django/db/models/query_utils.py",
+        "django/db/models/sql/__init__.py",
+        "django/utils/functional.py"
+    ],
+    "django/db/models/lookups.py": [
+        "django/core/exceptions.py",
+        "django/db/backends/base/operations.py",
+        "django/db/models/expressions.py",
+        "django/db/models/fields/__init__.py",
+        "django/db/models/query_utils.py",
+        "django/utils/datastructures.py",
+        "django/utils/deprecation.py",
+        "django/utils/functional.py",
+        "django/utils/hashable.py",
+        "django/db/models/sql/query.py",
+        "django/db/models/sql/query.py",
+        "django/db/models/functions/__init__.py",
+        "django/db/models/sql/query.py",
+        "django/db/models/functions/__init__.py"
+    ],
+    "django/db/models/manager.py": ["django/db/__init__.py", "django/db/models/query.py"],
+    "django/db/models/options.py": [
+        "django/apps/__init__.py",
+        "django/conf/__init__.py",
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/db/models/__init__.py",
+        "django/db/models/query_utils.py",
+        "django/utils/datastructures.py",
+        "django/utils/functional.py",
+        "django/utils/module_loading.py",
+        "django/utils/text.py",
+        "django/utils/translation/__init__.py",
+        "django/db/__init__.py",
+        "django/db/backends/utils.py"
+    ],
+    "django/db/models/query.py": [
+        "django/__init__.py",
+        "django/conf/__init__.py",
+        "django/core/__init__.py",
+        "django/db/__init__.py",
+        "django/db/models/__init__.py",
+        "django/db/models/constants.py",
+        "django/db/models/deletion.py",
+        "django/db/models/expressions.py",
+        "django/db/models/functions/__init__.py",
+        "django/db/models/query_utils.py",
+        "django/db/models/sql/constants.py",
+        "django/db/models/utils.py",
+        "django/utils/__init__.py",
+        "django/utils/deprecation.py",
+        "django/utils/functional.py",
+        "django/db/models/manager.py",
+        "django/db/models/expressions.py"
+    ],
+    "django/db/models/query_utils.py": [
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/db/models/constants.py",
+        "django/utils/__init__.py",
+        "django/utils/functional.py",
+        "django/utils/hashable.py",
+        "django/db/models/__init__.py",
+        "django/db/models/functions/__init__.py",
+        "django/db/models/sql/__init__.py",
+        "django/db/models/sql/constants.py",
+        "django/db/models/lookups.py",
+        "django/db/models/lookups.py"
+    ],
+    "django/db/models/signals.py": [
+          "django/db/models/utils.py", "django/dispatch/__init__.py",
+        "django/db/models/options.py"
+    ],
+    "django/db/models/sql/__init__.py": [
+        "django/db/models/sql/query.py",
+        "django/db/models/sql/query.py",
+        "django/db/models/sql/subqueries.py",
+        "django/db/models/sql/where.py"
+    ],
+    "django/db/models/sql/compiler.py": [
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/db/models/constants.py",
+        "django/db/models/expressions.py",
+        "django/db/models/functions/__init__.py",
+        "django/db/models/lookups.py",
+        "django/db/models/query_utils.py",
+        "django/db/models/sql/constants.py",
+        "django/db/models/sql/query.py",
+        "django/db/models/sql/where.py",
+        "django/db/transaction.py",
+        "django/utils/functional.py",
+        "django/utils/hashable.py",
+        "django/utils/regex_helper.py"
+    ],
+    "django/db/models/sql/datastructures.py": [
+        "django/core/exceptions.py",
+        "django/db/models/sql/constants.py",
+        "django/utils/deprecation.py"
+    ],
+    "django/db/models/sql/query.py": [
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/db/models/aggregates.py",
+        "django/db/models/constants.py",
+        "django/db/models/expressions.py",
+        "django/db/models/fields/__init__.py",
+        "django/db/models/fields/related_lookups.py",
+        "django/db/models/lookups.py",
+        "django/db/models/query_utils.py",
+        "django/db/models/sql/constants.py",
+        "django/db/models/sql/datastructures.py",
+        "django/db/models/sql/where.py",
+        "django/utils/functional.py",
+        "django/utils/regex_helper.py",
+        "django/utils/tree.py",
+        "django/db/models/sql/subqueries.py"
+    ],
+    "django/db/models/sql/subqueries.py": [
+        "django/core/exceptions.py",
+        "django/db/models/sql/constants.py",
+        "django/db/models/sql/query.py"
+    ],
+    "django/db/models/sql/where.py": [
+        "django/core/exceptions.py",
+        "django/db/models/expressions.py",
+        "django/db/models/functions/__init__.py",
+        "django/db/models/lookups.py",
+        "django/utils/__init__.py",
+        "django/utils/functional.py",
+        "django/db/models/__init__.py"
+    ],
+    "django/db/transaction.py": ["django/db/__init__.py"],
+    "django/db/utils.py": [
+        "django/conf/__init__.py",
+        "django/core/exceptions.py",
+        "django/utils/connection.py",
+        "django/utils/connection.py",
+        "django/utils/functional.py",
+        "django/utils/module_loading.py",
+        "django/db/backends/__init__.py"
+    ],
+    "django/dispatch/__init__.py": ["django/dispatch/dispatcher.py"],
+    "django/dispatch/dispatcher.py": ["django/utils/inspect.py", "django/conf/__init__.py"],
+    "django/forms/__init__.py": [
+         "django/core/exceptions.py", "django/forms/boundfield.py",
+            "django/forms/fields.py",      "django/forms/forms.py",
+          "django/forms/formsets.py",     "django/forms/models.py",
+           "django/forms/widgets.py"
+    ],
+    "django/forms/boundfield.py": [
+        "django/core/exceptions.py",
+        "django/forms/utils.py",
+        "django/forms/widgets.py",
+        "django/utils/functional.py",
+        "django/utils/html.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/forms/fields.py": [
+        "django/core/__init__.py",
+        "django/core/exceptions.py",
+        "django/forms/boundfield.py",
+        "django/forms/utils.py",
+        "django/forms/widgets.py",
+        "django/utils/__init__.py",
+        "django/utils/choices.py",
+        "django/utils/dateparse.py",
+        "django/utils/deprecation.py",
+        "django/utils/duration.py",
+        "django/utils/ipv6.py",
+        "django/utils/regex_helper.py",
+        "django/utils/translation/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/forms/forms.py": [
+        "django/core/exceptions.py",
+        "django/forms/fields.py",
+        "django/forms/utils.py",
+        "django/forms/widgets.py",
+        "django/utils/datastructures.py",
+        "django/utils/functional.py",
+        "django/utils/translation/__init__.py",
+        "django/forms/renderers.py"
+    ],
+    "django/forms/formsets.py": [
+        "django/core/exceptions.py",
+        "django/forms/__init__.py",
+        "django/forms/fields.py",
+        "django/forms/renderers.py",
+        "django/forms/utils.py",
+        "django/forms/widgets.py",
+        "django/utils/functional.py",
+        "django/utils/translation/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/forms/models.py": [
+        "django/core/exceptions.py",
+        "django/db/models/utils.py",
+        "django/forms/fields.py",
+        "django/forms/forms.py",
+        "django/forms/formsets.py",
+        "django/forms/utils.py",
+        "django/forms/widgets.py",
+        "django/utils/choices.py",
+        "django/utils/text.py",
+        "django/utils/translation/__init__.py",
+        "django/utils/translation/__init__.py",
+        "django/db/__init__.py",
+        "django/db/models/__init__.py",
+        "django/db/models/__init__.py",
+        "django/db/models/__init__.py",
+        "django/db/models/__init__.py"
+    ],
+    "django/forms/renderers.py": [
+        "django/conf/__init__.py",
+        "django/template/backends/django.py",
+        "django/template/loader.py",
+        "django/utils/deprecation.py",
+        "django/utils/functional.py",
+        "django/utils/module_loading.py",
+        "django/template/backends/jinja2.py"
+    ],
+    "django/forms/utils.py": [
+        "django/conf/__init__.py",
+        "django/core/exceptions.py",
+        "django/forms/renderers.py",
+        "django/utils/__init__.py",
+        "django/utils/html.py",
+        "django/utils/safestring.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/forms/widgets.py": [
+        "django/forms/utils.py",
+        "django/templatetags/static.py",
+        "django/utils/__init__.py",
+        "django/utils/choices.py",
+        "django/utils/dates.py",
+        "django/utils/formats.py",
+        "django/utils/html.py",
+        "django/utils/regex_helper.py",
+        "django/utils/safestring.py",
+        "django/utils/translation/__init__.py",
+        "django/forms/renderers.py"
+    ],
+    "django/http/__init__.py": ["django/http/cookie.py", "django/http/request.py", "django/http/response.py"],
+    "django/http/multipartparser.py": [
+        "django/conf/__init__.py",
+        "django/core/exceptions.py",
+        "django/core/files/uploadhandler.py",
+        "django/utils/datastructures.py",
+        "django/utils/encoding.py",
+        "django/utils/http.py",
+        "django/utils/regex_helper.py",
+        "django/http/__init__.py"
+    ],
+    "django/http/request.py": [
+        "django/conf/__init__.py",
+        "django/core/__init__.py",
+        "django/core/exceptions.py",
+        "django/core/files/__init__.py",
+        "django/http/multipartparser.py",
+        "django/utils/datastructures.py",
+        "django/utils/encoding.py",
+        "django/utils/functional.py",
+        "django/utils/http.py",
+        "django/utils/regex_helper.py"
+    ],
+    "django/http/response.py": [
+        "django/conf/__init__.py",
+        "django/core/__init__.py",
+        "django/core/exceptions.py",
+        "django/core/serializers/json.py",
+        "django/http/cookie.py",
+        "django/utils/__init__.py",
+        "django/utils/datastructures.py",
+        "django/utils/encoding.py",
+        "django/utils/http.py",
+        "django/utils/regex_helper.py"
+    ],
+    "django/middleware/cache.py": [
+        "django/conf/__init__.py",
+        "django/core/cache/__init__.py",
+        "django/utils/cache.py",
+        "django/utils/deprecation.py"
+    ],
+    "django/middleware/clickjacking.py": ["django/conf/__init__.py", "django/utils/deprecation.py"],
+    "django/middleware/common.py": [
+             "django/conf/__init__.py",    "django/core/exceptions.py",
+        "django/core/mail/__init__.py",      "django/http/__init__.py",
+             "django/urls/__init__.py",  "django/utils/deprecation.py",
+                "django/utils/http.py"
+    ],
+    "django/middleware/csrf.py": [
+             "django/conf/__init__.py",    "django/core/exceptions.py",
+             "django/http/__init__.py",      "django/urls/__init__.py",
+               "django/utils/cache.py",       "django/utils/crypto.py",
+         "django/utils/deprecation.py",   "django/utils/functional.py",
+                "django/utils/http.py",          "django/utils/log.py",
+        "django/utils/regex_helper.py"
+    ],
+    "django/middleware/gzip.py": [
+               "django/utils/cache.py",  "django/utils/deprecation.py",
+        "django/utils/regex_helper.py",         "django/utils/text.py"
+    ],
+    "django/middleware/http.py": [
+              "django/utils/cache.py", "django/utils/deprecation.py",
+               "django/utils/http.py"
+    ],
+    "django/middleware/locale.py": [
+            "django/conf/__init__.py",    "django/conf/urls/i18n.py",
+            "django/http/__init__.py",     "django/urls/__init__.py",
+           "django/utils/__init__.py",       "django/utils/cache.py",
+        "django/utils/deprecation.py"
+    ],
+    "django/middleware/security.py": [
+            "django/conf/__init__.py",     "django/http/__init__.py",
+        "django/utils/deprecation.py"
+    ],
+    "django/shortcuts.py": [
+            "django/http/__init__.py", "django/template/__init__.py",
+            "django/urls/__init__.py",  "django/utils/functional.py"
+    ],
+    "django/template/__init__.py": [
+        "django/template/engine.py",
+        "django/template/utils.py",
+        "django/template/base.py",
+        "django/template/context.py",
+        "django/template/exceptions.py",
+        "django/template/base.py",
+        "django/template/library.py",
+        "django/template/__init__.py"
+    ],
+    "django/template/autoreload.py": [
+        "django/dispatch/__init__.py",
+        "django/template/__init__.py",
+        "django/template/backends/django.py",
+        "django/utils/_os.py",
+        "django/utils/autoreload.py",
+        "django/forms/renderers.py"
+    ],
+    "django/template/backends/base.py": [
+         "django/core/exceptions.py",   "django/template/utils.py",
+               "django/utils/_os.py", "django/utils/functional.py"
+    ],
+    "django/template/backends/django.py": [
+        "django/apps/__init__.py",
+        "django/conf/__init__.py",
+        "django/template/__init__.py",
+        "django/template/context.py",
+        "django/template/engine.py",
+        "django/template/library.py",
+        "django/template/backends/base.py"
+    ],
+    "django/template/backends/dummy.py": [
+        "django/core/exceptions.py",
+        "django/template/__init__.py",
+        "django/utils/html.py",
+        "django/template/backends/base.py",
+        "django/template/backends/utils.py"
+    ],
+    "django/template/backends/jinja2.py": [
+        "django/conf/__init__.py",
+        "django/template/__init__.py",
+        "django/utils/functional.py",
+        "django/utils/module_loading.py",
+        "django/template/backends/base.py",
+        "django/template/backends/utils.py"
+    ],
+    "django/template/backends/utils.py": [
+         "django/middleware/csrf.py", "django/utils/functional.py",
+              "django/utils/html.py", "django/utils/safestring.py"
+    ],
+    "django/template/base.py": [
+        "django/template/context.py",
+        "django/utils/formats.py",
+        "django/utils/html.py",
+        "django/utils/regex_helper.py",
+        "django/utils/safestring.py",
+        "django/utils/text.py",
+        "django/utils/timezone.py",
+        "django/utils/translation/__init__.py",
+        "django/template/exceptions.py",
+        "django/template/engine.py"
+    ],
+    "django/template/context_processors.py": [
+           "django/conf/__init__.py",  "django/middleware/csrf.py",
+        "django/utils/functional.py",   "django/utils/__init__.py",
+          "django/utils/__init__.py",      "django/db/__init__.py"
+    ],
+    "django/template/defaultfilters.py": [
+        "django/utils/__init__.py",
+        "django/utils/dateformat.py",
+        "django/utils/encoding.py",
+        "django/utils/html.py",
+        "django/utils/html.py",
+        "django/utils/html.py",
+        "django/utils/html.py",
+        "django/utils/safestring.py",
+        "django/utils/text.py",
+        "django/utils/text.py",
+        "django/utils/text.py",
+        "django/utils/timesince.py",
+        "django/utils/translation/__init__.py",
+        "django/template/base.py",
+        "django/template/library.py"
+    ],
+    "django/template/defaulttags.py": [
+        "django/conf/__init__.py",
+        "django/utils/__init__.py",
+        "django/utils/html.py",
+        "django/utils/lorem_ipsum.py",
+        "django/utils/safestring.py",
+        "django/template/base.py",
+        "django/template/context.py",
+        "django/template/defaultfilters.py",
+        "django/template/library.py",
+        "django/template/smartif.py",
+        "django/utils/html.py",
+        "django/urls/__init__.py"
+    ],
+    "django/template/engine.py": [
+        "django/core/exceptions.py",
+        "django/utils/functional.py",
+        "django/utils/module_loading.py",
+        "django/template/base.py",
+        "django/template/context.py",
+        "django/template/exceptions.py",
+        "django/template/library.py",
+        "django/template/__init__.py",
+        "django/template/backends/django.py"
+    ],
+    "django/template/library.py": [
+        "django/utils/html.py",
+        "django/utils/itercompat.py",
+        "django/template/base.py",
+        "django/template/exceptions.py"
+    ],
+    "django/template/loader.py": [
+        "django/template/__init__.py",
+        "django/template/exceptions.py"
+    ],
+    "django/template/loader_tags.py": [
+        "django/utils/safestring.py",    "django/template/base.py",
+        "django/template/library.py"
+    ],
+    "django/template/loaders/app_directories.py": [
+        "django/template/utils.py",
+        "django/template/loaders/filesystem.py"
+    ],
+    "django/template/loaders/base.py": ["django/template/__init__.py"],
+    "django/template/loaders/cached.py": [
+        "django/template/__init__.py",
+        "django/template/backends/django.py",
+        "django/template/loaders/base.py"
+    ],
+    "django/template/loaders/filesystem.py": [
+        "django/core/exceptions.py",
+        "django/template/__init__.py",
+        "django/utils/_os.py",
+        "django/template/loaders/base.py"
+    ],
+    "django/template/loaders/locmem.py": [
+        "django/template/__init__.py",
+        "django/template/loaders/base.py"
+    ],
+    "django/template/response.py": ["django/http/__init__.py", "django/template/loader.py"],
+    "django/template/utils.py": [
+        "django/apps/__init__.py",
+        "django/conf/__init__.py",
+        "django/core/exceptions.py",
+        "django/utils/functional.py",
+        "django/utils/module_loading.py"
+    ],
+    "django/templatetags/cache.py": [
+        "django/core/cache/__init__.py",
+        "django/core/cache/utils.py",
+        "django/template/__init__.py"
+    ],
+    "django/templatetags/i18n.py": [
+        "django/conf/__init__.py",
+        "django/template/__init__.py",
+        "django/template/base.py",
+        "django/template/defaulttags.py",
+        "django/utils/__init__.py",
+        "django/utils/safestring.py"
+    ],
+    "django/templatetags/l10n.py": ["django/template/__init__.py", "django/utils/__init__.py"],
+    "django/templatetags/static.py": [
+        "django/__init__.py",
+        "django/apps/__init__.py",
+        "django/utils/encoding.py",
+        "django/utils/html.py",
+        "django/conf/__init__.py",
+        "django/contrib/staticfiles/storage.py"
+    ],
+    "django/templatetags/tz.py": ["django/template/__init__.py", "django/utils/__init__.py"],
+    "django/urls/__init__.py": [
+              "django/urls/base.py",       "django/urls/conf.py",
+        "django/urls/converters.py", "django/urls/exceptions.py",
+         "django/urls/resolvers.py",      "django/urls/utils.py"
+    ],
+    "django/urls/base.py": [
+        "django/utils/functional.py",
+        "django/utils/translation/__init__.py",
+        "django/urls/exceptions.py",
+        "django/urls/resolvers.py",
+        "django/urls/utils.py"
+    ],
+    "django/urls/conf.py": [
+        "django/core/exceptions.py",  "django/urls/resolvers.py",
+         "django/views/__init__.py"
+    ],
+    "django/urls/exceptions.py": ["django/http/__init__.py"],
+    "django/urls/resolvers.py": [
+        "django/conf/__init__.py",
+        "django/core/checks/__init__.py",
+        "django/core/checks/urls.py",
+        "django/core/exceptions.py",
+        "django/utils/datastructures.py",
+        "django/utils/functional.py",
+        "django/utils/http.py",
+        "django/utils/regex_helper.py",
+        "django/utils/translation/__init__.py",
+        "django/urls/converters.py",
+        "django/urls/exceptions.py",
+        "django/urls/utils.py",
+        "django/views/__init__.py",
+        "django/conf/__init__.py"
+    ],
+    "django/urls/utils.py": [
+        "django/core/exceptions.py",
+        "django/utils/module_loading.py"
+    ],
+    "django/utils/_os.py": ["django/core/exceptions.py"],
+    "django/utils/archive.py": ["django/core/exceptions.py"],
+    "django/utils/asyncio.py": ["django/core/exceptions.py"],
+    "django/utils/autoreload.py": [
+                 "django/__init__.py",     "django/apps/__init__.py",
+             "django/core/signals.py", "django/dispatch/__init__.py",
+         "django/utils/functional.py",     "django/utils/version.py",
+            "django/urls/__init__.py"
+    ],
+    "django/utils/cache.py": [
+        "django/conf/__init__.py",
+        "django/core/cache/__init__.py",
+        "django/http/__init__.py",
+        "django/utils/http.py",
+        "django/utils/log.py",
+        "django/utils/regex_helper.py",
+        "django/utils/timezone.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/utils/choices.py": ["django/utils/functional.py", "django/db/models/enums.py"],
+    "django/utils/connection.py": ["django/conf/__init__.py", "django/utils/functional.py"],
+    "django/utils/crypto.py": ["django/conf/__init__.py", "django/utils/encoding.py"],
+    "django/utils/dateformat.py": [
+        "django/utils/dates.py",
+        "django/utils/regex_helper.py",
+        "django/utils/timezone.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/utils/dateparse.py": ["django/utils/regex_helper.py", "django/utils/timezone.py"],
+    "django/utils/dates.py": [
+        "django/utils/translation/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/utils/deconstruct.py": ["django/utils/version.py"],
+    "django/utils/encoding.py": ["django/utils/functional.py"],
+    "django/utils/feedgenerator.py": ["django/utils/encoding.py", "django/utils/xmlutils.py"],
+    "django/utils/formats.py": [
+        "django/conf/__init__.py",
+        "django/utils/__init__.py",
+        "django/utils/functional.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/utils/hashable.py": ["django/utils/itercompat.py"],
+    "django/utils/html.py": [
+        "django/utils/deprecation.py",
+        "django/utils/encoding.py",
+        "django/utils/functional.py",
+        "django/utils/http.py",
+        "django/utils/regex_helper.py",
+        "django/utils/safestring.py",
+        "django/utils/text.py",
+        "django/core/serializers/json.py"
+    ],
+    "django/utils/http.py": [
+        "django/utils/datastructures.py",
+        "django/utils/regex_helper.py"
+    ],
+    "django/utils/ipv6.py": [
+        "django/core/exceptions.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/utils/log.py": [
+        "django/conf/__init__.py",
+        "django/core/__init__.py",
+        "django/core/mail/__init__.py",
+        "django/core/management/color.py",
+        "django/utils/module_loading.py"
+    ],
+    "django/utils/module_loading.py": ["django/apps/__init__.py"],
+    "django/utils/numberformat.py": ["django/conf/__init__.py", "django/utils/safestring.py"],
+    "django/utils/regex_helper.py": ["django/utils/functional.py"],
+    "django/utils/safestring.py": ["django/utils/functional.py"],
+    "django/utils/text.py": [
+        "django/core/exceptions.py",
+        "django/utils/functional.py",
+        "django/utils/regex_helper.py",
+        "django/utils/translation/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/utils/timesince.py": [
+        "django/utils/html.py",
+        "django/utils/timezone.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/utils/timezone.py": ["django/conf/__init__.py"],
+    "django/utils/translation/__init__.py": [
+        "django/utils/autoreload.py",
+        "django/utils/functional.py",
+        "django/utils/regex_helper.py",
+        "django/utils/translation/template.py",
+        "django/conf/locale/__init__.py",
+        "django/conf/__init__.py",
+        "django/utils/translation/__init__.py",
+        "django/utils/translation/reloader.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/utils/translation/reloader.py": [
+        "django/apps/__init__.py",
+        "django/utils/autoreload.py",
+        "django/conf/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/utils/translation/template.py": [
+        "django/template/base.py",
+        "django/utils/regex_helper.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/utils/translation/trans_null.py": ["django/conf/__init__.py"],
+    "django/utils/translation/trans_real.py": [
+        "django/apps/__init__.py",
+        "django/conf/__init__.py",
+        "django/conf/locale/__init__.py",
+        "django/core/exceptions.py",
+        "django/core/signals.py",
+        "django/dispatch/__init__.py",
+        "django/utils/regex_helper.py",
+        "django/utils/safestring.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "django/utils/tree.py": ["django/utils/hashable.py"],
+    "django/utils/version.py": ["django/utils/regex_helper.py", "django/__init__.py"],
+    "django/views/__init__.py": ["django/views/generic/base.py"],
+    "django/views/csrf.py": [
+        "django/conf/__init__.py",
+        "django/http/__init__.py",
+        "django/template/__init__.py",
+        "django/utils/translation/__init__.py",
+        "django/utils/version.py",
+        "django/middleware/csrf.py"
+    ],
+    "django/views/debug.py": [
+        "django/conf/__init__.py",
+        "django/http/__init__.py",
+        "django/template/__init__.py",
+        "django/template/defaultfilters.py",
+        "django/urls/__init__.py",
+        "django/utils/__init__.py",
+        "django/utils/datastructures.py",
+        "django/utils/encoding.py",
+        "django/utils/module_loading.py",
+        "django/utils/regex_helper.py",
+        "django/utils/version.py",
+        "django/views/decorators/debug.py",
+        "django/__init__.py"
+    ],
+    "django/views/decorators/cache.py": [
+        "django/middleware/cache.py",      "django/utils/cache.py",
+        "django/utils/decorators.py"
+    ],
+    "django/views/decorators/csrf.py": ["django/middleware/csrf.py", "django/utils/decorators.py"],
+    "django/views/decorators/debug.py": ["django/http/__init__.py"],
+    "django/views/decorators/gzip.py": ["django/middleware/gzip.py", "django/utils/decorators.py"],
+    "django/views/decorators/http.py": [
+           "django/http/__init__.py",  "django/middleware/http.py",
+          "django/utils/__init__.py",      "django/utils/cache.py",
+        "django/utils/decorators.py",       "django/utils/http.py",
+               "django/utils/log.py"
+    ],
+    "django/views/decorators/vary.py": ["django/utils/cache.py"],
+    "django/views/defaults.py": [
+        "django/http/__init__.py",
+        "django/template/__init__.py",
+        "django/views/decorators/csrf.py"
+    ],
+    "django/views/generic/__init__.py": [
+        "django/views/generic/base.py",
+        "django/views/generic/dates.py",
+        "django/views/generic/detail.py",
+        "django/views/generic/edit.py",
+        "django/views/generic/list.py"
+    ],
+    "django/views/generic/base.py": [
+          "django/core/exceptions.py",     "django/http/__init__.py",
+        "django/template/response.py",     "django/urls/__init__.py",
+         "django/utils/decorators.py",  "django/utils/functional.py"
+    ],
+    "django/views/generic/dates.py": [
+        "django/conf/__init__.py",
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/http/__init__.py",
+        "django/utils/__init__.py",
+        "django/utils/functional.py",
+        "django/utils/translation/__init__.py",
+        "django/views/generic/base.py",
+        "django/views/generic/detail.py",
+        "django/views/generic/list.py"
+    ],
+    "django/views/generic/detail.py": [
+        "django/core/exceptions.py",
+        "django/db/__init__.py",
+        "django/http/__init__.py",
+        "django/utils/translation/__init__.py",
+        "django/views/generic/base.py"
+    ],
+    "django/views/generic/edit.py": [
+        "django/core/exceptions.py",
+        "django/forms/__init__.py",
+        "django/forms/__init__.py",
+        "django/http/__init__.py",
+        "django/views/generic/base.py",
+        "django/views/generic/detail.py"
+    ],
+    "django/views/generic/list.py": [
+        "django/core/exceptions.py",
+        "django/core/paginator.py",
+        "django/db/models/__init__.py",
+        "django/http/__init__.py",
+        "django/utils/translation/__init__.py",
+        "django/views/generic/base.py"
+    ],
+    "django/views/i18n.py": [
+        "django/apps/__init__.py",
+        "django/conf/__init__.py",
+        "django/http/__init__.py",
+        "django/template/__init__.py",
+        "django/urls/__init__.py",
+        "django/utils/formats.py",
+        "django/utils/http.py",
+        "django/utils/translation/__init__.py",
+        "django/utils/translation/trans_real.py",
+        "django/views/generic/__init__.py"
+    ],
+    "django/views/static.py": [
+        "django/http/__init__.py",
+        "django/template/__init__.py",
+        "django/utils/_os.py",
+        "django/utils/http.py",
+        "django/utils/translation/__init__.py",
+        "django/utils/translation/__init__.py"
+    ],
+    "docs/conf.py": ["django/__init__.py"],
+    "scripts/manage_translations.py": [
+        "django/__init__.py",
+        "django/conf/__init__.py",
+        "django/core/management/__init__.py"
+    ]
+}
