@@ -34,7 +34,10 @@ class Vector {
   get() {
     return this.vector;
   }
+  
 }
+
+Vector.zero = new Vector({ x: 0, y: 0 });
 
 function chain(vector) {
   return new Vector(vector);

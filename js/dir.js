@@ -1,8 +1,8 @@
 const stretchFactor = 1e-2;
 const degree90 = Math.PI / 2;
+const thickness = 10;
 
 function createSquare(center, sideLength, details) {
-  const thickness = 10;
   const halfSide = sideLength / 2;
   const halfThickness = thickness / 2;
 
