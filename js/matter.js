@@ -68,12 +68,13 @@ function applyCenteringForce(bodies) {
     Matter.Body.applyForce(body, body.position, force);
 
     // zero out the angular velocity
-    Matter.Body.setAngularVelocity(body, body.angularVelocity / 2);
+    Matter.Body.setAngularVelocity(body, 0);
+    Matter.Body.setVelocity(body, Vector.zero.get());
   });
 }
 
 function repel(bodies){
-  const strength = 1e-1; // Adjust this value as needed
+  const strength = 1e-2; // Adjust this value as needed
   bodies.forEach(body => {
     //sum the forces from all other bodies
     let force = Vector.zero;

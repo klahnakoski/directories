@@ -1,4 +1,6 @@
 const stretchFactor = 1e-2;
+const stretchOffset = -2;
+const torqueFactor = 1e1;
 const degree90 = Math.PI / 2;
 const thickness = 10;
 
@@ -70,15 +72,20 @@ function afterUpdate() {
     const vertA = verts[i];
     const vertB = verts[(i + 1) % 4];
 
-    const a = chain(forceVector).mult(-1).rotate(-bodyA.angle).x().mult(stretchFactor).rotate(bodyA.angle).get();
+    const a = chain(forceVector).mult(-1).rotate(-bodyA.angle).x().add({x:stretchOffset, y:0}).mult(stretchFactor).rotate(bodyA.angle).get();
     vertA[1] = chain(vertA[1]).add(a).get();
     vertA[2] = chain(vertA[2]).add(a).get();
     con.pointA = vertA[2];
 
-    const b = chain(forceVector).rotate(-bodyB.angle).x().mult(stretchFactor).rotate(bodyB.angle).get();
+    const b = chain(forceVector).rotate(-bodyB.angle).x().add({x:-stretchOffset, y:0}).mult(stretchFactor).rotate(bodyB.angle).get();
     vertB[0] = chain(vertB[0]).add(b).get();
     vertB[3] = chain(vertB[3]).add(b).get();
     con.pointB = vertB[3];
+
+    // add torque to ensure constraint is 90 degrees
+    torque = Math.tan(bodyB.angle-bodyA.angle-degree90)*torqueFactor;
+    bodyA.torque=torque;
+    bodyB.torque=-torque;
   });
 
   this.bodies.forEach((body, i) => {
