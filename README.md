@@ -14,8 +14,20 @@ Microservices came to fashion because of pain caused by the complexity monolithi
 
 Visualizing the dependency graph of a code project will help justify moving files to a business centric directory structure.  PLus it will show the particularly knotty parts of the code.
 
+## Conclusion (3 days later)
 
-## Uasge
+This did not go well.  The effect I desire does not work well with a physics engine like matter.js.  Some things that went wrong are:
+
+* fast moving objects may jump out of thier container
+* additional code required to resize objects (edges of directory)
+* quadrilaterals can bend to let the files escape
+* must be careful with force feedback: Energy gets added to the system, making it unstable
+* Constraints can not be used to simulate attractive forces 
+
+
+## Usage
+
+This includes a python program to extract dependencies from a python project.  It will output a json file that can be used by the visualization.
 
 Example
 
