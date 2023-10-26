@@ -1,48 +1,64 @@
 class Vector {
-  constructor(vector) {
-    this.vector = vector;
-  }
+    constructor(vector) {
+      Object.assign(this, vector);
+    }
 
-  add(vector) {
-    return new Vector(Matter.Vector.add(this.vector, vector));
-  }
+    add(...vectors) {
+        let x = this.x;
+        let y = this.y;
+        for (let v of vectors) {
+            x += v.x;
+            y += v.y;
+        }
+        return new Vector({ x, y });
+    }
 
-  sub(vector) {
-    return new Vector(Matter.Vector.sub(this.vector, vector));
-  }
+    sub(vector) {
+        return new Vector({ x: this.x - vector.x, y: this.y - vector.y });
+    }
 
-  rotate(angle) {
-    return new Vector(Matter.Vector.rotate(this.vector, angle));
-  }
+    rotate(angle) {
+        return new Vector({
+            x: this.x * cos(angle) - this.y * sin(angle),
+            y: this.x * sin(angle) + this.y * cos(angle),
+        });
+    }
 
-  mult(scalar) {
-    return new Vector(Matter.Vector.mult(this.vector, scalar));
-  }
+    tangent() {
+        return new Vector({ x: -this.y, y: this.x });
+    }
 
-  magnitude() {
-    return Matter.Vector.magnitude(this.vector);
-  }
+    mult(other) {
+        return new Vector({ x: this.x * other, y: this.y * other });
+    }
 
-  x() {
-    return new Vector({ x: this.vector.x, y: 0 });
-  }
+    dot(vector) {
+        return this.x * vector.x + this.y * vector.y;
+    }
 
-  y() {
-    return new Vector({ x: 0, y: this.vector.y });
-  }
+    magnitude() {
+        return Math.sqrt(this.x * this.x + this.y * this.y);
+    }
 
-  get() {
-    return this.vector;
-  }
-  
+    normalize() {
+        return this.mult(1 / this.magnitude());
+    }
+
+    x() {
+        return new Vector({ x: this.x, y: 0 });
+    }
+
+    y() {
+        return new Vector({ x: 0, y: this.y });
+    }
 }
 
 Vector.zero = new Vector({ x: 0, y: 0 });
 
 function chain(vector) {
-  return new Vector(vector);
+    return new Vector(vector);
 }
 
 function toRadians(degrees) {
-  return degrees * (Math.PI / 180);
+    return degrees * (Math.PI / 180);
 }

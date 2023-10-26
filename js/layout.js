@@ -32,7 +32,7 @@ function first_layout(data, circleDetails, dirDetails, depDetails) {
     if (depth == 0) return [Matter.Bounds.create([outerTopLeft, outerTopLeft]), [], {}];
     const innerTopLeft = chain(outerTopLeft)
       .add({ x: space + dirLineThickness + space, y: space + dirLineThickness + space })
-      .get();
+      ;
     const numColumns = Math.ceil(Math.sqrt(Object.keys(loc).length));
     let bounds = { min: innerTopLeft, max: innerTopLeft };
     const dirs = [];
@@ -72,10 +72,10 @@ function first_layout(data, circleDetails, dirDetails, depDetails) {
     });
 
     // add a dir around this
-    const box = chain(bounds.max).sub(bounds.min).get();
+    const box = chain(bounds.max).sub(bounds.min);
     const sideLength = Math.max(box.x, box.y);
     const c = space + dirLineThickness + space + sideLength / 2;
-    const center = chain(outerTopLeft).add({ x: c, y: c }).get();
+    const center = chain(outerTopLeft).add({ x: c, y: c });
     const dir = createSquare(center, space + sideLength + space, dirDetails);
     dirs.push(dir);
     bounds = unionBounds(bounds, ...dir.bodies.map((b) => b.bounds));
@@ -85,24 +85,18 @@ function first_layout(data, circleDetails, dirDetails, depDetails) {
 
   const [bounds, dirs, circles] = grid({ x: 0, y: 0 }, [], deepData, dirDepth);
 
-  //add constraints to related circles
-  const constraints = Object.entries(circles).flatMap(([name, circle]) => {
-    if (!data[name]) return [];
-    return data[name].map((depName) => {
+    // fields
+    const length = Object.values(circles).length;
+    const fields = Array.from({ length }, () => Array.from({ length }, () => 1.0));
+
+  Object.entries(circles).forEach(([name, circle], i) => {
+    if (!data[name]) return;
+    data[name].forEach((depName, j) => {
       const depC = circles[depName];
-      if (!depC) return null
-      return Matter.Constraint.create({
-        bodyA: circle,
-        bodyB: depC,
-        pointA: { x: 0, y: 0 },
-        pointB: { x: 0, y: 0 },
-        stiffness: 0,
-        length: 1000,
-        ...depDetails,
-        label: circle.label + "->" + depName,
-      });
-    }).filter(c=>c!=null);
+      if (!depC) return;
+      fields[i][j] = -1.0;
+    });
   });
 
-  return { bounds, dirs, circles: Object.values(circles), constraints };
+  return { bounds, dirs, circles: Object.values(circles), fields };
 }

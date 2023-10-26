@@ -64,12 +64,12 @@ function applyCenteringForce(bodies) {
   const strength = 1e-5; // Adjust this value as needed
 
   bodies.forEach(body => {
-    const force = chain(body.position).sub({x:centerX, y:centerY}).mult(-strength).get();
+    const force = chain(body.position).sub({x:centerX, y:centerY}).mult(-strength);
     Matter.Body.applyForce(body, body.position, force);
 
     // zero out the angular velocity
     Matter.Body.setAngularVelocity(body, 0);
-    Matter.Body.setVelocity(body, Vector.zero.get());
+    Matter.Body.setVelocity(body, Vector.zero);
   });
 }
 
@@ -82,10 +82,10 @@ function repel(bodies){
     bodies.filter(b=>b!=body).forEach(otherBody=>{
       const f=pos.sub(otherBody.position);
       const mag = f.magnitude();
-      force = force.add(f.mult(strength/Math.pow(mag, 2)).get());
+      force = force.add(f.mult(strength/Math.pow(mag, 2)));
     });
     // Apply the force
-    Matter.Body.applyForce(body, body.position, force.get());
+    Matter.Body.applyForce(body, body.position, force);
   });
 }
 
