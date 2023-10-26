@@ -29,12 +29,12 @@ function first_layout(data, circleDetails, dirDetails, depDetails) {
   });
 
   function grid(outerTopLeft, path, loc, depth) {
-    if (depth == 0) return [Matter.Bounds.create([outerTopLeft, outerTopLeft]), [], {}];
+    if (depth == 0) return [new Bounds(outerTopLeft, outerTopLeft), [], {}];
     const innerTopLeft = chain(outerTopLeft)
       .add({ x: space + dirLineThickness + space, y: space + dirLineThickness + space })
       ;
     const numColumns = Math.ceil(Math.sqrt(Object.keys(loc).length));
-    let bounds = { min: innerTopLeft, max: innerTopLeft };
+    let bounds = new Bounds(innerTopLeft, innerTopLeft);
     const dirs = [];
     const circles = {};
     let left = innerTopLeft.x;
@@ -54,17 +54,18 @@ function first_layout(data, circleDetails, dirDetails, depDetails) {
             const y = Math.floor(i / numRows);
             return [
               [...path, file].join("/"),
-              Matter.Bodies.circle(x * 2 * (circleRadius + space) + circleRadius + left, y * 2 * (circleRadius + space) + circleRadius + top, circleRadius, { label: path.join("/") + "/" + file, ...circleDetails }),
+              new Circle({x: x * 2 * (circleRadius + space) + circleRadius + left, y:y * 2 * (circleRadius + space) + circleRadius + top}, circleRadius, {label: path.join("/") + "/" + file, ...circleDetails }),
             ];
           })
         );
-        const childBounds = unionBounds(...Object.values(childCircles).map((c) => c.bounds));
-        bounds = unionBounds(bounds, childBounds);
+        const temp = {x:left, y:top};
+        const childBounds = new Bounds(temp, temp).union(...Object.values(childCircles).map(c=>c.getBounds()));
+        bounds = bounds.union(childBounds);
         Object.assign(circles, childCircles);
         left = childBounds.max.x;
       } else {
         const [childBounds, childDirs, childCircles] = grid({ x: left, y: top }, [...path, k], v, depth - 1);
-        bounds = unionBounds(bounds, childBounds);
+        bounds = bounds.union(childBounds);
         dirs.push(...childDirs);
         Object.assign(circles, childCircles);
         left = childBounds.max.x;
@@ -78,7 +79,7 @@ function first_layout(data, circleDetails, dirDetails, depDetails) {
     const center = chain(outerTopLeft).add({ x: c, y: c });
     const dir = createSquare(center, space + sideLength + space, dirDetails);
     dirs.push(dir);
-    bounds = unionBounds(bounds, ...dir.bodies.map((b) => b.bounds));
+    bounds = bounds.union(...dir.bodies.map((b) => b.bounds));
 
     return [bounds, dirs, circles];
   }

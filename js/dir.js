@@ -89,7 +89,7 @@ function afterUpdate() {
   });
 
   this.bodies.forEach((body, i) => {
-    const original = body.vertices.map((v) => chain(v));
+    const original = body.vertices.map((v) => chain(v).get());
     Matter.Body.setVertices(body, verts[i]);
   });
 }

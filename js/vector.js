@@ -1,6 +1,6 @@
 class Vector {
     constructor(vector) {
-      Object.assign(this, vector);
+        Object.assign(this, vector);
     }
 
     add(...vectors) {
@@ -32,8 +32,8 @@ class Vector {
         return new Vector({ x: this.x * other, y: this.y * other });
     }
 
-    dot(vector) {
-        return this.x * vector.x + this.y * vector.y;
+    dot(other) {
+        return this.x * other.x + this.y * other.y;
     }
 
     magnitude() {
@@ -44,12 +44,24 @@ class Vector {
         return this.mult(1 / this.magnitude());
     }
 
+    inverse() {
+        return this.mult(Math.pow(this.magnitude(), -2));
+    }
+
     x() {
         return new Vector({ x: this.x, y: 0 });
     }
 
     y() {
         return new Vector({ x: 0, y: this.y });
+    }
+
+    min(other) {
+        return new Vector({ x: Math.min(this.x, other.x), y: Math.min(this.y, other.y) });
+    }
+
+    max(other) {
+        return new Vector({ x: Math.max(this.x, other.x), y: Math.max(this.y, other.y) });
     }
 }
 
