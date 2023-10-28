@@ -4,82 +4,68 @@
 
 // how to draw dir
 
-function collideMovingCircles(c1, c2) {
-    if (c1 === c2) return 1;
-    // return time [0..1] that collision will happen
-    // c1 and c2 are circles with position, radius and velocity
-
-    const dp = chain(c1.pos).sub(c2.pos);
-    const dv = chain(c1.vel).sub(c2.vel);
-
-    // is c1 moving away from c2?
-    // if (dp.dot(c1.vel) > 0){
-    //   return 1;
-    // }
-
-    const A = 2 * dv.dot(dv);
-    const B = 2 * dp.dot(dv);
-    const C = dp.dot(dp) - Math.pow(c1.rad + c2.rad, 2);
-    const T = B * B - 2 * A * C;
-    if (T < 0) return 1;
-    const G = Math.sqrt(T);
-
-    const t1 = (-B - G) / A;
-    const t2 = (-B + G) / A;
-    if (0 <= t1 && t1 <= 1) return t1;
-    if (0 <= t2 && t2 <= 1) return t2;
-    return 1;
-}
-
-function force(circle, other, factor) {
-    if (circle === other) return Vector.zero;
+function forceFunction(circle, other, attractFactor) {
     const vec = chain(other.pos).sub(circle.pos);
     const distance = vec.magnitude();
-    return vec.mult(factor / distance / distance);
+    const repel = Math.pow(distance / 2 / (circle.rad + other.rad), -20);
+    if (attractFactor > 0) {
+        // spring attraction
+        const total = Math.pow(distance / Math.max(1, circle.peers.length), 1);
+        if (isNaN(total)) {
+            console.log("null");
+        }
+        return vec.mult(attractFactor * total - repel);
+    } else {
+        // electrostatic repulsion
+        const total = Math.pow(distance, -1.8);
+        if (isNaN(total)) {
+            console.log("null");
+        }
+        return vec.mult(attractFactor * total - repel);
+    }
 }
 
-function fieldEffects(collisions, fields) {
+function fieldEffects(circles, fields) {
     // return force vector for each circle
-    collisions.forEach(({ c1 }, i) => {
+    circles.forEach((circle, i) => {
         const sub_fields = fields[i];
-        const centering = windowCenter.sub(c1.pos).mult(centerFactor);
-        c1.acc = centering.add(...collisions.map(({ c1: c2 }, j) => force(c1, c2, sub_fields[j]))).normalize();
-    });
-}
-
-function redirect(collisions) {
-    return collisions.map(({ c1: { pos, vel, acc, ...rest }, peer }, i) => {
-        if (peer === null) return { pos, vel: acc, acc: Vector.zero, ...rest };
-        const tangent = chain(peer.pos).sub(pos).tangent().normalize();
-        const new_vel = tangent.mult(tangent.dot(acc));
-        return { pos, vel: new_vel, acc: Vector.zero, ...rest };
+        const centering = windowCenter.sub(circle.pos).normalize().mult(centerFactor);
+        const temp = circle.acc
+            .add(centering)
+            .add(
+                ...circles.map((other, j) => {
+                    if (circle === other) return Vector.zero;
+                    return forceFunction(circle, other, sub_fields[j]);
+                })
+            )
+            .mult(1 / 100000);
+        if (isNaN(temp.x)) {
+            console.log("null");
+        }
+        circle.acc = temp;
     });
 }
 
 function step(circles, fields) {
-    // advance
-    const collisions = circles.map((c1) => {
-        let time = 1;
-        let peer = null;
-        circles.forEach((c2) => {
-            const t = collideMovingCircles(c1, c2);
-            if (t < time) {
-                time = t;
-                peer = c2;
-            }
-        });
-        return { c1, peer, time };
-    });
-
-    collisions.forEach(({ c1, peer, time }) => {
-        c1.pos = chain(c1.pos).add(chain(c1.vel).mult(time));
+    circles.forEach((c1) => {
+        if (isNaN(c1.vel.x)) {
+            console.log("null");
+        }
+        c1.pos = chain(c1.pos).add(chain(c1.vel));
     });
 
     // force fields
-    fieldEffects(collisions, fields);
+    fieldEffects(circles, fields);
 
     // new directions
-    return redirect(collisions);
+    circles.forEach((circle) => {
+        if (isNaN(circle.acc.x)) {
+            console.log("null");
+        }
+        circle.vel = circle.acc.normalize(); // circle.vel.add(circle.acc);
+    });
+
+    return circles;
 }
 
 // how to calculate next direction when circle on edge of dir
@@ -109,7 +95,9 @@ function step(circles, fields) {
 let myCircles = null;
 let myFields = null;
 let windowCenter = null;
-const centerFactor = 1e-1;
+const centerFactor = 1;
+const fieldFactor = 2;
+let dragging = null;
 
 async function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -120,14 +108,34 @@ async function setup() {
     const depDetails = {};
     const { circles, fields } = first_layout(data, circleDetails, dirDetails, depDetails);
 
-    myFields = fields;
+    myFields = fields.map((row) => row.map((f) => f * fieldFactor));
     myCircles = circles;
 
     mainDraw = () => {
+        strokeWeight(1);
+        stroke(255, 0, 0);
+        circles.forEach((circle, i) => {
+            circles.forEach((other, j) => {
+                if (myFields[i][j] > 0) {
+                    line(circle.pos.x, circle.pos.y, other.pos.x, other.pos.y);
+                }
+            });
+        });
         myCircles.forEach((c) => {
             ellipse(c.pos.x, c.pos.y, 2 * c.rad, 2 * c.rad);
         });
+        const mouse = chain({ x: mouseX, y: mouseY });
+        myCircles.forEach((c) => {
+            if (c.pos.sub(mouse).magnitude() < c.rad) {
+                fill(255); // Red when hovering
+                text(c.details.label, c.pos.x + c.rad, c.pos.y);
+            }
+        });
+
         myCircles = step(myCircles, myFields);
+        if (dragging != null) {
+            dragging.pos = chain({ x: mouseX, y: mouseY });
+        }
     };
 }
 
@@ -142,4 +150,24 @@ function draw() {
 function windowResized() {
     windowCenter = chain({ x: windowWidth / 2, y: windowHeight / 2 });
     resizeCanvas(windowWidth, windowHeight);
+}
+
+function mousePressed() {
+    let best = null;
+    let pos = chain({ x: mouseX, y: mouseY });
+    myCircles.forEach((circle) => {
+        const d = pos.sub(circle.pos).magnitude();
+        if (d < circle.rad) {
+            if (!best || d < best.d) {
+                best = circle;
+            }
+        }
+    });
+    if (best) {
+        dragging = best;
+    }
+}
+
+function mouseReleased() {
+    dragging = null;
 }
