@@ -1,5 +1,9 @@
 class Vector {
     constructor(vector) {
+        if (isNaN(vector.x) || isNaN(vector.y)){
+            console.log(v);
+      }
+
         Object.assign(this, vector);
     }
 
@@ -7,6 +11,9 @@ class Vector {
         let x = this.x;
         let y = this.y;
         for (let v of vectors) {
+            if (v ===undefined || isNaN(v.x) || isNaN(v.y)){
+                  console.log(v);
+            }
             x += v.x;
             y += v.y;
         }
@@ -17,6 +24,12 @@ class Vector {
         return new Vector({ x: this.x - vector.x, y: this.y - vector.y });
     }
 
+    angle(other) {
+        const dot = this.dot(other);
+        const mag = this.magnitude() * other.magnitude();
+        return Math.acos(dot / mag);
+    }
+
     rotate(angle) {
         return new Vector({
             x: this.x * cos(angle) - this.y * sin(angle),
@@ -25,6 +38,7 @@ class Vector {
     }
 
     tangent() {
+        // turn left 90%
         return new Vector({ x: -this.y, y: this.x });
     }
 
@@ -36,11 +50,17 @@ class Vector {
         return this.x * other.x + this.y * other.y;
     }
 
+    cross(other) {
+        return this.x * other.y - this.y * other.x;
+    }
+
     magnitude() {
         return Math.sqrt(this.x * this.x + this.y * this.y);
     }
 
     normalize() {
+        const mag = this.magnitude();
+        if (mag == 0) return Vector.zero;
         return this.mult(1 / this.magnitude());
     }
 
@@ -57,10 +77,17 @@ class Vector {
     }
 
     min(other) {
+        if (isNaN(other.x) || isNaN(other.y)){
+            console.log(v);
+      }
+
         return new Vector({ x: Math.min(this.x, other.x), y: Math.min(this.y, other.y) });
     }
 
     max(other) {
+        if (isNaN(other.x) || isNaN(other.y)){
+            console.log(v);
+      }
         return new Vector({ x: Math.max(this.x, other.x), y: Math.max(this.y, other.y) });
     }
 }

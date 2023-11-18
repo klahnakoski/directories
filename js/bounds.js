@@ -1,7 +1,7 @@
 class Bounds {
     constructor(min, max) {
-        this.min=chain(min);
-        this.max=chain(max);
+        this.min=min;
+        this.max=max;
     }
 
 
@@ -15,3 +15,4 @@ class Bounds {
         return new Bounds(min, max);
     }
 }
+
