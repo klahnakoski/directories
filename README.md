@@ -31,12 +31,12 @@ This did not go well.  The effect I desire does not work well with a physics eng
 The second attempt was spread over the past month as I battle the disillusionment of how tedious this is going to be.  ChatGPT helped a lot.
 
 * p5.js has a very simple interface, so it is easy to start
-* p5.js is only for drawing, all the constraints and rules must be written by me
+* p5.js is only for drawing, all the constraints and rules must be written by me (really!  I must write a physics engine from scratch?)
 * to minimize the "step-size" problem, all velocities were capped.  Still a problem, but less so.
 * collision code is complicated AND error-prone: once an object "steps" through an edge it is free to run away entirely
 * To get around the step-size problem, all edges are now "soft": Much like machine learning s-curves, all edges act on all objects no matter the distance; albeit with tiny forces far from the actual edges.
 * Quadrilaterals apply containment forces to all object they contain, and expulsion forces on all objects excluded, to ensure objects are forced back should they step out of bounds.
-* Simulating quadrilaterals as just four points is not enough to keep their volumes form overlapping are still over
+* Simulating quadrilaterals as just four points is not enough to keep their volumes form overlapping.
 
 ![img.png](docs/img.png)
 
