@@ -24,7 +24,7 @@ function createSquare(center, sideLength, details) {
       chain({ x: 0, y: -halfSide - halfThickness })
         .rotate(angle)
         .add(center)
-        .get()
+        
     );
   });
 
@@ -34,10 +34,10 @@ function createSquare(center, sideLength, details) {
     const lineB = lines[nextIdx];
     const angle = toRadians(i * 90);
 
-    const pointA = chain({ x: halfSide, y: halfThickness }).rotate(angle).get();
+    const pointA = chain({ x: halfSide, y: halfThickness }).rotate(angle);
     const pointB = chain({ x: -halfSide, y: halfThickness })
       .rotate(angle + degree90)
-      .get();
+      ;
 
     return Matter.Constraint.create({
       bodyA: lineA,
@@ -63,23 +63,23 @@ function createSquare(center, sideLength, details) {
 }
 
 function afterUpdate() {
-  const verts = this.bodies.map((b) => b.vertices.map((v) => chain(v).sub(b.position).get()));
+  const verts = this.bodies.map((b) => b.vertices.map((v) => chain(v).sub(b.position)));
   this.constraints.forEach((con, i) => {
-    const forceVector = chain(con.pointA).add(con.bodyA.position).sub(con.pointB).sub(con.bodyB.position).get();
+    const forceVector = chain(con.pointA).add(con.bodyA.position).sub(con.pointB).sub(con.bodyB.position);
     const delta = chain(forceVector).magnitude();
     const bodyA = con.bodyA;
     const bodyB = con.bodyB;
     const vertA = verts[i];
     const vertB = verts[(i + 1) % 4];
 
-    const a = chain(forceVector).mult(-1).rotate(-bodyA.angle).x().add({x:stretchOffset, y:0}).mult(stretchFactor).rotate(bodyA.angle).get();
-    vertA[1] = chain(vertA[1]).add(a).get();
-    vertA[2] = chain(vertA[2]).add(a).get();
+    const a = chain(forceVector).mult(-1).rotate(-bodyA.angle).x().add({x:stretchOffset, y:0}).mult(stretchFactor).rotate(bodyA.angle);
+    vertA[1] = chain(vertA[1]).add(a);
+    vertA[2] = chain(vertA[2]).add(a);
     con.pointA = vertA[2];
 
-    const b = chain(forceVector).rotate(-bodyB.angle).x().add({x:-stretchOffset, y:0}).mult(stretchFactor).rotate(bodyB.angle).get();
-    vertB[0] = chain(vertB[0]).add(b).get();
-    vertB[3] = chain(vertB[3]).add(b).get();
+    const b = chain(forceVector).rotate(-bodyB.angle).x().add({x:-stretchOffset, y:0}).mult(stretchFactor).rotate(bodyB.angle);
+    vertB[0] = chain(vertB[0]).add(b);
+    vertB[3] = chain(vertB[3]).add(b);
     con.pointB = vertB[3];
 
     // add torque to ensure constraint is 90 degrees

@@ -1,48 +1,103 @@
 class Vector {
-  constructor(vector) {
-    this.vector = vector;
-  }
+    constructor(vector) {
+        if (isNaN(vector.x) || isNaN(vector.y)){
+            console.log(v);
+      }
 
-  add(vector) {
-    return new Vector(Matter.Vector.add(this.vector, vector));
-  }
+        Object.assign(this, vector);
+    }
 
-  sub(vector) {
-    return new Vector(Matter.Vector.sub(this.vector, vector));
-  }
+    add(...vectors) {
+        let x = this.x;
+        let y = this.y;
+        for (let v of vectors) {
+            if (v ===undefined || isNaN(v.x) || isNaN(v.y)){
+                  console.log(v);
+            }
+            x += v.x;
+            y += v.y;
+        }
+        return new Vector({ x, y });
+    }
 
-  rotate(angle) {
-    return new Vector(Matter.Vector.rotate(this.vector, angle));
-  }
+    sub(vector) {
+        return new Vector({ x: this.x - vector.x, y: this.y - vector.y });
+    }
 
-  mult(scalar) {
-    return new Vector(Matter.Vector.mult(this.vector, scalar));
-  }
+    angle(other) {
+        const dot = this.dot(other);
+        const mag = this.magnitude() * other.magnitude();
+        return Math.acos(dot / mag);
+    }
 
-  magnitude() {
-    return Matter.Vector.magnitude(this.vector);
-  }
+    rotate(angle) {
+        return new Vector({
+            x: this.x * cos(angle) - this.y * sin(angle),
+            y: this.x * sin(angle) + this.y * cos(angle),
+        });
+    }
 
-  x() {
-    return new Vector({ x: this.vector.x, y: 0 });
-  }
+    tangent() {
+        // turn left 90%
+        return new Vector({ x: -this.y, y: this.x });
+    }
 
-  y() {
-    return new Vector({ x: 0, y: this.vector.y });
-  }
+    mult(other) {
+        return new Vector({ x: this.x * other, y: this.y * other });
+    }
 
-  get() {
-    return this.vector;
-  }
-  
+    dot(other) {
+        return this.x * other.x + this.y * other.y;
+    }
+
+    cross(other) {
+        return this.x * other.y - this.y * other.x;
+    }
+
+    magnitude() {
+        return Math.sqrt(this.x * this.x + this.y * this.y);
+    }
+
+    normalize() {
+        const mag = this.magnitude();
+        if (mag == 0) return Vector.zero;
+        return this.mult(1 / this.magnitude());
+    }
+
+    inverse() {
+        return this.mult(Math.pow(this.magnitude(), -2));
+    }
+
+    x() {
+        return new Vector({ x: this.x, y: 0 });
+    }
+
+    y() {
+        return new Vector({ x: 0, y: this.y });
+    }
+
+    min(other) {
+        if (isNaN(other.x) || isNaN(other.y)){
+            console.log(v);
+      }
+
+        return new Vector({ x: Math.min(this.x, other.x), y: Math.min(this.y, other.y) });
+    }
+
+    max(other) {
+        if (isNaN(other.x) || isNaN(other.y)){
+            console.log(v);
+      }
+        return new Vector({ x: Math.max(this.x, other.x), y: Math.max(this.y, other.y) });
+    }
 }
 
 Vector.zero = new Vector({ x: 0, y: 0 });
 
 function chain(vector) {
-  return new Vector(vector);
+    return new Vector(vector);
 }
 
 function toRadians(degrees) {
-  return degrees * (Math.PI / 180);
+    return degrees * (Math.PI / 180);
 }
