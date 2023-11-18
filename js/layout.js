@@ -1,7 +1,7 @@
 const circleRadius = 10;
 const space = 5;
 const dirLineThickness = 10;
-const dirDepth = 3;
+const dirDepth = 2;
 const attractFactor = 1e-1;
 const repelFactor = 1e2;
 
@@ -33,6 +33,7 @@ function first_layout(data, circleDetails, dirDetails, depDetails) {
     const dirs = [];
     const circles = {};
     const containers = [];
+    const siblingDirs = [];
 
     function grid(outerTopLeft, path, loc, depth) {
         const innerTopLeft = outerTopLeft.add({ x: space + dirLineThickness + space, y: space + dirLineThickness + space });
@@ -42,6 +43,7 @@ function first_layout(data, circleDetails, dirDetails, depDetails) {
         let top = innerTopLeft.y;
 
         const internal = [];
+        const peerDirs = []
         Object.entries(loc).flatMap(([k, v], i) => {
             const x = i % numColumns;
             if (x == 0) {
@@ -73,7 +75,14 @@ function first_layout(data, circleDetails, dirDetails, depDetails) {
                 left = childBounds.max.x;
                 internal.push(...childInternal);
                 internal.push(...childDir.points);
+                peerDirs.push(childDir);
             }
+        });
+
+        peerDirs.forEach((dir1, i)=>{
+            peerDirs.slice(i).forEach(dir2=>{   
+                siblingDirs.push({quad:dir1, other:dir2});
+            })
         });
 
         // add a dir around this
@@ -114,14 +123,13 @@ function first_layout(data, circleDetails, dirDetails, depDetails) {
         });
     });
 
-    // every container repels external circles (and quads)
+    // every container repels external circles
     const allCircles = Object.values(circles);
-    allCircles.push(...dirs.flatMap(d=>d.points));
     containers.forEach(args=>{
         const {internal} = args;
-        args.external = allCircles.filter(c=>!internal.includes(c));
+        args.external = [];// allCircles.filter(c=>!internal.includes(c));
     });
 
-    return { circles: Object.values(circles), quads: dirs, forces, fields, containers};
+    return { circles: Object.values(circles), quads: dirs, forces, fields, siblingDirs, containers};
 }
 

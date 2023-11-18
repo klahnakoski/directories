@@ -37,9 +37,9 @@ class Vector {
         });
     }
 
-    tangent() {
-        // turn left 90%
-        return new Vector({ x: -this.y, y: this.x });
+    perp() {
+        // 90deg clockwise (positive y is down) normalized perpendicular vector
+        return new Vector({ x: -this.y, y: this.x }).normalize();
     }
 
     mult(other) {
