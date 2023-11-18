@@ -24,6 +24,8 @@ This did not go well.  The effect I desire does not work well with a physics eng
 * must be careful with force feedback: Energy gets added to the system, making it unstable
 * matter.js "Constraints" can not be used to simulate attractive forces
 
+![img_1.png](docs/img_1.png)
+
 ## Attempt 2: p5.js (Nov 18, 2023)
 
 The second attempt was spread over the past month as I battle the disillusionment of how tedious this is going to be.  ChatGPT helped a lot.
@@ -35,7 +37,8 @@ The second attempt was spread over the past month as I battle the disillusionmen
 * To get around the step-size problem, all edges are now "soft": Much like machine learning s-curves, all edges act on all objects no matter the distance; albeit with tiny forces far from the actual edges.
 * Quadrilaterals apply containment forces to all object they contain, and expulsion forces on all objects excluded, to ensure objects are forced back should they step out of bounds.
 * Simulating quadrilaterals as just four points is not enough to keep their volumes form overlapping are still over
-![img.png](img.png)
+
+![img.png](docs/img.png)
 
 
 ## Usage
