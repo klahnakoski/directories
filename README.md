@@ -1,6 +1,6 @@
 # Directory Visualization
 
-This is an experiment in matter.js to visualize files (circles) and directories (bounding boxes).
+This is an experiment to visualize files (circles) and directories (bounding boxes).
 
 * related files will attract
 * unrelated files will repel
