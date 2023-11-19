@@ -37,9 +37,9 @@ class Vector {
         });
     }
 
-    perp() {
+    norm() {
         // 90deg clockwise (positive y is down) normalized perpendicular vector
-        return new Vector({ x: -this.y, y: this.x }).normalize();
+        return new Vector({ x: -this.y, y: this.x }).unit();
     }
 
     mult(other) {
@@ -58,10 +58,16 @@ class Vector {
         return Math.sqrt(this.x * this.x + this.y * this.y);
     }
 
-    normalize() {
+    unit() {
         const mag = this.magnitude();
         if (mag == 0) return Vector.zero;
         return this.mult(1 / this.magnitude());
+    }
+
+    ceiling(max){
+        const mag = this.magnitude();
+        if (mag>max) return this.mult(max/mag);
+        return this;
     }
 
     inverse() {

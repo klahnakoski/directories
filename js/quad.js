@@ -22,7 +22,7 @@ class Quad {
         return this.points.map((c1, i)=>{
             const c2 = this.points[(i+1)%4];
             const d = c2.pos.sub(c1.pos);
-            return d.perp();
+            return d.norm();
         });
     }
 

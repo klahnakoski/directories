@@ -1,9 +1,9 @@
 const circleRadius = 10;
 const space = 5;
 const dirLineThickness = 10;
-const dirDepth = 2;
-const attractFactor = 1e-1;
-const repelFactor = 1e2;
+const dirDepth = 3;
+const attractFactor = 1e-2;
+const repelFactor = 1e1;
 
 function first_layout(data, circleDetails, dirDetails, depDetails) {
     // use a simple layout for the circles and dirs
@@ -80,7 +80,7 @@ function first_layout(data, circleDetails, dirDetails, depDetails) {
         });
 
         peerDirs.forEach((dir1, i)=>{
-            peerDirs.slice(i).forEach(dir2=>{   
+            peerDirs.slice(i+1).forEach(dir2=>{   
                 siblingDirs.push({quad:dir1, other:dir2});
             })
         });
@@ -127,7 +127,7 @@ function first_layout(data, circleDetails, dirDetails, depDetails) {
     const allCircles = Object.values(circles);
     containers.forEach(args=>{
         const {internal} = args;
-        args.external = [];// allCircles.filter(c=>!internal.includes(c));
+        args.external = [];  //allCircles.filter(c=>!internal.includes(c));
     });
 
     return { circles: Object.values(circles), quads: dirs, forces, fields, siblingDirs, containers};

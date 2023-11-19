@@ -68,29 +68,23 @@ function bounceQuadCircle(quad, other, attractFactor) {
 function bounceQuadQuad({quad, other, repelFactor}) {
     const buffer = quad.rad+other.rad;
     const quadNorms = [...quad.getNorms(), ...other.getNorms()];
-    const candidates = quadNorms.map((norm, i)=>{
+    for( const norm of quadNorms){
         const q = quad.points.map(c=>{return {x:norm.dot(c.pos), c}}).sort((a,b)=>a.x-b.x);
-        const o =other.points.map(c=>{return {x:norm.dot(c.pos), c}}).sort((a,b)=>a.x-b.x);
-        if (q[3].x<o[3].x){
-            return {dist: o[0].x-q[3].x, norm, q:q[3], o:o[0], i};
-        }else {
-            return {dist: q[0].x-o[3].x, norm, q:q[0], o:o[3], i}
-        } //endif
-    }).sort((a,b)=>a.dist-b.dist);
-    const {dist, norm, q, o, i} = candidates[0];    
-    if (dist<-buffer) return; // no collision
+        const o = other.points.map(c=>{return {x:norm.dot(c.pos), c}}).sort((a,b)=>a.x-b.x);
+        if (q[3].x+buffer < o[0].x || o[3].x+buffer < q[0].x) return;  // no collision
+    };
 
-    //which quad edge is in play?
-    const source = i<4 ? quad : other;
-    const p1 = source.points[i%4];
-    const p2 = source.points[(i+1)%4];
-    p1.acc = p1.acc.add(norm.mult(repelFactor/2));
-    p2.acc = p2.acc.add(norm.mult(repelFactor/2));
+    // force quads apart
+    const quadCenter = Vector.zero.add(...quad.points.map(p=>p.pos)).mult(1/4);
+    const otherCenter = Vector.zero.add(...other.points.map(p=>p.pos)).mult(1/4);
+    const d = otherCenter.sub(quadCenter).unit().mult(repelFactor);
 
-    //which vertex on other quad is in play?
-    const k = (i<4?o:q).c;
-    k.acc = k.acc.add(norm.mult(-repelFactor));
-
+    quad.points.forEach(c=>{
+        c.acc = c.acc.sub(d);
+    });
+    other.points.forEach(c=>{
+        c.acc = c.acc.add(d);
+    });
 }
 
 function containment({dir, internal, external}) {
@@ -100,7 +94,7 @@ function containment({dir, internal, external}) {
         const c2 = dir.points[(i+1)%4];
     
         const d = c2.pos.sub(c1.pos);
-        const tan = d.perp();
+        const tan = d.norm();
         internal.forEach(other=>{
             const offset = tan.mult(other.rad+rad);
             const v = other.pos.sub(c1.pos).sub(offset);
@@ -125,7 +119,7 @@ function containment({dir, internal, external}) {
             const c2 = dir.points[(i+1)%4];
         
             const d = c2.pos.sub(c1.pos);
-            const tan = d.perp();
+            const tan = d.norm();
             const offset = tan.mult(other.rad+rad);
             const v = other.pos.sub(c1.pos).add(offset);
             const side = d.cross(v);
@@ -133,7 +127,7 @@ function containment({dir, internal, external}) {
                 // if outside, do nothing
                 return {side, distance:0, force:Vector.zero};
             } 
-            const force = d.perp().mult(-containmentFactor);
+            const force = d.norm().mult(-containmentFactor);
             // distance from line to circle
             const t = v.dot(d)/d.dot(d);
             const distance = v.sub(d.mult(t)).magnitude();
@@ -147,57 +141,85 @@ function containment({dir, internal, external}) {
     });
 }
 
+const quadStiffness = 0.2;
 
 function forceQuadShape(quad, springFactor) {
     const points = quad.points;
+
+    // distribute forces around the quad
+    const acc = points.map(c1=>c1.acc)
+    points.forEach((c1, i)=>{
+        const a1 = acc[i];
+        const c0 = quad.points[(i+3)%4];
+        const c2 = quad.points[(i+1)%4];
+        const d0=c0.pos.sub(c1.pos).unit();
+        const d2=c2.pos.sub(c1.pos).unit();
+        const a0 = d0.mult(d0.dot(a1)*quadStiffness)
+        const a2 = d2.mult(d2.dot(a1)*quadStiffness)
+        c0.acc = c0.acc.add(a0);
+        c1.acc = c1.acc.sub(a0).sub(a2);
+        c2.acc = c2.acc.add(a2);
+    });
 
     // keep 90 degree angles between lines
     points.forEach((c1, i)=>{
         const c2 = quad.points[(i+1)%4];
         const c3 = quad.points[(i+2)%4];
-        const d1 = c1.pos.sub(c2.pos).normalize()
-        const d3 = c3.pos.sub(c2.pos).normalize()
+        const d1 = c1.pos.sub(c2.pos).unit()
+        const d3 = c3.pos.sub(c2.pos).unit()
 
-        const angle = d1.angle(d3);
-        const cosAngle = d1.dot(d3);
-        const amplitude = angleFactor * cosAngle * Math.pow((1-cosAngle*cosAngle), -2);
-        const f1 = d1.perp().mult(amplitude);
-        const f3 = d3.perp().mult(-amplitude);
+        const cosAngle = d1.dot(d3);    
+        if (cosAngle>0.9) return; // no need to correct
+        let amplitude = angleFactor * cosAngle * Math.pow((1-cosAngle*cosAngle), -2);
+        // if (cosAngle>0.9) amplitude=containmentFactor;
+        // if (cosAngle<-0.9) amplitude=-containmentFactor;
+
+        const f1 = d1.norm().mult(amplitude);
+        const f3 = d3.norm().mult(-amplitude);
         c1.acc=c1.acc.add(f1);
-        c2.acc=c2.acc.add(f1.add(f3).mult(-1));
+        c2.acc=c2.acc.sub(f1).sub(f3);
         c3.acc=c3.acc.add(f3);
 
-        // keep quad small
-        const s1 = c2.pos.sub(c1.pos).normalize()
+        // keep quad small (constant force)
+        const s1 = c2.pos.sub(c1.pos).unit()
         c1.acc = c1.acc.add(s1.mult(springFactor));
         c2.acc = c2.acc.add(s1.mult(-springFactor));
+
+        // average out vertex forces
     });
 }
 
 
 function step(circles, quads, forces, fields, containers, siblingDirs) {
     // advance shapes, zero out forces
+    const center = windowCenter.sub(Vector.zero.add(...circles.map(c=>c.pos)).mult(1/circles.length));
     circles.forEach(circle => {
         if (isNaN(circle.acc.x)) {
             console.log("null");
         }
-        circle.pos = circle.pos.add(circle.vel);
-        const mag = circle.acc.magnitude();
-        if (mag>1) {
-            circle.vel = circle.acc.mult(1/mag);
-        } else {
-            circle.vel = circle.acc;
-        }
-        circle.acc = windowCenter.sub(circle.pos).normalize().mult(centerFactor);
+        circle.pos = circle.pos.add(circle.vel).add(center);
+        circle.vel= circle.acc.ceiling(1);
+        circle.acc = windowCenter.sub(circle.pos).unit().mult(centerFactor);
     });
+    
     quads.forEach(quad => {
-        quad.points.forEach((point) => {
+        quad.points.forEach((point, i) => {
             if (isNaN(point.acc.x)) {
                 console.log("null");
             }
-            point.pos = point.pos.add(point.vel);
-            point.vel = point.acc.normalize();
+            point.pos = point.pos.add(point.vel).add(center);
+            point.vel = point.acc.ceiling(1);
             point.acc = Vector.zero;
+
+            // ensure quads are not too small
+            const p2 = quad.points[(i + 1) % 4];
+            const d1 = p2.pos.sub(point.pos);
+            const mag = d1.magnitude();
+            if (mag < minQuadSize) {
+                const add = d1.unit().mult(minQuadSize - mag).mult(0.5);
+                point.pos = point.pos.sub(add);
+                p2.pos = p2.pos.add(add);
+            }
         });
     });
 
@@ -231,12 +253,13 @@ function step(circles, quads, forces, fields, containers, siblingDirs) {
 
 let windowCenter = null;
 const centerFactor = 1e2;
-const boxSpringFactor = 1e-1
+const boxSpringFactor = 1e2
 const fieldFactor = 2;
 const angleFactor =1e0;
-const containmentFactor = 1e20;
+const containmentFactor = 1e10;
 let dragging = null;
 let myCircles = null;
+const minQuadSize = 20;
 
 async function setup() {
     createCanvas(windowWidth, windowHeight);

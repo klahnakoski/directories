@@ -38,8 +38,8 @@ The second attempt was spread over the past month as I battle the disillusionmen
 * Quadrilaterals apply containment forces to all object they contain, and expulsion forces on all objects excluded, to ensure objects are forced back should they step out of bounds.
 * Simulating quadrilaterals as just four points is not enough to keep their volumes form overlapping.
 
-![img.png](docs/img.png)
 
+![img.png](docs/img3.png)
 
 ## Usage
 
